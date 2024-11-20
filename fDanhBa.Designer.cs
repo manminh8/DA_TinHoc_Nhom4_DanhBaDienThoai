@@ -188,7 +188,7 @@
             this.nhậpDữLiệuToolStripMenuItem.Name = "nhậpDữLiệuToolStripMenuItem";
             this.nhậpDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nhậpDữLiệuToolStripMenuItem.Text = "Nhập dữ liệu";
-            this.nhậpDữLiệuToolStripMenuItem.Click += new System.EventHandler(this.IFile_Click);
+            this.nhậpDữLiệuToolStripMenuItem.Click += new System.EventHandler(this.LoadFile_Click);
             // 
             // xuấtDữLiệuToolStripMenuItem
             // 

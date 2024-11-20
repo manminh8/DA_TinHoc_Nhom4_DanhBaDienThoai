@@ -25,19 +25,13 @@ namespace QLDanhBa
             //hienthi();
         }
 
-        private void hienthi(DataGridView dataGridView)
+        private void hienthi()
         {
             
-            dataGridView.DataSource = ListPB.laydanhsach();
+            dgvDanhBa.DataSource=listPB.laydanhsach;
         }
         
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        
-            hienthi(dgvDanhBa);
-        }
-        
-        
+
         #region Events
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -55,8 +49,14 @@ namespace QLDanhBa
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            ListPB.saveFileJSON("danhba.json");        
+            listPB.saveFileJSON();        
         }
 
+        private void LoadFile_Click(object sender, EventArgs e)
+        {
+            listPB.saveFileJSON();
+            dgvDanhBa.DataSource=listPB.laydanhsach;
+            hienthi();
+        }
     }
 }
