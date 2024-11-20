@@ -8,9 +8,11 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json.Converters;
 
 namespace QLDanhBa
 {
+    [Serializable]
     public class CXulyDanhBa
     {
         private HashSet<CDanhBa> m_listPB;
@@ -19,65 +21,26 @@ namespace QLDanhBa
         {
             m_listPB = new HashSet<CDanhBa>();
         }
-        public List<CDanhBa> laydanhsach()
+        public List<CDanhBa> laydanhsach
         {
-            return m_listPB.ToList();
+             get => m_listPB.ToList();
         }
         public void them(CDanhBa thongtin)
         {
             m_listPB.Add(thongtin);
         }
-        public bool saveFileJSON( string filePath)
+        public void saveFileJSON()
         {
-            try
-            {
-                // Chuyển đổi đối tượng thành chuỗi JSON
-                string json = JsonConvert.SerializeObject(m_listPB, Formatting.Indented);
-                // Bạn có thể lựa chọn ghi đè, thêm mới, hoặc hỏi ý kiến người dùng
-                // Ở đây, mình chọn ghi đè
-                //if (File.Exists(filePath))
-                //{
-                //    File.Delete(filePath);
-                //}
-                // Ghi dữ liệu vào file
-                using (StreamWriter file = new StreamWriter(filePath))
-                {
-                    file.Write(json);
-                }
-                return true;//ghi file thành công
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi ghi file: " + ex.Message);
-                return false;
-            }
+           string json = JsonConvert.SerializeObject(m_listPB, Formatting.Indented);
+            File.WriteAllText("listPB.json", json);
+            MessageBox.Show("Luu thanh cong");
         }
-        public HashSet<CXulyDanhBa> LoadFileJSon(string filePath)
+        public void LoadFileJSon()
         {
-            filePath = "danhba.json";
-            try
-            {
-                if (!File.Exists(filePath))
-                {
-                    MessageBox.Show("File không tồn tại!");
-                    return new HashSet<CXulyDanhBa>();// Trả về một danh sách rỗng nếu có lỗi
-                }
-                // Đọc dữ liệu từ file          
-                string json = File.ReadAllText(filePath);
-                // Chuyển đổi chuỗi JSON thành danh sách đối tượng
-                HashSet<CXulyDanhBa> m_listPB = JsonConvert.DeserializeObject<HashSet<CXulyDanhBa>>(json);
-                return m_listPB;
-            }
-            catch (JsonReaderException ex)
-            {
-                MessageBox.Show("Lỗi định dạng JSON: " + ex.Message);
-                return new HashSet<CXulyDanhBa>();// Trả về một danh sách rỗng nếu có lỗi
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi đọc file: " + ex.Message);
-                return new HashSet<CXulyDanhBa>();// Trả về một danh sách rỗng nếu có lỗi
-            }
+            string jsonString = File.ReadAllText("listPB.json");
+
+            m_listPB = JsonConvert.DeserializeObject<HashSet<CDanhBa>>(jsonString);
+
         }
     }
 }
