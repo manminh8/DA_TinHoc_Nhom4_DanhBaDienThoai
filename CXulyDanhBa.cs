@@ -37,10 +37,17 @@ namespace QLDanhBa
         }
         public void LoadFileJSon()
         {
-            string jsonString = File.ReadAllText("listPB.json");
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
+            openFileDialog.Title = "Select a JSON file";
 
-            m_listPB = JsonConvert.DeserializeObject<HashSet<CDanhBa>>(jsonString);
+            // Hiển thị hộp thoại và kiểm tra xem người dùng có chọn tệp không
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string jsonString = File.ReadAllText("listPB.json");
 
+                m_listPB = JsonConvert.DeserializeObject<HashSet<CDanhBa>>(jsonString);
+            }
         }
     }
 }

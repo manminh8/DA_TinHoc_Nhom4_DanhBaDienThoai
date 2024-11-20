@@ -43,10 +43,10 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.danhBạToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nhậpDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xuấtDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhBa)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -183,17 +183,12 @@
             this.danhBạToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.danhBạToolStripMenuItem.Text = "Danh Bạ";
             // 
-            // trợGiúpToolStripMenuItem
-            // 
-            this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
-            this.trợGiúpToolStripMenuItem.Text = "Trợ Giúp";
-            // 
             // nhậpDữLiệuToolStripMenuItem
             // 
             this.nhậpDữLiệuToolStripMenuItem.Name = "nhậpDữLiệuToolStripMenuItem";
             this.nhậpDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nhậpDữLiệuToolStripMenuItem.Text = "Nhập dữ liệu";
+            this.nhậpDữLiệuToolStripMenuItem.Click += new System.EventHandler(this.IFile_Click);
             // 
             // xuấtDữLiệuToolStripMenuItem
             // 
@@ -208,6 +203,12 @@
             this.thêmToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.thêmToolStripMenuItem.Text = "Thêm liên hệ";
             this.thêmToolStripMenuItem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // trợGiúpToolStripMenuItem
+            // 
+            this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
+            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.trợGiúpToolStripMenuItem.Text = "Trợ Giúp";
             // 
             // fDanhBa
             // 
