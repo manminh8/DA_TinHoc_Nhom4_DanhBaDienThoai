@@ -17,34 +17,22 @@ namespace QLDanhBa
 {
     public partial class fDanhBa : Form
     {
-        CXulyDanhBa ListPB = new CXulyDanhBa();
-        //bool isClose = true;
-
+        CXulyDanhBa listPB = new CXulyDanhBa();
         public fDanhBa()
-        {
+        { 
             InitializeComponent();
         }
 
-        private void hienthi(DataGridView dataGridView)
-        {
-            
-            dataGridView.DataSource = ListPB.laydanhsach();
+        private void hienthi(DataGridView dgv, List<CDanhBa> ds)
+        { 
+            dgv.DataSource = ds.ToList();
         }
-        
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        
-            hienthi(dgvDanhBa);
-        }
-        
         
         #region Events
         private void btnThem_Click(object sender, EventArgs e)
         {
             fAdd formAdd = new fAdd(dgvDanhBa);
-            formAdd.Show();
-            
-
+            formAdd.ShowDialog();
         }
 
 
@@ -57,7 +45,8 @@ namespace QLDanhBa
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            ListPB.saveFileJSON("danhba.json");        
+            listPB.saveFileJSON();        
         }
+
     }
 }
