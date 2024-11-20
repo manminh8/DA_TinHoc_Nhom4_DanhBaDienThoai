@@ -17,34 +17,32 @@ namespace QLDanhBa
 {
     public partial class fDanhBa : Form
     {
-        CXulyDanhBa ListPB = new CXulyDanhBa();
-        //bool isClose = true;
-
+        CXulyDanhBa listPB = new CXulyDanhBa();
         public fDanhBa()
-        {
+        { 
             InitializeComponent();
+            //load();
+            //hienthi();
         }
 
-        private void hienthi(DataGridView dataGridView)
-        {
-            
-            dataGridView.DataSource = ListPB.laydanhsach();
+        private void hienthi()
+        { 
+            dgvDanhBa.DataSource = listPB.laydanhsach;
         }
-        
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        
-            hienthi(dgvDanhBa);
-        }
-        
-        
+
+        //private void load()
+        //{
+        //    CDanhBa a = new CDanhBa("0707809288", "Man", "hominhman", "STU", "Sinh vien");
+        //    CDanhBa b = new CDanhBa("0707809222", "Minh", "hominhman", "STU", "Sinh vien");
+        //    CDanhBa c = new CDanhBa("0707809233", "Manh", "hominhman", "STU", "Sinh vien");
+        //    listPB.them(a); listPB.them(b); listPB.them(c);
+        //}
+
         #region Events
         private void btnThem_Click(object sender, EventArgs e)
         {
             fAdd formAdd = new fAdd(dgvDanhBa);
-            formAdd.Show();
-            
-
+            formAdd.ShowDialog();
         }
 
 
@@ -57,7 +55,14 @@ namespace QLDanhBa
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            ListPB.saveFileJSON("danhba.json");        
+            listPB.saveFileJSON();        
+        }
+
+        private void IFile_Click(object sender, EventArgs e)
+        {
+            listPB.LoadFileJSon();
+            dgvDanhBa.DataSource = listPB.laydanhsach;
+            hienthi();
         }
     }
 }

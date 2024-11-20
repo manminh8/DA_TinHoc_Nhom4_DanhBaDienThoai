@@ -16,7 +16,6 @@ namespace QLDanhBa
     {
 
         CXulyDanhBa xuly = new CXulyDanhBa();
-
         DataGridView data;
 
         public fAdd()
@@ -63,15 +62,13 @@ namespace QLDanhBa
             {
                 xuly.them(db1);
                 MessageBox.Show("Đã thêm thành không");
-                hienthi(data);
-
-                this.Hide();
+                hienthi(data,xuly.laydanhsach);
             }
         }
-        public void hienthi(DataGridView dgv)
+        public void hienthi(DataGridView dgv,List<CDanhBa> ds)
         {
 
-            dgv.DataSource = xuly.laydanhsach();
+            dgv.DataSource = ds.ToList();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
