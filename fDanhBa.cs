@@ -17,7 +17,7 @@ namespace QLDanhBa
 {
     public partial class fDanhBa : Form
     {
-        CXulyDanhBa listPB = new CXulyDanhBa();
+        CXulyDanhBa lPB = new CXulyDanhBa();
         public fDanhBa()
         { 
             InitializeComponent();
@@ -25,10 +25,18 @@ namespace QLDanhBa
             //hienthi();
         }
 
+        void load()
+        {
+            CDanhBa a = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "Sinh vien");
+            CDanhBa b= new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "Sinh vien");
+
+            CDanhBa cDanh = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "Sinh vien");
+            lPB.them(a);lPB.them(b);lPB.them(cDanh);
+        }
         private void hienthi()
         {
             
-            dgvDanhBa.DataSource=listPB.laydanhsach;
+            dgvDanhBa.DataSource=lPB.laydanhsach;
         }
         
 
@@ -49,13 +57,13 @@ namespace QLDanhBa
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            listPB.saveFileJSON();        
+            lPB.saveFileJSON();        
         }
 
         private void LoadFile_Click(object sender, EventArgs e)
         {
-            listPB.saveFileJSON();
-            dgvDanhBa.DataSource=listPB.laydanhsach;
+            lPB.saveFileJSON();
+            dgvDanhBa.DataSource=lPB.laydanhsach;
             hienthi();
         }
     }
