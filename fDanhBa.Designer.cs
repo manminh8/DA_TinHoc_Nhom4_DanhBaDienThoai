@@ -40,11 +40,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.danhBạToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nhậpDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xuấtDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsDanhBaXuatDuLieu = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsDanhBaLuuDuLieu = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsDanhBaThemLienHe = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.cmsDanhBaDong = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhBa)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,12 +59,13 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dgvDanhBa.Location = new System.Drawing.Point(0, 148);
-            this.dgvDanhBa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvDanhBa.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvDanhBa.Location = new System.Drawing.Point(0, 218);
+            this.dgvDanhBa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvDanhBa.Name = "dgvDanhBa";
             this.dgvDanhBa.RowHeadersWidth = 51;
             this.dgvDanhBa.RowTemplate.Height = 24;
-            this.dgvDanhBa.Size = new System.Drawing.Size(781, 364);
+            this.dgvDanhBa.Size = new System.Drawing.Size(666, 296);
             this.dgvDanhBa.TabIndex = 0;
             // 
             // Column1
@@ -108,20 +110,26 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(675, 59);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Image = global::QLDanhBa.Properties.Resources.delete;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(471, 125);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(80, 31);
+            this.btnXoa.Size = new System.Drawing.Size(96, 33);
             this.btnXoa.TabIndex = 3;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(564, 59);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Image = global::QLDanhBa.Properties.Resources.wrench;
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(471, 69);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(84, 31);
+            this.btnSua.Size = new System.Drawing.Size(96, 33);
             this.btnSua.TabIndex = 4;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -129,65 +137,75 @@
             // lblTimKiem
             // 
             this.lblTimKiem.AutoSize = true;
-            this.lblTimKiem.Location = new System.Drawing.Point(51, 62);
+            this.lblTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimKiem.Location = new System.Drawing.Point(8, 113);
+            this.lblTimKiem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTimKiem.Name = "lblTimKiem";
-            this.lblTimKiem.Size = new System.Drawing.Size(62, 16);
+            this.lblTimKiem.Size = new System.Drawing.Size(71, 20);
             this.lblTimKiem.TabIndex = 9;
             this.lblTimKiem.Text = "Tìm kiếm";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(238, 59);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(172, 107);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(290, 22);
+            this.textBox1.Size = new System.Drawing.Size(218, 26);
             this.textBox1.TabIndex = 10;
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Tên",
             "Số điện thoại"});
-            this.comboBox1.Location = new System.Drawing.Point(119, 59);
+            this.comboBox1.Location = new System.Drawing.Point(83, 107);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(104, 24);
+            this.comboBox1.Size = new System.Drawing.Size(79, 28);
             this.comboBox1.TabIndex = 11;
             // 
             // danhBạToolStripMenuItem
             // 
             this.danhBạToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nhậpDữLiệuToolStripMenuItem,
-            this.xuấtDữLiệuToolStripMenuItem,
-            this.thêmToolStripMenuItem});
+            this.cmsDanhBaXuatDuLieu,
+            this.cmsDanhBaLuuDuLieu,
+            this.cmsDanhBaThemLienHe,
+            this.cmsDanhBaDong});
             this.danhBạToolStripMenuItem.Name = "danhBạToolStripMenuItem";
-            this.danhBạToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.danhBạToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.danhBạToolStripMenuItem.Text = "Danh Bạ";
             // 
-            // nhậpDữLiệuToolStripMenuItem
+            // cmsDanhBaXuatDuLieu
             // 
-            this.nhậpDữLiệuToolStripMenuItem.Name = "nhậpDữLiệuToolStripMenuItem";
-            this.nhậpDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
-            this.nhậpDữLiệuToolStripMenuItem.Text = "Nhập dữ liệu";
-            this.nhậpDữLiệuToolStripMenuItem.Click += new System.EventHandler(this.LoadFile_Click);
+            this.cmsDanhBaXuatDuLieu.Name = "cmsDanhBaXuatDuLieu";
+            this.cmsDanhBaXuatDuLieu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.cmsDanhBaXuatDuLieu.Size = new System.Drawing.Size(184, 22);
+            this.cmsDanhBaXuatDuLieu.Text = "Xuất Dữ Liệu";
+            this.cmsDanhBaXuatDuLieu.Click += new System.EventHandler(this.LoadFile_Click);
             // 
-            // xuấtDữLiệuToolStripMenuItem
+            // cmsDanhBaLuuDuLieu
             // 
-            this.xuấtDữLiệuToolStripMenuItem.Name = "xuấtDữLiệuToolStripMenuItem";
-            this.xuấtDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
-            this.xuấtDữLiệuToolStripMenuItem.Text = "Xuất dữ liệu";
-            this.xuấtDữLiệuToolStripMenuItem.Click += new System.EventHandler(this.btnLuu_Click);
+            this.cmsDanhBaLuuDuLieu.Name = "cmsDanhBaLuuDuLieu";
+            this.cmsDanhBaLuuDuLieu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.cmsDanhBaLuuDuLieu.Size = new System.Drawing.Size(184, 22);
+            this.cmsDanhBaLuuDuLieu.Text = "Lưu Dữ Liệu";
+            this.cmsDanhBaLuuDuLieu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // thêmToolStripMenuItem
+            // cmsDanhBaThemLienHe
             // 
-            this.thêmToolStripMenuItem.Name = "thêmToolStripMenuItem";
-            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
-            this.thêmToolStripMenuItem.Text = "Thêm liên hệ";
-            this.thêmToolStripMenuItem.Click += new System.EventHandler(this.btnThem_Click);
+            this.cmsDanhBaThemLienHe.Name = "cmsDanhBaThemLienHe";
+            this.cmsDanhBaThemLienHe.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.cmsDanhBaThemLienHe.Size = new System.Drawing.Size(184, 22);
+            this.cmsDanhBaThemLienHe.Text = "Thêm liên hệ";
+            this.cmsDanhBaThemLienHe.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.trợGiúpToolStripMenuItem.Text = "Trợ Giúp";
             // 
             // menuStrip1
@@ -198,15 +216,23 @@
             this.trợGiúpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(792, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(666, 24);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // cmsDanhBaDong
+            // 
+            this.cmsDanhBaDong.Name = "cmsDanhBaDong";
+            this.cmsDanhBaDong.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.cmsDanhBaDong.Size = new System.Drawing.Size(184, 22);
+            this.cmsDanhBaDong.Text = "Đóng";
+            // 
             // fDanhBa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 638);
+            this.ClientSize = new System.Drawing.Size(666, 514);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
@@ -214,7 +240,7 @@
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.dgvDanhBa);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fDanhBa";
             this.Text = "Danh Bạ";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhBa)).EndInit();
@@ -238,11 +264,12 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ToolStripMenuItem danhBạToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nhậpDữLiệuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xuấtDữLiệuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem thêmToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cmsDanhBaXuatDuLieu;
+        private System.Windows.Forms.ToolStripMenuItem cmsDanhBaLuuDuLieu;
+        private System.Windows.Forms.ToolStripMenuItem cmsDanhBaThemLienHe;
         private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem cmsDanhBaDong;
     }
 }
 
