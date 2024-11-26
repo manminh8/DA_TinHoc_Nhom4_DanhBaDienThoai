@@ -9,24 +9,22 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace QLDanhBa
 {
     public partial class fAdd : Form
     {
 
-        CXulyDanhBa xuly = new CXulyDanhBa();
-        DataGridView data;
+        CXulyDanhBa xuly;
 
+        
         public fAdd()
         {
             InitializeComponent();
+            xuly = new CXulyDanhBa();
         }
-        public fAdd(DataGridView dt)
-        {
-            InitializeComponent();
-            data = dt;
-        }
+
 
         private bool check()
         {
@@ -62,13 +60,7 @@ namespace QLDanhBa
             {
                 xuly.them(db1);
                 MessageBox.Show("Đã thêm thành không");
-                hienthi(data,xuly.laydanhsach);
             }
-        }
-        public void hienthi(DataGridView dgv,List<CDanhBa> ds)
-        {
-
-            dgv.DataSource = ds.ToList();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

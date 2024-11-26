@@ -17,33 +17,30 @@ namespace QLDanhBa
 {
     public partial class fDanhBa : Form
     {
-        CXulyDanhBa lPB = new CXulyDanhBa();
+        CXulyDanhBa xuly = new CXulyDanhBa();
         public fDanhBa()
         { 
             InitializeComponent();
             //load();
-            //hienthi();
+            hienthi();
         }
-
-        void load()
-        {
-            CDanhBa a = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "Sinh vien");
-            CDanhBa b= new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "Sinh vien");
-
-            CDanhBa cDanh = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "Sinh vien");
-            lPB.them(a);lPB.them(b);lPB.them(cDanh);
-        }
+        //void load()
+        //{
+        //    CDanhBa a = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "SinhVien");
+        //    CDanhBa b = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "SinhVien");
+        //    CDanhBa c = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "SinhVien");
+        //    xuly.them(a);xuly.them(b);xuly.them(c);
+        //}
         private void hienthi()
         {
-            
-            dgvDanhBa.DataSource=lPB.laydanhsach;
+            dgvDanhBa.DataSource=xuly.laydanhsach();
         }
         
 
         #region Events
         private void btnThem_Click(object sender, EventArgs e)
         {
-            fAdd formAdd = new fAdd(dgvDanhBa);
+            fAdd formAdd = new fAdd();
             formAdd.ShowDialog();
         }
 
@@ -57,13 +54,13 @@ namespace QLDanhBa
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            lPB.saveFileJSON();        
+            xuly.saveFileJSON();        
         }
 
         private void LoadFile_Click(object sender, EventArgs e)
         {
-            lPB.saveFileJSON();
-            dgvDanhBa.DataSource=lPB.laydanhsach;
+            xuly.LoadFileJSon();
+            dgvDanhBa.DataSource=xuly.laydanhsach();
             hienthi();
         }
     }

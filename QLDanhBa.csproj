@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CDanhBa.cs" />
+    <Compile Include="CData.cs" />
     <Compile Include="CXulyDanhBa.cs" />
     <Compile Include="fDanhBa.cs">
       <SubType>Form</SubType>
@@ -65,7 +66,6 @@
     <Compile Include="fAdd.Designer.cs">
       <DependentUpon>fAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="XuLy.cs" />
     <EmbeddedResource Include="fDanhBa.resx">
       <DependentUpon>fDanhBa.cs</DependentUpon>
     </EmbeddedResource>

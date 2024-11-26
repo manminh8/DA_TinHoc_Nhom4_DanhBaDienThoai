@@ -19,19 +19,51 @@ namespace QLDanhBa
 
         public CXulyDanhBa()
         {
-            m_listPB = new HashSet<CDanhBa>();
+            m_listPB = CData.khoiTao().getDanhBa();
         }
-        public List<CDanhBa> laydanhsach
+        public List<CDanhBa> laydanhsach()
         {
-             get => m_listPB.ToList();
+            return m_listPB.ToList();
         }
         public void them(CDanhBa thongtin)
         {
             m_listPB.Add(thongtin);
         }
+        public CDanhBa tim(string sdt)
+        {
+            foreach (CDanhBa lienhe in m_listPB)
+            {
+                if (lienhe.Sdt == sdt)
+                {
+                    return lienhe;
+                }
+            }
+            return null;
+        }
+
+        public void xoa(string sdt)
+        {
+            CDanhBa lienhe = tim(sdt);
+            if (lienhe != null)
+            {
+                m_listPB.Remove(lienhe);
+            }
+        }
+
+        public void sua(CDanhBa update_m)
+        {
+            CDanhBa lienhe = tim(update_m.Sdt);
+            if(lienhe != null)
+            {
+                lienhe.Email = update_m.Email;
+                lienhe.Ten = update_m.Ten;
+                lienhe.Tencoquan=update_m.Tencoquan;
+                lienhe.Ghichu = update_m.Ghichu;
+            }
+        }
         public void saveFileJSON()
         {
-           string json = JsonConvert.SerializeObject(m_listPB, Formatting.Indented);
+            string json = JsonConvert.SerializeObject(m_listPB, Formatting.Indented);
             File.WriteAllText("listPB.json", json);
             MessageBox.Show("Luu thanh cong");
         }
