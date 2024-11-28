@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -15,17 +16,12 @@ namespace QLDanhBa
 {
     public partial class fAdd : Form
     {
-
-        CXulyDanhBa xuly;
-
-        
+        private CXulyDanhBa xuly;       
         public fAdd()
         {
             InitializeComponent();
             xuly = new CXulyDanhBa();
         }
-
-
         private bool check()
         {
             if (!Regex.IsMatch(txtSdt.Text, @"^\d{10}$"))
@@ -46,25 +42,43 @@ namespace QLDanhBa
             }
             return true;
         }
-
+        private void xoa()
+        {
+            txtSdt.Text = "";
+            txtTen.Text= "";
+            txtTenCoQuan.Text = "";
+            txtEmail.Text = "";
+            txtGhiChu.Text = "";       
+        }
         private void btnXacnhan_Click(object sender, EventArgs e)
         {
-
+          
             string Ten = txtTen.Text;
             string Tencoquan = txtTenCoQuan.Text;
             string Email = txtEmail.Text;
             string Sdt = txtSdt.Text;
             string Ghichu = txtGhiChu.Text;
+            
             CDanhBa db1 = new CDanhBa(Sdt, Ten, Email, Tencoquan, Ghichu);
-            if (check())
+            if (xuly.tim(txtSdt.Text) == null)
             {
-                xuly.them(db1);
-                MessageBox.Show("Đã thêm thành không");
+                if (check())
+                {
+                    xuly.them(db1);
+                    MessageBox.Show("Đã thêm Thành công!", "Thông Báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    xoa();
+                }
             }
+            else
+            {
+                MessageBox.Show("Số Điện Thoại Đã Tồn Tại!!");
+            }
+         
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            
             fDanhBa f = new fDanhBa();
             this.Close();
         }

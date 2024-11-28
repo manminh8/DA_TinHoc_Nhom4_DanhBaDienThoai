@@ -17,7 +17,12 @@ namespace QLDanhBa
 {
     public partial class fDanhBa : Form
     {
-        CXulyDanhBa xuly = new CXulyDanhBa();
+       CXulyDanhBa xuly = new CXulyDanhBa();
+        
+        private void hienthi()
+        {
+            dgvDanhBa.DataSource = xuly.getDanhBa().ToList();
+        }
         public fDanhBa()
         { 
             InitializeComponent();
@@ -30,18 +35,13 @@ namespace QLDanhBa
         //    CDanhBa b = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "SinhVien");
         //    CDanhBa c = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "SinhVien");
         //    xuly.them(a);xuly.them(b);xuly.them(c);
-        //}
-        private void hienthi()
-        {
-            dgvDanhBa.DataSource=xuly.laydanhsach();
-        }
-        
-
+        //}          
         #region Events
         private void btnThem_Click(object sender, EventArgs e)
-        {
-            fAdd formAdd = new fAdd();
-            formAdd.ShowDialog();
+        {         
+            fAdd formAdd = new fAdd();                   
+            formAdd.ShowDialog(); 
+            hienthi();
         }
 
 
@@ -60,8 +60,35 @@ namespace QLDanhBa
         private void LoadFile_Click(object sender, EventArgs e)
         {
             xuly.LoadFileJSon();
-            dgvDanhBa.DataSource=xuly.laydanhsach();
+            dgvDanhBa.DataSource=xuly.getDanhBa();
             hienthi();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            CDanhBa f=new CDanhBa();
+            f.Ten = txtDanhBaTen.Text;
+            f.Tencoquan = txtDanhBaTenCoQuan.Text;
+            f.Email = txtDanhBaEmail.Text;
+            f.Ghichu = txtDanhBaGhiChu.Text;
+            xuly.sua(f);
+            hienthi();
+            
+                 
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDanhBa_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            txtDanhBaSdt.Text = dgvDanhBa.Rows[e.RowIndex].Cells["sdt"].Value.ToString();
+            txtDanhBaTen.Text = dgvDanhBa.Rows[e.RowIndex].Cells["ten"].Value.ToString();
+            txtDanhBaTenCoQuan.Text = dgvDanhBa.Rows[e.RowIndex].Cells["tencoquan"].Value.ToString();
+            txtDanhBaEmail.Text = dgvDanhBa.Rows[e.RowIndex].Cells["email"].Value.ToString();
+            txtDanhBaGhiChu.Text = dgvDanhBa.Rows[e.RowIndex].Cells["GhiChu"].Value.ToString();
         }
     }
 }

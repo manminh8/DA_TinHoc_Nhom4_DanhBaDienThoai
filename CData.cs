@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 namespace QLDanhBa
 {
     [Serializable]
-    internal class CData
+    public class CData
     {
         private static CData m_instance=null;
-        private HashSet<CDanhBa> m_dsdanhba;
+        private HashSet<CDanhBa> dbDienThoai;
 
-        private CData()
+        public CData()
         {
-            m_dsdanhba = new HashSet<CDanhBa>();
+            dbDienThoai = new HashSet<CDanhBa>();
         }
 
         public static CData khoiTao()
@@ -24,12 +24,9 @@ namespace QLDanhBa
                 m_instance = new CData();
             return m_instance;
         }
-        public HashSet<CDanhBa> getDanhBa() { return m_dsdanhba; }
-        
-        //public static bool ghiFile(string filename)
-        //{
-
-        //}
-
+        public HashSet<CDanhBa> getDanhBa()
+        { 
+            return dbDienThoai; 
+       }
     }
 }

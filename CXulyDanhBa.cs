@@ -15,23 +15,19 @@ namespace QLDanhBa
     [Serializable]
     public class CXulyDanhBa
     {
-        private HashSet<CDanhBa> m_listPB;
+        private HashSet<CDanhBa> dbDienThoai;
 
         public CXulyDanhBa()
         {
-            m_listPB = CData.khoiTao().getDanhBa();
+            dbDienThoai = CData.khoiTao().getDanhBa();
         }
-        public List<CDanhBa> laydanhsach()
+        public HashSet<CDanhBa> getDanhBa()
         {
-            return m_listPB.ToList();
-        }
-        public void them(CDanhBa thongtin)
-        {
-            m_listPB.Add(thongtin);
+            return dbDienThoai;
         }
         public CDanhBa tim(string sdt)
         {
-            foreach (CDanhBa lienhe in m_listPB)
+            foreach (CDanhBa lienhe in dbDienThoai)
             {
                 if (lienhe.Sdt == sdt)
                 {
@@ -40,30 +36,37 @@ namespace QLDanhBa
             }
             return null;
         }
-
+        public void them(CDanhBa thongtin)
+        {
+            dbDienThoai.Add(thongtin);       
+        }
         public void xoa(string sdt)
         {
             CDanhBa lienhe = tim(sdt);
             if (lienhe != null)
             {
-                m_listPB.Remove(lienhe);
+                dbDienThoai.Remove(lienhe);
             }
         }
 
-        public void sua(CDanhBa update_m)
+        public void sua(CDanhBa update)
         {
-            CDanhBa lienhe = tim(update_m.Sdt);
+            CDanhBa lienhe = tim(update.Sdt);
             if(lienhe != null)
             {
-                lienhe.Email = update_m.Email;
-                lienhe.Ten = update_m.Ten;
-                lienhe.Tencoquan=update_m.Tencoquan;
-                lienhe.Ghichu = update_m.Ghichu;
+                lienhe.Ten = update.Ten; 
+                lienhe.Tencoquan = update.Tencoquan;
+                lienhe.Email = update.Email;            
+                lienhe.Ghichu = update.Ghichu;
+            }
+            else
+            {
+                MessageBox.Show("Không Tìm Thấy Đối Tượng Để Sửa!","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Question);
             }
         }
         public void saveFileJSON()
         {
-            string json = JsonConvert.SerializeObject(m_listPB, Formatting.Indented);
+            string json = JsonConvert.SerializeObject(dbDienThoai   , Formatting.Indented);
             File.WriteAllText("listPB.json", json);
             MessageBox.Show("Luu thanh cong");
         }
@@ -78,7 +81,7 @@ namespace QLDanhBa
             {
                 string jsonString = File.ReadAllText("listPB.json");
 
-                m_listPB = JsonConvert.DeserializeObject<HashSet<CDanhBa>>(jsonString);
+                dbDienThoai  = JsonConvert.DeserializeObject<HashSet<CDanhBa>>(jsonString);
             }
         }
     }
