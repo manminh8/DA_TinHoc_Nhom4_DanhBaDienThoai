@@ -66,29 +66,13 @@ namespace QLDanhBa
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            CDanhBa f=new CDanhBa();
-            f.Ten = txtDanhBaTen.Text;
-            f.Tencoquan = txtDanhBaTenCoQuan.Text;
-            f.Email = txtDanhBaEmail.Text;
-            f.Ghichu = txtDanhBaGhiChu.Text;
-            xuly.sua(f);
-            hienthi();
-            
-                 
+          
+                           
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void dgvDanhBa_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            txtDanhBaSdt.Text = dgvDanhBa.Rows[e.RowIndex].Cells["sdt"].Value.ToString();
-            txtDanhBaTen.Text = dgvDanhBa.Rows[e.RowIndex].Cells["ten"].Value.ToString();
-            txtDanhBaTenCoQuan.Text = dgvDanhBa.Rows[e.RowIndex].Cells["tencoquan"].Value.ToString();
-            txtDanhBaEmail.Text = dgvDanhBa.Rows[e.RowIndex].Cells["email"].Value.ToString();
-            txtDanhBaGhiChu.Text = dgvDanhBa.Rows[e.RowIndex].Cells["GhiChu"].Value.ToString();
         }
     }
 }
