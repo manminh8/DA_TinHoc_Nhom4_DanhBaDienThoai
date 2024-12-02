@@ -74,9 +74,22 @@ namespace QLDanhBa
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            fSua frmSua= new fSua();
-            frmSua.ShowDialog();
-            hienthi();
+            if (dgvDanhBa.SelectedRows.Count > 0)
+            {
+                CDanhBa selectedDB=(CDanhBa)dgvDanhBa.SelectedRows[0].DataBoundItem;
+                fSua frmSua = new fSua();
+                frmSua.hienThiThongTin(selectedDB);
+                if(frmSua.ShowDialog() == DialogResult.OK)
+                {
+                    xuly.sua(selectedDB);
+                    hienthi();
+                }               
+            }
+            else
+            {
+                MessageBox.Show("Chọn Một Dòng Để Sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

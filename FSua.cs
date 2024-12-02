@@ -14,6 +14,7 @@ namespace QLDanhBa
 {
     public partial class fSua : Form
     {
+       
         private CXulyDanhBa xuly;
         public fSua()
         {
@@ -40,11 +41,18 @@ namespace QLDanhBa
             }
             return true;
         }
+        public void hienThiThongTin(CDanhBa danhBa)
+        {
+            txtSuaSDT.Text = danhBa.Sdt;
+            txtSuaTen.Text = danhBa.Ten;
+            txtSuaTenCoQuan.Text = danhBa.Tencoquan;
+            txtSuaEmail.Text = danhBa.Email;
+            txtSuaGhiChu.Text = danhBa.Ghichu;
+        }
         private void FSua_Load(object sender, EventArgs e)
         {
 
         }
-
         private void btnSuaXacnhan_Click(object sender, EventArgs e)
         {
             //CDanhBa danhbaMoi = new CDanhBa(txtSuaSDT.Text, txtSuaTen.Text, txtSuaEmail.Text, txtSuaTenCoQuan.Text, txtSuaGhiChu.Text);
