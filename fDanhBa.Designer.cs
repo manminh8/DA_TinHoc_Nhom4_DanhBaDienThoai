@@ -40,13 +40,14 @@
             this.lblTimKiem = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.danhBạToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDanhBaXuatDuLieu = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDanhBaLuuDuLieu = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDanhBaThemLienHe = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDanhBaDong = new System.Windows.Forms.ToolStripMenuItem();
+            this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.btnReFresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhBa)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -61,12 +62,12 @@
             this.email,
             this.ghichu});
             this.dgvDanhBa.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvDanhBa.Location = new System.Drawing.Point(0, 230);
-            this.dgvDanhBa.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvDanhBa.Location = new System.Drawing.Point(0, 208);
+            this.dgvDanhBa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDanhBa.Name = "dgvDanhBa";
             this.dgvDanhBa.RowHeadersWidth = 51;
             this.dgvDanhBa.RowTemplate.Height = 24;
-            this.dgvDanhBa.Size = new System.Drawing.Size(845, 219);
+            this.dgvDanhBa.Size = new System.Drawing.Size(1196, 417);
             this.dgvDanhBa.TabIndex = 0;
             // 
             // sdt
@@ -114,10 +115,10 @@
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Image = global::QLDanhBa.Properties.Resources.delete;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(493, 122);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoa.Location = new System.Drawing.Point(206, 136);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(96, 33);
+            this.btnXoa.Size = new System.Drawing.Size(128, 41);
             this.btnXoa.TabIndex = 3;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -128,10 +129,10 @@
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Image = global::QLDanhBa.Properties.Resources.wrench;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(493, 66);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSua.Location = new System.Drawing.Point(10, 136);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(96, 33);
+            this.btnSua.Size = new System.Drawing.Size(128, 41);
             this.btnSua.TabIndex = 4;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -141,20 +142,19 @@
             // 
             this.lblTimKiem.AutoSize = true;
             this.lblTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimKiem.Location = new System.Drawing.Point(82, 103);
-            this.lblTimKiem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTimKiem.Location = new System.Drawing.Point(7, 52);
             this.lblTimKiem.Name = "lblTimKiem";
-            this.lblTimKiem.Size = new System.Drawing.Size(71, 20);
+            this.lblTimKiem.Size = new System.Drawing.Size(91, 25);
             this.lblTimKiem.TabIndex = 9;
             this.lblTimKiem.Text = "Tìm kiếm";
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(246, 97);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Location = new System.Drawing.Point(246, 55);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(218, 26);
+            this.textBox1.Size = new System.Drawing.Size(289, 30);
             this.textBox1.TabIndex = 10;
             // 
             // comboBox1
@@ -164,16 +164,58 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Tên",
             "Số điện thoại"});
-            this.comboBox1.Location = new System.Drawing.Point(157, 97);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Location = new System.Drawing.Point(104, 52);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(79, 28);
+            this.comboBox1.Size = new System.Drawing.Size(107, 33);
             this.comboBox1.TabIndex = 11;
+            // 
+            // danhBạToolStripMenuItem
+            // 
+            this.danhBạToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsDanhBaXuatDuLieu,
+            this.cmsDanhBaLuuDuLieu,
+            this.cmsDanhBaThemLienHe,
+            this.cmsDanhBaDong});
+            this.danhBạToolStripMenuItem.Name = "danhBạToolStripMenuItem";
+            this.danhBạToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.danhBạToolStripMenuItem.Text = "Danh Bạ";
+            // 
+            // cmsDanhBaXuatDuLieu
+            // 
+            this.cmsDanhBaXuatDuLieu.Name = "cmsDanhBaXuatDuLieu";
+            this.cmsDanhBaXuatDuLieu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.cmsDanhBaXuatDuLieu.Size = new System.Drawing.Size(230, 26);
+            this.cmsDanhBaXuatDuLieu.Text = "Xuất Dữ Liệu";
+            this.cmsDanhBaXuatDuLieu.Click += new System.EventHandler(this.LoadFile_Click);
+            // 
+            // cmsDanhBaLuuDuLieu
+            // 
+            this.cmsDanhBaLuuDuLieu.Name = "cmsDanhBaLuuDuLieu";
+            this.cmsDanhBaLuuDuLieu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.cmsDanhBaLuuDuLieu.Size = new System.Drawing.Size(230, 26);
+            this.cmsDanhBaLuuDuLieu.Text = "Lưu Dữ Liệu";
+            this.cmsDanhBaLuuDuLieu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // cmsDanhBaThemLienHe
+            // 
+            this.cmsDanhBaThemLienHe.Name = "cmsDanhBaThemLienHe";
+            this.cmsDanhBaThemLienHe.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.cmsDanhBaThemLienHe.Size = new System.Drawing.Size(230, 26);
+            this.cmsDanhBaThemLienHe.Text = "Thêm liên hệ";
+            this.cmsDanhBaThemLienHe.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // cmsDanhBaDong
+            // 
+            this.cmsDanhBaDong.Name = "cmsDanhBaDong";
+            this.cmsDanhBaDong.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.cmsDanhBaDong.Size = new System.Drawing.Size(230, 26);
+            this.cmsDanhBaDong.Text = "Đóng";
             // 
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.trợGiúpToolStripMenuItem.Text = "Trợ Giúp";
             // 
             // menuStrip1
@@ -184,58 +226,31 @@
             this.trợGiúpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(845, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1196, 28);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // danhBạToolStripMenuItem
+            // btnReFresh
             // 
-            this.danhBạToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmsDanhBaXuatDuLieu,
-            this.cmsDanhBaLuuDuLieu,
-            this.cmsDanhBaThemLienHe,
-            this.cmsDanhBaDong});
-            this.danhBạToolStripMenuItem.Name = "danhBạToolStripMenuItem";
-            this.danhBạToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.danhBạToolStripMenuItem.Text = "Danh Bạ";
-            // 
-            // cmsDanhBaXuatDuLieu
-            // 
-            this.cmsDanhBaXuatDuLieu.Name = "cmsDanhBaXuatDuLieu";
-            this.cmsDanhBaXuatDuLieu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.cmsDanhBaXuatDuLieu.Size = new System.Drawing.Size(184, 22);
-            this.cmsDanhBaXuatDuLieu.Text = "Xuất Dữ Liệu";
-            this.cmsDanhBaXuatDuLieu.Click += new System.EventHandler(this.LoadFile_Click);
-            // 
-            // cmsDanhBaLuuDuLieu
-            // 
-            this.cmsDanhBaLuuDuLieu.Name = "cmsDanhBaLuuDuLieu";
-            this.cmsDanhBaLuuDuLieu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.cmsDanhBaLuuDuLieu.Size = new System.Drawing.Size(184, 22);
-            this.cmsDanhBaLuuDuLieu.Text = "Lưu Dữ Liệu";
-            this.cmsDanhBaLuuDuLieu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // cmsDanhBaThemLienHe
-            // 
-            this.cmsDanhBaThemLienHe.Name = "cmsDanhBaThemLienHe";
-            this.cmsDanhBaThemLienHe.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.cmsDanhBaThemLienHe.Size = new System.Drawing.Size(184, 22);
-            this.cmsDanhBaThemLienHe.Text = "Thêm liên hệ";
-            this.cmsDanhBaThemLienHe.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // cmsDanhBaDong
-            // 
-            this.cmsDanhBaDong.Name = "cmsDanhBaDong";
-            this.cmsDanhBaDong.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.cmsDanhBaDong.Size = new System.Drawing.Size(184, 22);
-            this.cmsDanhBaDong.Text = "Đóng";
+            this.btnReFresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReFresh.Image = global::QLDanhBa.Properties.Resources.wrench;
+            this.btnReFresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReFresh.Location = new System.Drawing.Point(459, 136);
+            this.btnReFresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReFresh.Name = "btnReFresh";
+            this.btnReFresh.Size = new System.Drawing.Size(128, 41);
+            this.btnReFresh.TabIndex = 23;
+            this.btnReFresh.Text = "Làm mới";
+            this.btnReFresh.UseVisualStyleBackColor = true;
+            this.btnReFresh.Click += new System.EventHandler(this.btnReFresh_Click);
             // 
             // fDanhBa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 449);
+            this.ClientSize = new System.Drawing.Size(1196, 625);
+            this.Controls.Add(this.btnReFresh);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
@@ -244,7 +259,7 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.dgvDanhBa);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fDanhBa";
             this.Text = "Danh Bạ";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhBa)).EndInit();
@@ -262,8 +277,6 @@
         private System.Windows.Forms.Label lblTimKiem;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
         private System.Windows.Forms.DataGridViewTextBoxColumn ten;
         private System.Windows.Forms.DataGridViewTextBoxColumn tencoquan;
@@ -274,6 +287,9 @@
         private System.Windows.Forms.ToolStripMenuItem cmsDanhBaLuuDuLieu;
         private System.Windows.Forms.ToolStripMenuItem cmsDanhBaThemLienHe;
         private System.Windows.Forms.ToolStripMenuItem cmsDanhBaDong;
+        private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Button btnReFresh;
     }
 }
 

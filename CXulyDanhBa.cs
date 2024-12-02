@@ -12,7 +12,7 @@ using Newtonsoft.Json.Converters;
 
 namespace QLDanhBa
 {
-    [Serializable]
+
     public class CXulyDanhBa
     {
         private HashSet<CDanhBa> dbDienThoai;
@@ -38,7 +38,7 @@ namespace QLDanhBa
         }
         public void them(CDanhBa thongtin)
         {
-            dbDienThoai.Add(thongtin);       
+            dbDienThoai.Add(thongtin);
         }
         public void xoa(string sdt)
         {
@@ -52,37 +52,18 @@ namespace QLDanhBa
         public void sua(CDanhBa update)
         {
             CDanhBa lienhe = tim(update.Sdt);
-            if(lienhe != null)
+            if (lienhe != null)
             {
-                lienhe.Ten = update.Ten; 
+                lienhe.Ten = update.Ten;
                 lienhe.Tencoquan = update.Tencoquan;
-                lienhe.Email = update.Email;            
+                lienhe.Email = update.Email;
                 lienhe.Ghichu = update.Ghichu;
             }
             else
             {
-                MessageBox.Show("Không Tìm Thấy Đối Tượng Để Sửa!","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Question);
+                MessageBox.Show("Không Tìm Thấy Đối Tượng Để Sửa!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
         }
-        public void saveFileJSON()
-        {
-            string json = JsonConvert.SerializeObject(dbDienThoai   , Formatting.Indented);
-            File.WriteAllText("listPB.json", json);
-            MessageBox.Show("Luu thanh cong");
-        }
-        public void LoadFileJSon()
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
-            openFileDialog.Title = "Select a JSON file";
-
-            // Hiển thị hộp thoại và kiểm tra xem người dùng có chọn tệp không
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string jsonString = File.ReadAllText("listPB.json");
-
-                dbDienThoai  = JsonConvert.DeserializeObject<HashSet<CDanhBa>>(jsonString);
-            }
-        }
+    
     }
 }

@@ -24,7 +24,7 @@ namespace QLDanhBa
             Email = mail;
             Tencoquan = tencoquan;
             Ghichu = ghichu;
-            //Danhmuc = danhmuc;
+
         }
         public CDanhBa() : this("", "", "", "","") { }
         public string Sdt { get => m_sdt; set => m_sdt = value; }
@@ -32,6 +32,6 @@ namespace QLDanhBa
         public string Email { get => m_email; set => m_email = value; }
         public string Tencoquan { get => m_tencoquan; set => m_tencoquan = value; }
         public string Ghichu { get => m_ghichu; set => m_ghichu = value; }
-       // public string Danhmuc { get => m_danhmuc; set => m_danhmuc = value;}
+
     }
 }

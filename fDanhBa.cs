@@ -17,30 +17,32 @@ namespace QLDanhBa
 {
     public partial class fDanhBa : Form
     {
-       CXulyDanhBa xuly = new CXulyDanhBa();
-        
+        CXulyDanhBa xuly = new CXulyDanhBa();
+
         private void hienthi()
         {
-            dgvDanhBa.DataSource = xuly.getDanhBa().ToList();
+            BindingSource bs = new BindingSource();
+            bs.DataSource = xuly.getDanhBa().ToList();
+            dgvDanhBa.DataSource = bs;
         }
         public fDanhBa()
-        { 
+        {
             InitializeComponent();
             //load();
             hienthi();
         }
-        //void load()
-        //{
-        //    CDanhBa a = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "SinhVien");
-        //    CDanhBa b = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "SinhVien");
-        //    CDanhBa c = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "SinhVien");
-        //    xuly.them(a);xuly.them(b);xuly.them(c);
-        //}          
+        void load()
+        {
+            CDanhBa a = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "SinhVien");
+            CDanhBa b = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "SinhVien");
+            CDanhBa c = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "SinhVien");
+            xuly.them(a); xuly.them(b); xuly.them(c);
+        }
         #region Events
         private void btnThem_Click(object sender, EventArgs e)
-        {         
-            fAdd formAdd = new fAdd();                   
-            formAdd.ShowDialog(); 
+        {
+            fAdd formAdd = new fAdd();
+            formAdd.ShowDialog();
             hienthi();
         }
 
@@ -54,25 +56,32 @@ namespace QLDanhBa
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            xuly.saveFileJSON();        
+            if (CData.saveDataToFile("contacts.json"))
+            { 
+                MessageBox.Show("Luu thanh cong");
+            } else { MessageBox.Show("Luu khong thanh cong"); }
         }
 
         private void LoadFile_Click(object sender, EventArgs e)
         {
-            xuly.LoadFileJSon();
-            dgvDanhBa.DataSource=xuly.getDanhBa();
-            hienthi();
+            CData.LoadFileJSon("contacts.json");
+
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-          
-                           
+
+
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReFresh_Click(object sender, EventArgs e)
+        {
+            hienthi();
         }
     }
 }
