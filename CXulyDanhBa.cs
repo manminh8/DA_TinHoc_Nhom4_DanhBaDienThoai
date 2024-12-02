@@ -68,8 +68,7 @@ namespace QLDanhBa
         {
             try {
                 string json = JsonConvert.SerializeObject(dbDienThoai, Formatting.Indented);
-                File.WriteAllText("listPB.json", json);
-                MessageBox.Show("Luu thanh cong");
+                File.WriteAllText("listPB.json", json);               
                 return true;
             }
             catch(Exception ex)

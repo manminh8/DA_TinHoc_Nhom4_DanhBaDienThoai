@@ -58,6 +58,12 @@
     <Compile Include="fDanhBa.Designer.cs">
       <DependentUpon>fDanhBa.cs</DependentUpon>
     </Compile>
+    <Compile Include="FSua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSua.Designer.cs">
+      <DependentUpon>FSua.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="fAdd.cs">
@@ -68,6 +74,9 @@
     </Compile>
     <EmbeddedResource Include="fDanhBa.resx">
       <DependentUpon>fDanhBa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSua.resx">
+      <DependentUpon>FSua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -107,6 +116,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restart1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

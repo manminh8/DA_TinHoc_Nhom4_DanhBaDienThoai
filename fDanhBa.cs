@@ -30,17 +30,9 @@ namespace QLDanhBa
         {
             InitializeComponent();
             xuly = new CXulyDanhBa();
-            //load();
-
             hienthi();
         }
-        void load()
-        {
-            CDanhBa a = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "SinhVien");
-            CDanhBa b = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "SinhVien");
-            CDanhBa c = new CDanhBa("0707809288", "Man", "hominhman2004tn@gmail.com", "STU", "SinhVien");
-            xuly.them(a); xuly.them(b); xuly.them(c);
-        }
+      
         #region Events
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -60,27 +52,31 @@ namespace QLDanhBa
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (xuly.saveFileJSON())
-            { 
-                MessageBox.Show("Luu thanh cong");
-            } else { MessageBox.Show("Luu khong thanh cong"); }
+            {
+                MessageBox.Show("Lưu Dữ Liệu Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } else {
+                MessageBox.Show("Không Thể Luu Được Dữ Liệu!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            }
         }
 
         private void LoadFile_Click(object sender, EventArgs e)
         {
             if (xuly.LoadFileJSon())
             {
-                MessageBox.Show("Load file thanh cong");
+                MessageBox.Show("Đã Tải Dữ Liệu Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 hienthi();
             }
             else
             {
-                MessageBox.Show("Load file khong thanh cong");
+                MessageBox.Show("Đã Tải Dữ Liệu Không Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            
+            fSua frmSua= new fSua();
+            frmSua.ShowDialog();
+            hienthi();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -93,13 +89,24 @@ namespace QLDanhBa
             }
             else
             {
-                MessageBox.Show("Chọn một dòng để xóa");
+                MessageBox.Show("Chọn Một Dòng Để Xóa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnReFresh_Click(object sender, EventArgs e)
         {
             hienthi();
+        }
+
+        private void cmsDanhBaDong_Click(object sender, EventArgs e)
+        {
+            string text = "Bạn Có Muốn Dừng Chương Trình?";
+            string caption = "Thông Báo";
+            DialogResult rs=MessageBox.Show(text, caption,MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }
