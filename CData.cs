@@ -15,11 +15,11 @@ namespace QLDanhBa
     public class CData
     {
         private static CData m_instance = null;
-        private HashSet<CDanhBa> dbDienThoai;
+        private List<CDanhBa> dbDienThoai;
 
-        public CData()
+        private CData()
         {
-            dbDienThoai = new HashSet<CDanhBa>();
+            dbDienThoai = new List<CDanhBa>();
         }
 
         public static CData khoiTao()
@@ -28,32 +28,9 @@ namespace QLDanhBa
                 m_instance = new CData();
             return m_instance;
         }
-        public HashSet<CDanhBa> getDanhBa()
+        public List<CDanhBa> getDanhBa()
         {
             return dbDienThoai;
-        }
-        public static bool LoadFileJSon(string filename)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
-            openFileDialog.Title = "Select a JSON file";
-
-            // Hiển thị hộp thoại và kiểm tra xem người dùng có chọn tệp không
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string jsonString = File.ReadAllText(filename);
-                m_instance.dbDienThoai = JsonConvert.DeserializeObject<HashSet<CDanhBa>>(jsonString);
-                return true;
-            }
-            return false;
-
-        }
-        public static bool saveDataToFile(string filePath)
-        {
-            if (m_instance == null) return false;
-            string jsonData = JsonConvert.SerializeObject(m_instance.dbDienThoai);
-            File.WriteAllText(filePath, jsonData);
-            return true;
         }
     }
 }

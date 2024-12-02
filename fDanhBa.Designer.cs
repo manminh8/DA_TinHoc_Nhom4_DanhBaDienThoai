@@ -61,13 +61,12 @@
             this.tencoquan,
             this.email,
             this.ghichu});
-            this.dgvDanhBa.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvDanhBa.Location = new System.Drawing.Point(0, 208);
+            this.dgvDanhBa.Location = new System.Drawing.Point(12, 194);
             this.dgvDanhBa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDanhBa.Name = "dgvDanhBa";
             this.dgvDanhBa.RowHeadersWidth = 51;
             this.dgvDanhBa.RowTemplate.Height = 24;
-            this.dgvDanhBa.Size = new System.Drawing.Size(1196, 417);
+            this.dgvDanhBa.Size = new System.Drawing.Size(948, 298);
             this.dgvDanhBa.TabIndex = 0;
             // 
             // sdt
@@ -115,7 +114,7 @@
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Image = global::QLDanhBa.Properties.Resources.delete;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(206, 136);
+            this.btnXoa.Location = new System.Drawing.Point(686, 126);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(128, 41);
@@ -129,7 +128,7 @@
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Image = global::QLDanhBa.Properties.Resources.wrench;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(10, 136);
+            this.btnSua.Location = new System.Drawing.Point(552, 126);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(128, 41);
@@ -142,7 +141,7 @@
             // 
             this.lblTimKiem.AutoSize = true;
             this.lblTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimKiem.Location = new System.Drawing.Point(7, 52);
+            this.lblTimKiem.Location = new System.Drawing.Point(12, 139);
             this.lblTimKiem.Name = "lblTimKiem";
             this.lblTimKiem.Size = new System.Drawing.Size(91, 25);
             this.lblTimKiem.TabIndex = 9;
@@ -151,7 +150,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(246, 55);
+            this.textBox1.Location = new System.Drawing.Point(238, 134);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(289, 30);
@@ -164,7 +163,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Tên",
             "Số điện thoại"});
-            this.comboBox1.Location = new System.Drawing.Point(104, 52);
+            this.comboBox1.Location = new System.Drawing.Point(116, 131);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(107, 33);
@@ -227,7 +226,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1196, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(972, 28);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -236,7 +235,7 @@
             this.btnReFresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReFresh.Image = global::QLDanhBa.Properties.Resources.wrench;
             this.btnReFresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReFresh.Location = new System.Drawing.Point(459, 136);
+            this.btnReFresh.Location = new System.Drawing.Point(832, 126);
             this.btnReFresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReFresh.Name = "btnReFresh";
             this.btnReFresh.Size = new System.Drawing.Size(128, 41);
@@ -249,7 +248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1196, 625);
+            this.ClientSize = new System.Drawing.Size(972, 503);
             this.Controls.Add(this.btnReFresh);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.comboBox1);

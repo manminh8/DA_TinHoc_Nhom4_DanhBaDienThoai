@@ -16,7 +16,7 @@ namespace QLDanhBa
 {
     public partial class fAdd : Form
     {
-        private CXulyDanhBa xuly;       
+         private CXulyDanhBa xuly;       
         public fAdd()
         {
             InitializeComponent();

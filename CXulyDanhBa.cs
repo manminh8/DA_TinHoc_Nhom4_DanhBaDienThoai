@@ -15,15 +15,15 @@ namespace QLDanhBa
 
     public class CXulyDanhBa
     {
-        private HashSet<CDanhBa> dbDienThoai;
+        private List<CDanhBa> dbDienThoai;
 
         public CXulyDanhBa()
         {
             dbDienThoai = CData.khoiTao().getDanhBa();
         }
-        public HashSet<CDanhBa> getDanhBa()
+        public List<CDanhBa> getDanhBa()
         {
-            return dbDienThoai;
+            return dbDienThoai.ToList();
         }
         public CDanhBa tim(string sdt)
         {
@@ -64,6 +64,46 @@ namespace QLDanhBa
                 MessageBox.Show("Không Tìm Thấy Đối Tượng Để Sửa!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
         }
-    
+        public bool saveFileJSON()
+        {
+            try {
+                string json = JsonConvert.SerializeObject(dbDienThoai, Formatting.Indented);
+                File.WriteAllText("listPB.json", json);
+                MessageBox.Show("Luu thanh cong");
+                return true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+        public bool LoadFileJSon()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
+            openFileDialog.Title = "Select a JSON file";
+            try
+            {
+                // Hiển thị hộp thoại và kiểm tra xem người dùng có chọn tệp không
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string jsonString = File.ReadAllText("listPB.json");
+
+                    List<CDanhBa> db = JsonConvert.DeserializeObject<List<CDanhBa>>(jsonString);
+                    foreach (CDanhBa dbItem in db)
+                    {
+                        dbDienThoai.Add(dbItem);
+                    }
+                }
+                return true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
     }
 }

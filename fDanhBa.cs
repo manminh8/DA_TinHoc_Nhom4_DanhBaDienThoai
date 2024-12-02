@@ -11,24 +11,27 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace QLDanhBa
 {
     public partial class fDanhBa : Form
     {
-        CXulyDanhBa xuly = new CXulyDanhBa();
+        private CXulyDanhBa xuly;
 
         private void hienthi()
         {
             BindingSource bs = new BindingSource();
-            bs.DataSource = xuly.getDanhBa().ToList();
+            bs.DataSource = xuly.getDanhBa();
             dgvDanhBa.DataSource = bs;
         }
         public fDanhBa()
         {
             InitializeComponent();
+            xuly = new CXulyDanhBa();
             //load();
+
             hienthi();
         }
         void load()
@@ -56,7 +59,7 @@ namespace QLDanhBa
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (CData.saveDataToFile("contacts.json"))
+            if (xuly.saveFileJSON())
             { 
                 MessageBox.Show("Luu thanh cong");
             } else { MessageBox.Show("Luu khong thanh cong"); }
@@ -64,19 +67,34 @@ namespace QLDanhBa
 
         private void LoadFile_Click(object sender, EventArgs e)
         {
-            CData.LoadFileJSon("contacts.json");
-
+            if (xuly.LoadFileJSon())
+            {
+                MessageBox.Show("Load file thanh cong");
+                hienthi();
+            }
+            else
+            {
+                MessageBox.Show("Load file khong thanh cong");
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
-
+            
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
+            if(dgvDanhBa.SelectedRows.Count > 0)
+            {
+                CDanhBa selectedDB = (CDanhBa)dgvDanhBa.SelectedRows[0].DataBoundItem;
+                xuly.xoa(selectedDB.Sdt);
+                hienthi();
+            }
+            else
+            {
+                MessageBox.Show("Chọn một dòng để xóa");
+            }
         }
 
         private void btnReFresh_Click(object sender, EventArgs e)
