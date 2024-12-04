@@ -18,18 +18,21 @@ namespace QLDanhBa
 {
     public partial class fDanhBa : Form
     {
-        private CXulyDanhBa xuly;
+        private CXulyDanhBa xulyDB;
+        private CXulyRac xulyRac;
 
         private void hienthi()
         {
             BindingSource bs = new BindingSource();
-            bs.DataSource = xuly.getDanhBa();
+            bs.DataSource = xulyDB.getDanhBa();
             dgvDanhBa.DataSource = bs;
         }
         public fDanhBa()
         {
             InitializeComponent();
-            xuly = new CXulyDanhBa();
+            xulyDB = new CXulyDanhBa();
+            xulyRac = new CXulyRac();
+            xulyDB.autoLoad();
             hienthi();
         }
       
@@ -38,20 +41,17 @@ namespace QLDanhBa
         {
             fAdd formAdd = new fAdd();
             formAdd.ShowDialog();
+            xulyDB.autoSave();
             hienthi();
         }
 
 
-        private void btnTim_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        #endregion
+       
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (xuly.saveFileJSON())
+            if (xulyDB.saveFileJSON(xulyDB.getDanhBa()))
             {
                 MessageBox.Show("Lưu Dữ Liệu Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             } else {
@@ -61,7 +61,7 @@ namespace QLDanhBa
 
         private void LoadFile_Click(object sender, EventArgs e)
         {
-            if (xuly.LoadFileJSon())
+            if (xulyDB.LoadFileJSon())
             {
                 MessageBox.Show("Đã Tải Dữ Liệu Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 hienthi();
@@ -77,11 +77,12 @@ namespace QLDanhBa
             if (dgvDanhBa.SelectedRows.Count > 0)
             {
                 CDanhBa selectedDB=(CDanhBa)dgvDanhBa.SelectedRows[0].DataBoundItem;
+                this.Hide();
                 fSua frmSua = new fSua();
                 frmSua.hienThiThongTin(selectedDB);
                 if(frmSua.ShowDialog() == DialogResult.OK)
                 {
-                    xuly.sua(selectedDB);
+                    xulyDB.sua(selectedDB);
                     hienthi();
                 }               
             }
@@ -97,7 +98,8 @@ namespace QLDanhBa
             if(dgvDanhBa.SelectedRows.Count > 0)
             {
                 CDanhBa selectedDB = (CDanhBa)dgvDanhBa.SelectedRows[0].DataBoundItem;
-                xuly.xoa(selectedDB.Sdt);
+                xulyRac.them(selectedDB);
+                xulyDB.xoa(selectedDB.Sdt);
                 hienthi();
             }
             else
@@ -111,15 +113,26 @@ namespace QLDanhBa
             hienthi();
         }
 
-        private void cmsDanhBaDong_Click(object sender, EventArgs e)
+
+        #endregion
+
+        private void fDanhBa_FormClosing(object sender, FormClosingEventArgs e)
         {
-            string text = "Bạn Có Muốn Dừng Chương Trình?";
-            string caption = "Thông Báo";
-            DialogResult rs=MessageBox.Show(text, caption,MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            if (rs == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            Application.Exit();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThungRac_Click(object sender, EventArgs e)
+        {
+            fThungRac fRac = new fThungRac();
+            this.Hide();
+            fRac.FormClosed += (s, agrs) => this.Show(); // Khi Form2 đóng, mở lại Form1
+            fRac.ShowDialog();
+            hienthi();
         }
     }
 }

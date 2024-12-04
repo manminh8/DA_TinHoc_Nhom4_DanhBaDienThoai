@@ -27,6 +27,15 @@ namespace QLDanhBa
 
         }
         public CDanhBa() : this("", "", "", "","") { }
+
+        public CDanhBa(CDanhBa orther)
+        {
+            Sdt = orther.Sdt;
+            Ten = orther.Ten;
+            Email = orther.Email;
+            Tencoquan = orther.Tencoquan;
+            Ghichu = orther.Ghichu;
+        }
         public string Sdt { get => m_sdt; set => m_sdt = value; }
         public string Ten { get => m_ten; set => m_ten = value; }      
         public string Email { get => m_email; set => m_email = value; }

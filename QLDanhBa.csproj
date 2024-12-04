@@ -50,8 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CDanhBa.cs" />
-    <Compile Include="CData.cs" />
+    <Compile Include="CDuLieu.cs" />
     <Compile Include="CXulyDanhBa.cs" />
+    <Compile Include="CXulyRac.cs" />
     <Compile Include="fDanhBa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +64,12 @@
     </Compile>
     <Compile Include="FSua.Designer.cs">
       <DependentUpon>FSua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fThungRac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThungRac.Designer.cs">
+      <DependentUpon>fThungRac.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FSua.resx">
       <DependentUpon>FSua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fThungRac.resx">
+      <DependentUpon>fThungRac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

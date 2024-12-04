@@ -19,7 +19,7 @@ namespace QLDanhBa
 
         public CXulyDanhBa()
         {
-            dbDienThoai = CData.khoiTao().getDanhBa();
+            dbDienThoai = CDuLieu.khoiTao().getDanhBa();
         }
         public List<CDanhBa> getDanhBa()
         {
@@ -64,15 +64,66 @@ namespace QLDanhBa
                 MessageBox.Show("Không Tìm Thấy Đối Tượng Để Sửa!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
         }
-        public bool saveFileJSON()
+        public bool autoSave()
         {
             try {
                 string json = JsonConvert.SerializeObject(dbDienThoai, Formatting.Indented);
-                File.WriteAllText("listPB.json", json);               
+                File.WriteAllText("DanhBa.json", json);               
                 return true;
             }
             catch(Exception ex)
             {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+        public bool autoLoad()
+        {
+            try
+            {
+                string jsonString = File.ReadAllText("DanhBa.json");
+                List<CDanhBa> db = JsonConvert.DeserializeObject<List<CDanhBa>>(jsonString);
+                foreach (CDanhBa dbItem in db)
+                {
+                    dbDienThoai.Add(dbItem);
+                }
+                return true;
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+        public bool saveFileJSON(object data)
+        {
+            try
+            {
+                // Chuyển đổi đối tượng thành chuỗi JSON
+                string json = JsonConvert.SerializeObject(dbDienThoai, Formatting.Indented);
+
+                // Hiển thị hộp thoại "Save File" để người dùng chọn vị trí lưu và đặt tên file
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
+                saveFileDialog.FilterIndex = 1;
+                saveFileDialog.RestoreDirectory = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Lưu file JSON vào vị trí đã chọn
+                    string filePath = saveFileDialog.FileName;
+                    File.WriteAllText(filePath, json);
+
+                    return true;
+                }
+                else
+                {
+                    // Người dùng không chọn vị trí lưu file
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Hiển thị thông báo lỗi
                 MessageBox.Show(ex.Message);
                 return false;
             }
@@ -87,15 +138,19 @@ namespace QLDanhBa
                 // Hiển thị hộp thoại và kiểm tra xem người dùng có chọn tệp không
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string jsonString = File.ReadAllText("listPB.json");
+                    string jsonString = File.ReadAllText(openFileDialog.FileName);
 
                     List<CDanhBa> db = JsonConvert.DeserializeObject<List<CDanhBa>>(jsonString);
                     foreach (CDanhBa dbItem in db)
                     {
                         dbDienThoai.Add(dbItem);
                     }
+                    return true;
                 }
-                return true;
+                else
+                {
+                    return false;
+                }
             }
             catch(Exception ex)
             {
@@ -104,5 +159,6 @@ namespace QLDanhBa
             }
 
         }
+
     }
 }

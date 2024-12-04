@@ -12,25 +12,33 @@ using System.Windows.Forms;
 namespace QLDanhBa
 {
     [Serializable]
-    public class CData
+    public class CDuLieu
     {
-        private static CData m_instance = null;
+        private static CDuLieu m_instance = null;
+
         private List<CDanhBa> dbDienThoai;
+        private List<CDanhBa> dsRac;
 
-        private CData()
-        {
-            dbDienThoai = new List<CDanhBa>();
-        }
-
-        public static CData khoiTao()
-        {
-            if (m_instance == null)
-                m_instance = new CData();
-            return m_instance;
-        }
         public List<CDanhBa> getDanhBa()
         {
             return dbDienThoai;
         }
+        public List<CDanhBa> getdsRac()
+        {
+            return dsRac;
+        }
+        private CDuLieu()
+        {
+            dbDienThoai = new List<CDanhBa>();
+            dsRac = new List<CDanhBa>();
+        }
+
+        public static CDuLieu khoiTao()
+        {
+            if (m_instance == null)
+                m_instance = new CDuLieu();
+            return m_instance;
+        }
+
     }
 }
