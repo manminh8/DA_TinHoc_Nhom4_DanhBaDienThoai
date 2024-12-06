@@ -59,12 +59,6 @@
     <Compile Include="fDanhBa.Designer.cs">
       <DependentUpon>fDanhBa.cs</DependentUpon>
     </Compile>
-    <Compile Include="FSua.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FSua.Designer.cs">
-      <DependentUpon>FSua.cs</DependentUpon>
-    </Compile>
     <Compile Include="fThungRac.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,9 +81,6 @@
     </Compile>
     <EmbeddedResource Include="fDanhBa.resx">
       <DependentUpon>fDanhBa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FSua.resx">
-      <DependentUpon>FSua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fThungRac.resx">
       <DependentUpon>fThungRac.cs</DependentUpon>
