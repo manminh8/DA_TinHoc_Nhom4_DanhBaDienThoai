@@ -36,7 +36,7 @@
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTimKiem = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.danhBạToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDanhBaXuatDuLieu = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,9 +45,10 @@
             this.xuấtDanhBạToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.btnTuyChon = new System.Windows.Forms.Button();
+            this.btnThungRac = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.btnThungRac = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhBa)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -122,14 +123,15 @@
             this.lblTimKiem.TabIndex = 9;
             this.lblTimKiem.Text = "Tìm kiếm";
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(233, 40);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(265, 26);
-            this.textBox1.TabIndex = 10;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(217, 44);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(265, 26);
+            this.txtSearch.TabIndex = 10;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // comboBox1
             // 
@@ -144,7 +146,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(115, 28);
             this.comboBox1.TabIndex = 11;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
             // 
             // danhBạToolStripMenuItem
             // 
@@ -206,6 +208,32 @@
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // btnTuyChon
+            // 
+            this.btnTuyChon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTuyChon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTuyChon.Location = new System.Drawing.Point(556, 104);
+            this.btnTuyChon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTuyChon.Name = "btnTuyChon";
+            this.btnTuyChon.Size = new System.Drawing.Size(96, 33);
+            this.btnTuyChon.TabIndex = 14;
+            this.btnTuyChon.Text = "Tùy chọn";
+            this.btnTuyChon.UseVisualStyleBackColor = true;
+            // 
+            // btnThungRac
+            // 
+            this.btnThungRac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThungRac.Image = global::QLDanhBa.Properties.Resources.delete;
+            this.btnThungRac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThungRac.Location = new System.Drawing.Point(556, 41);
+            this.btnThungRac.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThungRac.Name = "btnThungRac";
+            this.btnThungRac.Size = new System.Drawing.Size(124, 33);
+            this.btnThungRac.TabIndex = 13;
+            this.btnThungRac.Text = "Thùng rác";
+            this.btnThungRac.UseVisualStyleBackColor = true;
+            this.btnThungRac.Click += new System.EventHandler(this.btnThungRac_Click);
+            // 
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -234,29 +262,16 @@
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // btnThungRac
-            // 
-            this.btnThungRac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThungRac.Image = global::QLDanhBa.Properties.Resources.delete;
-            this.btnThungRac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThungRac.Location = new System.Drawing.Point(556, 41);
-            this.btnThungRac.Margin = new System.Windows.Forms.Padding(2);
-            this.btnThungRac.Name = "btnThungRac";
-            this.btnThungRac.Size = new System.Drawing.Size(124, 33);
-            this.btnThungRac.TabIndex = 13;
-            this.btnThungRac.Text = "Thùng rác";
-            this.btnThungRac.UseVisualStyleBackColor = true;
-            this.btnThungRac.Click += new System.EventHandler(this.btnThungRac_Click);
-            // 
             // fDanhBa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 409);
+            this.Controls.Add(this.btnTuyChon);
             this.Controls.Add(this.btnThungRac);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblTimKiem);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXoa);
@@ -279,7 +294,7 @@
         private System.Windows.Forms.Button btnSua;
         public System.Windows.Forms.DataGridView dgvDanhBa;
         private System.Windows.Forms.Label lblTimKiem;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
         private System.Windows.Forms.DataGridViewTextBoxColumn ten;
@@ -294,6 +309,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem xuấtDanhBạToolStripMenuItem;
         private System.Windows.Forms.Button btnThungRac;
+        private System.Windows.Forms.Button btnTuyChon;
     }
 }
 

@@ -79,5 +79,10 @@ namespace QLDanhBa
         {
             this.Close();
         }
+
+        private void fSua_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -71,6 +71,12 @@
     <Compile Include="fThungRac.Designer.cs">
       <DependentUpon>fThungRac.cs</DependentUpon>
     </Compile>
+    <Compile Include="fTuyChon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTuyChon.Designer.cs">
+      <DependentUpon>fTuyChon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="fAdd.cs">
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fThungRac.resx">
       <DependentUpon>fThungRac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTuyChon.resx">
+      <DependentUpon>fTuyChon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

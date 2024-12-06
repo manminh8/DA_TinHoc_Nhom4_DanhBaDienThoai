@@ -78,13 +78,16 @@ namespace QLDanhBa
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            
-            fDanhBa f = new fDanhBa();
             this.Close();
         }
         private void Add_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void fAdd_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

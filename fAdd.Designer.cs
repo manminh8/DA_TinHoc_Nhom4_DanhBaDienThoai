@@ -51,7 +51,7 @@
             // 
             this.txtSdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSdt.Location = new System.Drawing.Point(120, 56);
-            this.txtSdt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSdt.Margin = new System.Windows.Forms.Padding(2);
             this.txtSdt.Name = "txtSdt";
             this.txtSdt.Size = new System.Drawing.Size(264, 26);
             this.txtSdt.TabIndex = 2;
@@ -82,7 +82,7 @@
             // 
             this.txtTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTen.Location = new System.Drawing.Point(120, 114);
-            this.txtTen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(2);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(264, 26);
             this.txtTen.TabIndex = 4;
@@ -102,7 +102,7 @@
             // 
             this.txtTenCoQuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenCoQuan.Location = new System.Drawing.Point(120, 173);
-            this.txtTenCoQuan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenCoQuan.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenCoQuan.Name = "txtTenCoQuan";
             this.txtTenCoQuan.Size = new System.Drawing.Size(264, 26);
             this.txtTenCoQuan.TabIndex = 6;
@@ -122,7 +122,7 @@
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(120, 236);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(264, 26);
             this.txtEmail.TabIndex = 8;
@@ -142,7 +142,7 @@
             // 
             this.txtGhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGhiChu.Location = new System.Drawing.Point(120, 298);
-            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(2);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(264, 26);
             this.txtGhiChu.TabIndex = 10;
@@ -231,9 +231,10 @@
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnXacnhan);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fAdd";
             this.Text = "Thêm Liên Hệ";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fAdd_FormClosed);
             this.Load += new System.EventHandler(this.Add_Load);
             this.grbDanhMuc.ResumeLayout(false);
             this.grbDanhMuc.PerformLayout();

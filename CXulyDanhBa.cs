@@ -39,6 +39,7 @@ namespace QLDanhBa
         public void them(CDanhBa thongtin)
         {
             dbDienThoai.Add(thongtin);
+            autoSave();
         }
         public void xoa(string sdt)
         {

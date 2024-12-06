@@ -1,8 +1,14 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using Newtonsoft.Json.Converters;
 
 namespace QLDanhBa
 {
@@ -42,6 +48,38 @@ namespace QLDanhBa
             if (rac != null)
             {
                 m_dsRac.Remove(rac);
+            }
+        }
+        public bool autoSaveRac()
+        {
+            try
+            {
+                string json = JsonConvert.SerializeObject(m_dsRac, Formatting.Indented);
+                File.WriteAllText("TrashData.json", json);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+        public bool autoLoadRac()
+        {
+            try
+            {
+                string jsonString = File.ReadAllText("TrashData.json");
+                List<CDanhBa> db = JsonConvert.DeserializeObject<List<CDanhBa>>(jsonString);
+                foreach (CDanhBa dbItem in db)
+                {
+                    m_dsRac.Add(dbItem);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
             }
         }
     }
