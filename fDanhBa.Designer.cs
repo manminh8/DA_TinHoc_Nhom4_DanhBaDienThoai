@@ -47,8 +47,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnTuyChon = new System.Windows.Forms.Button();
             this.btnThungRac = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhBa)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -151,10 +149,10 @@
             // danhBạToolStripMenuItem
             // 
             this.danhBạToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xuấtDanhBạToolStripMenuItem,
             this.cmsDanhBaXuatDuLieu,
             this.cmsDanhBaThemLienHe,
-            this.cmsDanhBaDong,
-            this.xuấtDanhBạToolStripMenuItem});
+            this.cmsDanhBaDong});
             this.danhBạToolStripMenuItem.Name = "danhBạToolStripMenuItem";
             this.danhBạToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.danhBạToolStripMenuItem.Text = "Danh Bạ";
@@ -163,15 +161,15 @@
             // 
             this.cmsDanhBaXuatDuLieu.Name = "cmsDanhBaXuatDuLieu";
             this.cmsDanhBaXuatDuLieu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.cmsDanhBaXuatDuLieu.Size = new System.Drawing.Size(192, 22);
-            this.cmsDanhBaXuatDuLieu.Text = "Nhập danh bạ";
+            this.cmsDanhBaXuatDuLieu.Size = new System.Drawing.Size(187, 22);
+            this.cmsDanhBaXuatDuLieu.Text = "Xuất danh bạ";
             this.cmsDanhBaXuatDuLieu.Click += new System.EventHandler(this.LoadFile_Click);
             // 
             // cmsDanhBaThemLienHe
             // 
             this.cmsDanhBaThemLienHe.Name = "cmsDanhBaThemLienHe";
             this.cmsDanhBaThemLienHe.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.cmsDanhBaThemLienHe.Size = new System.Drawing.Size(192, 22);
+            this.cmsDanhBaThemLienHe.Size = new System.Drawing.Size(187, 22);
             this.cmsDanhBaThemLienHe.Text = "Thêm liên hệ";
             this.cmsDanhBaThemLienHe.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -179,14 +177,15 @@
             // 
             this.cmsDanhBaDong.Name = "cmsDanhBaDong";
             this.cmsDanhBaDong.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.cmsDanhBaDong.Size = new System.Drawing.Size(192, 22);
+            this.cmsDanhBaDong.Size = new System.Drawing.Size(187, 22);
             this.cmsDanhBaDong.Text = "Đóng";
             // 
             // xuấtDanhBạToolStripMenuItem
             // 
             this.xuấtDanhBạToolStripMenuItem.Name = "xuấtDanhBạToolStripMenuItem";
-            this.xuấtDanhBạToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.xuấtDanhBạToolStripMenuItem.Text = "Xuất danh bạ";
+            this.xuấtDanhBạToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.xuấtDanhBạToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.xuấtDanhBạToolStripMenuItem.Text = "Lưu danh bạ";
             this.xuấtDanhBạToolStripMenuItem.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // trợGiúpToolStripMenuItem
@@ -211,21 +210,23 @@
             // btnTuyChon
             // 
             this.btnTuyChon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTuyChon.Image = global::QLDanhBa.Properties.Resources.option;
             this.btnTuyChon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTuyChon.Location = new System.Drawing.Point(556, 104);
+            this.btnTuyChon.Location = new System.Drawing.Point(556, 107);
             this.btnTuyChon.Margin = new System.Windows.Forms.Padding(2);
             this.btnTuyChon.Name = "btnTuyChon";
-            this.btnTuyChon.Size = new System.Drawing.Size(96, 33);
+            this.btnTuyChon.Size = new System.Drawing.Size(124, 29);
             this.btnTuyChon.TabIndex = 14;
             this.btnTuyChon.Text = "Tùy chọn";
             this.btnTuyChon.UseVisualStyleBackColor = true;
+            this.btnTuyChon.Click += new System.EventHandler(this.btnTuyChon_Click);
             // 
             // btnThungRac
             // 
             this.btnThungRac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThungRac.Image = global::QLDanhBa.Properties.Resources.delete;
             this.btnThungRac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThungRac.Location = new System.Drawing.Point(556, 41);
+            this.btnThungRac.Location = new System.Drawing.Point(556, 44);
             this.btnThungRac.Margin = new System.Windows.Forms.Padding(2);
             this.btnThungRac.Name = "btnThungRac";
             this.btnThungRac.Size = new System.Drawing.Size(124, 33);
@@ -233,34 +234,6 @@
             this.btnThungRac.Text = "Thùng rác";
             this.btnThungRac.UseVisualStyleBackColor = true;
             this.btnThungRac.Click += new System.EventHandler(this.btnThungRac_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Image = global::QLDanhBa.Properties.Resources.wrench;
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(43, 104);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(96, 33);
-            this.btnSua.TabIndex = 4;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Image = global::QLDanhBa.Properties.Resources.delete;
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(187, 104);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(96, 33);
-            this.btnXoa.TabIndex = 3;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // fDanhBa
             // 
@@ -273,8 +246,6 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblTimKiem);
-            this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.dgvDanhBa);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -290,8 +261,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnSua;
         public System.Windows.Forms.DataGridView dgvDanhBa;
         private System.Windows.Forms.Label lblTimKiem;
         private System.Windows.Forms.TextBox txtSearch;

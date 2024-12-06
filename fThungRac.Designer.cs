@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fThungRac));
             this.dgvThungRac = new System.Windows.Forms.DataGridView();
-            this.btnKhoiPhuc = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
+            this.btnKhoiPhuc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThungRac)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvThungRac
             // 
+            this.dgvThungRac.AllowUserToAddRows = false;
             this.dgvThungRac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThungRac.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvThungRac.Location = new System.Drawing.Point(0, 0);
@@ -43,27 +45,31 @@
             this.dgvThungRac.Size = new System.Drawing.Size(800, 313);
             this.dgvThungRac.TabIndex = 0;
             // 
-            // btnKhoiPhuc
-            // 
-            this.btnKhoiPhuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKhoiPhuc.Location = new System.Drawing.Point(243, 385);
-            this.btnKhoiPhuc.Name = "btnKhoiPhuc";
-            this.btnKhoiPhuc.Size = new System.Drawing.Size(103, 33);
-            this.btnKhoiPhuc.TabIndex = 1;
-            this.btnKhoiPhuc.Text = "Khôi phục";
-            this.btnKhoiPhuc.UseVisualStyleBackColor = true;
-            this.btnKhoiPhuc.Click += new System.EventHandler(this.btnKhoiPhuc_Click);
-            // 
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(493, 385);
+            this.btnXoa.Image = global::QLDanhBa.Properties.Resources.delete__1_;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(335, 351);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(103, 33);
+            this.btnXoa.Size = new System.Drawing.Size(115, 40);
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa ";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnKhoiPhuc
+            // 
+            this.btnKhoiPhuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKhoiPhuc.Image = global::QLDanhBa.Properties.Resources.restart;
+            this.btnKhoiPhuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKhoiPhuc.Location = new System.Drawing.Point(108, 351);
+            this.btnKhoiPhuc.Name = "btnKhoiPhuc";
+            this.btnKhoiPhuc.Size = new System.Drawing.Size(115, 40);
+            this.btnKhoiPhuc.TabIndex = 1;
+            this.btnKhoiPhuc.Text = "Khôi phục";
+            this.btnKhoiPhuc.UseVisualStyleBackColor = true;
+            this.btnKhoiPhuc.Click += new System.EventHandler(this.btnKhoiPhuc_Click);
             // 
             // fThungRac
             // 
@@ -73,8 +79,9 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnKhoiPhuc);
             this.Controls.Add(this.dgvThungRac);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fThungRac";
-            this.Text = "fThungRac";
+            this.Text = "Thùng Rác";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fThungRac_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvThungRac)).EndInit();
             this.ResumeLayout(false);

@@ -80,18 +80,31 @@ namespace QLDanhBa
         }
         public bool autoLoad()
         {
-            try
+            // Kiểm tra file có tồn tại hay không
+            if (File.Exists("DanhBa.json"))
             {
-                string jsonString = File.ReadAllText("DanhBa.json");
-                List<CDanhBa> db = JsonConvert.DeserializeObject<List<CDanhBa>>(jsonString);
-                foreach (CDanhBa dbItem in db)
+                try
                 {
-                    dbDienThoai.Add(dbItem);
+                    // Đọc nội dung file
+                    string jsonString = File.ReadAllText("DanhBa.json");
+                    // Deserialize JSON thành danh sách đối tượng CDanhBa
+                    List<CDanhBa> db = JsonConvert.DeserializeObject<List<CDanhBa>>(jsonString);
+                    // Thêm các đối tượng vào danh sách
+                    foreach (CDanhBa dbItem in db)
+                    {
+                        dbDienThoai.Add(dbItem);
+                    }
+                    return true;
                 }
-                return true;
-            }catch(Exception ex)
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return false;
+                }
+            }
+            else
             {
-                MessageBox.Show(ex.Message);
+                // File không tồn tại, không load
                 return false;
             }
         }

@@ -73,24 +73,7 @@ namespace QLDanhBa
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (dgvDanhBa.SelectedRows.Count > 0)
-            {
-                CDanhBa selectedDB = (CDanhBa)dgvDanhBa.SelectedRows[0].DataBoundItem;
-                fSua frmSua = new fSua();
-                frmSua.FormClosed += (s, agrs) => this.Show(); // Khi Form2 đóng, mở lại Form1
-                this.Hide();
-                frmSua.hienThiThongTin(selectedDB);
-                if (frmSua.ShowDialog() == DialogResult.OK)
-                {
-                    xulyDB.sua(selectedDB);
-                    hienthi();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Chọn Một Dòng Để Sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+            hienthi();
         }
 
         private void FrmSua_FormClosed(object sender, FormClosedEventArgs e)
@@ -178,7 +161,24 @@ namespace QLDanhBa
                     }
                 }
             }
-            hienthi();
+        }
+
+        private void btnTuyChon_Click(object sender, EventArgs e)
+        {
+            if (dgvDanhBa.SelectedRows.Count > 0)
+            {
+                CDanhBa selectedDB = (CDanhBa)dgvDanhBa.SelectedRows[0].DataBoundItem;
+                fTuyChon frmchon = new fTuyChon();
+                frmchon.FormClosed += (s, agrs) => this.Show(); // Khi Form2 đóng, mở lại Form1
+                this.Hide();
+                frmchon.hienThiThongTin(selectedDB);
+                frmchon.ShowDialog();
+                hienthi();
+            }
+            else
+            {
+                MessageBox.Show("Chọn Không Hợp Lệ!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
