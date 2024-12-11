@@ -59,6 +59,7 @@ namespace QLDanhBa
                 lienhe.Tencoquan = update.Tencoquan;
                 lienhe.Email = update.Email;
                 lienhe.Ghichu = update.Ghichu;
+                lienhe.Danhsach = update.Danhsach;
             }
             else
             {

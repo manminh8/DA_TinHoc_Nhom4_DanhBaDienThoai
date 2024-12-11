@@ -39,12 +39,8 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
-            this.rdbYeuThich = new System.Windows.Forms.RadioButton();
-            this.rdbDanhSachDen = new System.Windows.Forms.RadioButton();
-            this.grbDanhMuc = new System.Windows.Forms.GroupBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnXacnhan = new System.Windows.Forms.Button();
-            this.grbDanhMuc.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSdt
@@ -147,42 +143,6 @@
             this.txtGhiChu.Size = new System.Drawing.Size(264, 26);
             this.txtGhiChu.TabIndex = 10;
             // 
-            // rdbYeuThich
-            // 
-            this.rdbYeuThich.AutoSize = true;
-            this.rdbYeuThich.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbYeuThich.Location = new System.Drawing.Point(6, 45);
-            this.rdbYeuThich.Name = "rdbYeuThich";
-            this.rdbYeuThich.Size = new System.Drawing.Size(98, 24);
-            this.rdbYeuThich.TabIndex = 12;
-            this.rdbYeuThich.TabStop = true;
-            this.rdbYeuThich.Text = "Yêu Thích";
-            this.rdbYeuThich.UseVisualStyleBackColor = true;
-            // 
-            // rdbDanhSachDen
-            // 
-            this.rdbDanhSachDen.AutoSize = true;
-            this.rdbDanhSachDen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbDanhSachDen.Location = new System.Drawing.Point(6, 89);
-            this.rdbDanhSachDen.Name = "rdbDanhSachDen";
-            this.rdbDanhSachDen.Size = new System.Drawing.Size(141, 24);
-            this.rdbDanhSachDen.TabIndex = 13;
-            this.rdbDanhSachDen.TabStop = true;
-            this.rdbDanhSachDen.Text = "Danh Sách Đen";
-            this.rdbDanhSachDen.UseVisualStyleBackColor = true;
-            // 
-            // grbDanhMuc
-            // 
-            this.grbDanhMuc.Controls.Add(this.rdbDanhSachDen);
-            this.grbDanhMuc.Controls.Add(this.rdbYeuThich);
-            this.grbDanhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbDanhMuc.Location = new System.Drawing.Point(425, 56);
-            this.grbDanhMuc.Name = "grbDanhMuc";
-            this.grbDanhMuc.Size = new System.Drawing.Size(161, 154);
-            this.grbDanhMuc.TabIndex = 14;
-            this.grbDanhMuc.TabStop = false;
-            this.grbDanhMuc.Text = "Danh Mục";
-            // 
             // btnHuy
             // 
             this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -216,8 +176,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(615, 449);
-            this.Controls.Add(this.grbDanhMuc);
+            this.ClientSize = new System.Drawing.Size(412, 449);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtGhiChu);
             this.Controls.Add(this.label4);
@@ -236,8 +195,6 @@
             this.Text = "Thêm Liên Hệ";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fAdd_FormClosed);
             this.Load += new System.EventHandler(this.Add_Load);
-            this.grbDanhMuc.ResumeLayout(false);
-            this.grbDanhMuc.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,8 +214,5 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtGhiChu;
-        private System.Windows.Forms.RadioButton rdbYeuThich;
-        private System.Windows.Forms.RadioButton rdbDanhSachDen;
-        private System.Windows.Forms.GroupBox grbDanhMuc;
     }
 }

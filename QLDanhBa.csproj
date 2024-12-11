@@ -51,13 +51,33 @@
   <ItemGroup>
     <Compile Include="CDanhBa.cs" />
     <Compile Include="CDuLieu.cs" />
+    <Compile Include="CNhom.cs" />
     <Compile Include="CXulyDanhBa.cs" />
+    <Compile Include="CXulyNhom.cs" />
     <Compile Include="CXulyRac.cs" />
+    <Compile Include="fChiTietNhom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fChiTietNhom.Designer.cs">
+      <DependentUpon>fChiTietNhom.cs</DependentUpon>
+    </Compile>
     <Compile Include="fDanhBa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fDanhBa.Designer.cs">
       <DependentUpon>fDanhBa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fNhom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fNhom.Designer.cs">
+      <DependentUpon>fNhom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fThemThanhVienNhom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThemThanhVienNhom.Designer.cs">
+      <DependentUpon>fThemThanhVienNhom.cs</DependentUpon>
     </Compile>
     <Compile Include="fThungRac.cs">
       <SubType>Form</SubType>
@@ -79,8 +99,17 @@
     <Compile Include="fAdd.Designer.cs">
       <DependentUpon>fAdd.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="fChiTietNhom.resx">
+      <DependentUpon>fChiTietNhom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fDanhBa.resx">
       <DependentUpon>fDanhBa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fNhom.resx">
+      <DependentUpon>fNhom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fThemThanhVienNhom.resx">
+      <DependentUpon>fThemThanhVienNhom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fThungRac.resx">
       <DependentUpon>fThungRac.cs</DependentUpon>

@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSuaSDT = new System.Windows.Forms.TextBox();
+            this.rdbYeuThich = new System.Windows.Forms.RadioButton();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -46,7 +47,7 @@
             // txtSuaGhiChu
             // 
             this.txtSuaGhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSuaGhiChu.Location = new System.Drawing.Point(151, 311);
+            this.txtSuaGhiChu.Location = new System.Drawing.Point(150, 295);
             this.txtSuaGhiChu.Name = "txtSuaGhiChu";
             this.txtSuaGhiChu.Size = new System.Drawing.Size(284, 26);
             this.txtSuaGhiChu.TabIndex = 13;
@@ -54,7 +55,7 @@
             // txtSuaEmail
             // 
             this.txtSuaEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSuaEmail.Location = new System.Drawing.Point(151, 245);
+            this.txtSuaEmail.Location = new System.Drawing.Point(150, 229);
             this.txtSuaEmail.Name = "txtSuaEmail";
             this.txtSuaEmail.Size = new System.Drawing.Size(284, 26);
             this.txtSuaEmail.TabIndex = 14;
@@ -62,7 +63,7 @@
             // txtSuaTenCoQuan
             // 
             this.txtSuaTenCoQuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSuaTenCoQuan.Location = new System.Drawing.Point(151, 184);
+            this.txtSuaTenCoQuan.Location = new System.Drawing.Point(150, 168);
             this.txtSuaTenCoQuan.Name = "txtSuaTenCoQuan";
             this.txtSuaTenCoQuan.Size = new System.Drawing.Size(284, 26);
             this.txtSuaTenCoQuan.TabIndex = 15;
@@ -70,7 +71,7 @@
             // txtSuaTen
             // 
             this.txtSuaTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSuaTen.Location = new System.Drawing.Point(151, 123);
+            this.txtSuaTen.Location = new System.Drawing.Point(150, 107);
             this.txtSuaTen.Name = "txtSuaTen";
             this.txtSuaTen.Size = new System.Drawing.Size(284, 26);
             this.txtSuaTen.TabIndex = 16;
@@ -79,7 +80,7 @@
             // 
             this.lblSuaGhiChu.AutoSize = true;
             this.lblSuaGhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuaGhiChu.Location = new System.Drawing.Point(13, 316);
+            this.lblSuaGhiChu.Location = new System.Drawing.Point(12, 300);
             this.lblSuaGhiChu.Name = "lblSuaGhiChu";
             this.lblSuaGhiChu.Size = new System.Drawing.Size(67, 20);
             this.lblSuaGhiChu.TabIndex = 11;
@@ -89,7 +90,7 @@
             // 
             this.lblSuaEmail.AutoSize = true;
             this.lblSuaEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuaEmail.Location = new System.Drawing.Point(13, 250);
+            this.lblSuaEmail.Location = new System.Drawing.Point(12, 234);
             this.lblSuaEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSuaEmail.Name = "lblSuaEmail";
             this.lblSuaEmail.Size = new System.Drawing.Size(48, 20);
@@ -100,7 +101,7 @@
             // 
             this.lblSuaTenCoQuan.AutoSize = true;
             this.lblSuaTenCoQuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuaTenCoQuan.Location = new System.Drawing.Point(13, 183);
+            this.lblSuaTenCoQuan.Location = new System.Drawing.Point(12, 167);
             this.lblSuaTenCoQuan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSuaTenCoQuan.Name = "lblSuaTenCoQuan";
             this.lblSuaTenCoQuan.Size = new System.Drawing.Size(103, 20);
@@ -111,7 +112,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 123);
+            this.label1.Location = new System.Drawing.Point(12, 107);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 20);
@@ -122,7 +123,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 74);
+            this.label2.Location = new System.Drawing.Point(12, 49);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 20);
@@ -133,10 +134,21 @@
             // 
             this.txtSuaSDT.Enabled = false;
             this.txtSuaSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSuaSDT.Location = new System.Drawing.Point(151, 74);
+            this.txtSuaSDT.Location = new System.Drawing.Point(150, 46);
             this.txtSuaSDT.Name = "txtSuaSDT";
             this.txtSuaSDT.Size = new System.Drawing.Size(284, 26);
             this.txtSuaSDT.TabIndex = 12;
+            // 
+            // rdbYeuThich
+            // 
+            this.rdbYeuThich.AutoSize = true;
+            this.rdbYeuThich.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbYeuThich.Location = new System.Drawing.Point(48, 361);
+            this.rdbYeuThich.Name = "rdbYeuThich";
+            this.rdbYeuThich.Size = new System.Drawing.Size(100, 22);
+            this.rdbYeuThich.TabIndex = 17;
+            this.rdbYeuThich.Text = "Yêu Thích";
+            this.rdbYeuThich.UseVisualStyleBackColor = true;
             // 
             // btnXoa
             // 
@@ -171,6 +183,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 514);
+            this.Controls.Add(this.rdbYeuThich);
             this.Controls.Add(this.txtSuaSDT);
             this.Controls.Add(this.txtSuaGhiChu);
             this.Controls.Add(this.txtSuaEmail);
@@ -204,5 +217,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSuaSDT;
+        private System.Windows.Forms.RadioButton rdbYeuThich;
     }
 }

@@ -27,6 +27,7 @@ namespace QLDanhBa
             if (!Regex.IsMatch(txtSdt.Text, @"^\d{10}$"))
             {
                 MessageBox.Show("Số điện thoại không đúng");
+                txtSdt.Focus();
                 return false;
                 // @: cho biết rằng đây là một chuỗi "verbatim" (chuỗi nguyên văn)
                 // ^: Bắt đầu chuỗi.
@@ -50,16 +51,16 @@ namespace QLDanhBa
             txtEmail.Text = "";
             txtGhiChu.Text = "";       
         }
+
         private void btnXacnhan_Click(object sender, EventArgs e)
         {
-          
-            string Ten = txtTen.Text;
-            string Tencoquan = txtTenCoQuan.Text;
-            string Email = txtEmail.Text;
-            string Sdt = txtSdt.Text;
-            string Ghichu = txtGhiChu.Text;
-            
-            CDanhBa db1 = new CDanhBa(Sdt, Ten, Email, Tencoquan, Ghichu);
+            CDanhBa db1 = new CDanhBa();
+            db1.Ten = txtTen.Text;
+            db1.Email = txtEmail.Text;
+            db1.Tencoquan = txtTenCoQuan.Text;
+            db1.Sdt = txtSdt.Text;
+            db1.Ghichu = txtGhiChu.Text;
+            db1.Danhsach = DanhSach.None;
             if (xuly.tim(txtSdt.Text) == null)
             {
                 if (check())

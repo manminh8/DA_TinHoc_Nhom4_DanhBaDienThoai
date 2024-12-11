@@ -28,6 +28,10 @@ namespace QLDanhBa
             txtSuaTenCoQuan.Text = danhBa.Tencoquan;
             txtSuaEmail.Text = danhBa.Email;
             txtSuaGhiChu.Text = danhBa.Ghichu;
+            if(danhBa.Danhsach == DanhSach.YeuThich)
+            {
+                rdbYeuThich.Checked = true;
+            }
         }
         private bool check()
         {
@@ -64,6 +68,7 @@ namespace QLDanhBa
                     xuly.sua(danhBaMoi);
                     xuly.autoSave();
                     MessageBox.Show("Đã Sửa Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    this.Close();
                 }
             }
             else
@@ -82,6 +87,7 @@ namespace QLDanhBa
                 xulyRac.them(danhBaMoi);
                 xulyRac.autoSaveRac();
                 MessageBox.Show("Đã Xóa Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                this.Close();
 
             }
             else
@@ -89,5 +95,7 @@ namespace QLDanhBa
                 MessageBox.Show("Không Thể Xóa!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
         }
+
+
     }
 }

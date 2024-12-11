@@ -18,7 +18,7 @@ namespace QLDanhBa
 
         private List<CDanhBa> dbDienThoai;
         private List<CDanhBa> dsRac;
-
+        private List<CNhom> dsNhom;
         public List<CDanhBa> getDanhBa()
         {
             return dbDienThoai;
@@ -26,6 +26,10 @@ namespace QLDanhBa
         public List<CDanhBa> getdsRac()
         {
             return dsRac;
+        }
+        public List<CNhom> getdsNhom()
+        {
+            return dsNhom;
         }
         private CDuLieu()
         {

@@ -39,14 +39,16 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.danhBạToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xuấtDanhBạToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDanhBaXuatDuLieu = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDanhBaThemLienHe = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDanhBaDong = new System.Windows.Forms.ToolStripMenuItem();
-            this.xuấtDanhBạToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnTuyChon = new System.Windows.Forms.Button();
             this.btnThungRac = new System.Windows.Forms.Button();
+            this.btnNhom = new System.Windows.Forms.Button();
+            this.btnShowDBYT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhBa)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -114,7 +116,7 @@
             // 
             this.lblTimKiem.AutoSize = true;
             this.lblTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimKiem.Location = new System.Drawing.Point(9, 47);
+            this.lblTimKiem.Location = new System.Drawing.Point(115, 53);
             this.lblTimKiem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTimKiem.Name = "lblTimKiem";
             this.lblTimKiem.Size = new System.Drawing.Size(71, 20);
@@ -124,7 +126,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(217, 44);
+            this.txtSearch.Location = new System.Drawing.Point(323, 50);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(265, 26);
@@ -139,7 +141,7 @@
             "Tên",
             "Số điện thoại",
             "Tên cơ quan"});
-            this.comboBox1.Location = new System.Drawing.Point(87, 40);
+            this.comboBox1.Location = new System.Drawing.Point(193, 46);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(115, 28);
@@ -156,6 +158,14 @@
             this.danhBạToolStripMenuItem.Name = "danhBạToolStripMenuItem";
             this.danhBạToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.danhBạToolStripMenuItem.Text = "Danh Bạ";
+            // 
+            // xuấtDanhBạToolStripMenuItem
+            // 
+            this.xuấtDanhBạToolStripMenuItem.Name = "xuấtDanhBạToolStripMenuItem";
+            this.xuấtDanhBạToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.xuấtDanhBạToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.xuấtDanhBạToolStripMenuItem.Text = "Lưu danh bạ";
+            this.xuấtDanhBạToolStripMenuItem.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // cmsDanhBaXuatDuLieu
             // 
@@ -179,14 +189,6 @@
             this.cmsDanhBaDong.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.cmsDanhBaDong.Size = new System.Drawing.Size(187, 22);
             this.cmsDanhBaDong.Text = "Đóng";
-            // 
-            // xuấtDanhBạToolStripMenuItem
-            // 
-            this.xuấtDanhBạToolStripMenuItem.Name = "xuấtDanhBạToolStripMenuItem";
-            this.xuấtDanhBạToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.xuấtDanhBạToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.xuấtDanhBạToolStripMenuItem.Text = "Lưu danh bạ";
-            this.xuấtDanhBạToolStripMenuItem.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // trợGiúpToolStripMenuItem
             // 
@@ -226,7 +228,7 @@
             this.btnThungRac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThungRac.Image = global::QLDanhBa.Properties.Resources.delete;
             this.btnThungRac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThungRac.Location = new System.Drawing.Point(556, 44);
+            this.btnThungRac.Location = new System.Drawing.Point(337, 107);
             this.btnThungRac.Margin = new System.Windows.Forms.Padding(2);
             this.btnThungRac.Name = "btnThungRac";
             this.btnThungRac.Size = new System.Drawing.Size(124, 33);
@@ -235,11 +237,40 @@
             this.btnThungRac.UseVisualStyleBackColor = true;
             this.btnThungRac.Click += new System.EventHandler(this.btnThungRac_Click);
             // 
+            // btnNhom
+            // 
+            this.btnNhom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhom.Image = global::QLDanhBa.Properties.Resources.delete;
+            this.btnNhom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhom.Location = new System.Drawing.Point(193, 107);
+            this.btnNhom.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNhom.Name = "btnNhom";
+            this.btnNhom.Size = new System.Drawing.Size(124, 33);
+            this.btnNhom.TabIndex = 15;
+            this.btnNhom.Text = "Nhom";
+            this.btnNhom.UseVisualStyleBackColor = true;
+            this.btnNhom.Click += new System.EventHandler(this.btnNhom_Click);
+            // 
+            // btnShowDBYT
+            // 
+            this.btnShowDBYT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowDBYT.Image = global::QLDanhBa.Properties.Resources.delete;
+            this.btnShowDBYT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowDBYT.Location = new System.Drawing.Point(34, 107);
+            this.btnShowDBYT.Margin = new System.Windows.Forms.Padding(2);
+            this.btnShowDBYT.Name = "btnShowDBYT";
+            this.btnShowDBYT.Size = new System.Drawing.Size(124, 33);
+            this.btnShowDBYT.TabIndex = 16;
+            this.btnShowDBYT.Text = "Danh bạ yêu thích";
+            this.btnShowDBYT.UseVisualStyleBackColor = true;
+            // 
             // fDanhBa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 409);
+            this.Controls.Add(this.btnShowDBYT);
+            this.Controls.Add(this.btnNhom);
             this.Controls.Add(this.btnTuyChon);
             this.Controls.Add(this.btnThungRac);
             this.Controls.Add(this.menuStrip1);
@@ -279,6 +310,8 @@
         private System.Windows.Forms.ToolStripMenuItem xuấtDanhBạToolStripMenuItem;
         private System.Windows.Forms.Button btnThungRac;
         private System.Windows.Forms.Button btnTuyChon;
+        private System.Windows.Forms.Button btnNhom;
+        private System.Windows.Forms.Button btnShowDBYT;
     }
 }
 

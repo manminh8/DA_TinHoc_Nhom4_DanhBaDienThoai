@@ -18,9 +18,10 @@ namespace QLDanhBa
 {
     public partial class fDanhBa : Form
     {
-        private string searchType;
+        private string searchType; //Lưu loại tìm kiếm 
         private CXulyDanhBa xulyDB;
         private CXulyRac xulyRac;
+        private CXulyNhom xulyNhom;
 
         private void hienthi()
         {
@@ -33,8 +34,13 @@ namespace QLDanhBa
             InitializeComponent();
             xulyDB = new CXulyDanhBa();
             xulyRac = new CXulyRac();
-            xulyDB.autoLoad();
-            xulyRac.autoLoadRac();
+            //Kiểm tra file có tồn tại để đọc dữ liệu
+            if (File.Exists("DanhBa.json"))
+                xulyDB.autoLoad();
+            if (File.Exists("TrashData.json"))
+                xulyRac.autoLoadRac();
+            if (File.Exists("ListNhom.json"))
+                xulyNhom.autoLoad();
             hienthi();
         }
 
@@ -121,7 +127,7 @@ namespace QLDanhBa
         }
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
-        { 
+        {
             var cb = sender as ComboBox;
             if (cb != null)
             {
@@ -140,25 +146,31 @@ namespace QLDanhBa
                     if (item.Sdt.Contains(search))
                     {
                         listSearch.Add(item);
-                        dgvDanhBa.DataSource = null;
-                        dgvDanhBa.DataSource = listSearch;
                     }
-                }else if (searchType == "Tên")
+                }
+                else if (searchType == "Tên")
                 {
                     if (item.Ten.Contains(search))
                     {
                         listSearch.Add(item);
-                        dgvDanhBa.DataSource = null;
-                        dgvDanhBa.DataSource = listSearch;
                     }
-                }else if(searchType == "Tên cơ quan")
+                }
+                else if (searchType == "Tên cơ quan")
                 {
                     if (item.Tencoquan.Contains(search))
                     {
                         listSearch.Add(item);
-                        dgvDanhBa.DataSource = null;
-                        dgvDanhBa.DataSource = listSearch;
                     }
+                }
+
+                if (listSearch.Count == 0)
+                {
+                    dgvDanhBa.DataSource = null; // Làm rỗng dgv
+                }
+                else
+                {
+                    dgvDanhBa.DataSource = null;
+                    dgvDanhBa.DataSource = listSearch;
                 }
             }
         }
@@ -179,6 +191,14 @@ namespace QLDanhBa
             {
                 MessageBox.Show("Chọn Không Hợp Lệ!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnNhom_Click(object sender, EventArgs e)
+        {
+            fNhom frmNhom = new fNhom();
+            frmNhom.FormClosed += (s, args) => this.Show();
+            this.Hide();
+            frmNhom.ShowDialog();
         }
     }
 }
