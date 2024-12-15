@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ScrollBar;
 
 namespace QLDanhBa
 {
@@ -37,7 +38,7 @@ namespace QLDanhBa
             };
             this.Hide();
             fTN.ShowDialog();
-            
+
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -60,6 +61,7 @@ namespace QLDanhBa
         {
             if (dgvNhom.SelectedRows.Count > 0)
             {
+
                 CNhom nhom = (CNhom)dgvNhom.SelectedRows[0].DataBoundItem;
                 string tennhom = nhom.Tennhom;
 
@@ -72,6 +74,22 @@ namespace QLDanhBa
                 };
                 this.Hide();
                 fCTN.ShowDialog();
+            }
+        }
+        public void xoaDong()
+        {
+          BindingSource bs=(BindingSource)dgvNhom.DataSource;
+            bs.RemoveCurrent();
+        }
+        private void dgvNhom_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {          
+            foreach (DataGridViewRow row in dgvNhom.Rows)
+            {
+                if (string.IsNullOrWhiteSpace(row.Cells[0].Value.ToString()))
+                {
+                    MessageBox.Show("Không Thể Để Trống Tên Nhóm", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);                
+                }
+                xoaDong();
             }
         }
     }

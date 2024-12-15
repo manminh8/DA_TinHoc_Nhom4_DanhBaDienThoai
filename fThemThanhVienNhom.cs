@@ -56,5 +56,10 @@ namespace QLDanhBa
                 MessageBox.Show("Chọn liên hệ để thêm");
             }
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -49,12 +49,16 @@ namespace QLDanhBa
         private void btnLuu_Click(object sender, EventArgs e)
         {
             CNhom c = xulyNhom.tim(tenNhomcu);
+            if (string.IsNullOrWhiteSpace(txtTennhom.Text.Trim()))
+            {
+                return;
+            }
             if (c.Tennhom == txtTennhom.Text)
             {
-                foreach(CDanhBa db in dsDB) 
+                foreach (CDanhBa db in dsDB)    
                     xulyNhom.ThemDanhBaVaoNhom(c.Tennhom, db);
             }
-            if (xulyNhom.tim(txtTennhom.Text) == null)
+            else if (xulyNhom.tim(txtTennhom.Text) == null)
             {
                 xulyNhom.taoNhom(txtTennhom.Text);
                 foreach (CDanhBa db in dsDB)
@@ -68,7 +72,7 @@ namespace QLDanhBa
             {
                 MessageBox.Show("Tên nhóm bị trùng");
                 txtTennhom.Focus();
-            }
+            }          
         }
 
         private void btnThemThanhVien_Click(object sender, EventArgs e)
@@ -81,6 +85,11 @@ namespace QLDanhBa
                 this.Show();
             }; this.Hide();
             frm.ShowDialog();
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
