@@ -1,6 +1,6 @@
 ﻿namespace QLDanhBa
 {
-    partial class fChiTietNhom
+    partial class fThemNhom
     {
         /// <summary>
         /// Required designer variable.
@@ -28,86 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.txtTenNhom = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTennhom = new System.Windows.Forms.TextBox();
+            this.dgvThemNhom = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnThemThanhVien = new System.Windows.Forms.Button();
-            this.dgvChiTietNhom = new System.Windows.Forms.DataGridView();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietNhom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThemNhom)).BeginInit();
             this.SuspendLayout();
+            // 
+            // txtTenNhom
+            // 
+            this.txtTenNhom.Location = new System.Drawing.Point(83, 43);
+            this.txtTenNhom.Name = "txtTenNhom";
+            this.txtTenNhom.Size = new System.Drawing.Size(100, 20);
+            this.txtTenNhom.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 15);
+            this.label1.Location = new System.Drawing.Point(20, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tên nhóm";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Tên Nhóm";
             // 
-            // txtTennhom
+            // dgvThemNhom
             // 
-            this.txtTennhom.Location = new System.Drawing.Point(160, 12);
-            this.txtTennhom.Name = "txtTennhom";
-            this.txtTennhom.Size = new System.Drawing.Size(205, 20);
-            this.txtTennhom.TabIndex = 1;
+            this.dgvThemNhom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThemNhom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvThemNhom.Location = new System.Drawing.Point(0, 219);
+            this.dgvThemNhom.Name = "dgvThemNhom";
+            this.dgvThemNhom.Size = new System.Drawing.Size(541, 315);
+            this.dgvThemNhom.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 203);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Danh bạ đã chọn";
             // 
             // btnThemThanhVien
             // 
-            this.btnThemThanhVien.Location = new System.Drawing.Point(173, 105);
+            this.btnThemThanhVien.Location = new System.Drawing.Point(288, 41);
             this.btnThemThanhVien.Name = "btnThemThanhVien";
             this.btnThemThanhVien.Size = new System.Drawing.Size(118, 23);
-            this.btnThemThanhVien.TabIndex = 2;
+            this.btnThemThanhVien.TabIndex = 4;
             this.btnThemThanhVien.Text = "Thêm Thành Viên";
             this.btnThemThanhVien.UseVisualStyleBackColor = true;
             this.btnThemThanhVien.Click += new System.EventHandler(this.btnThemThanhVien_Click);
             // 
-            // dgvChiTietNhom
-            // 
-            this.dgvChiTietNhom.AllowUserToAddRows = false;
-            this.dgvChiTietNhom.AllowUserToDeleteRows = false;
-            this.dgvChiTietNhom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChiTietNhom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvChiTietNhom.Location = new System.Drawing.Point(0, 259);
-            this.dgvChiTietNhom.Name = "dgvChiTietNhom";
-            this.dgvChiTietNhom.ReadOnly = true;
-            this.dgvChiTietNhom.Size = new System.Drawing.Size(487, 191);
-            this.dgvChiTietNhom.TabIndex = 3;
-            // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(358, 190);
+            this.btnLuu.Location = new System.Drawing.Point(250, 140);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 23);
-            this.btnLuu.TabIndex = 4;
+            this.btnLuu.TabIndex = 5;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(70, 190);
+            this.btnHuy.Location = new System.Drawing.Point(375, 138);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 25);
-            this.btnHuy.TabIndex = 5;
+            this.btnHuy.TabIndex = 6;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             // 
-            // fChiTietNhom
+            // fThemNhom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 450);
+            this.ClientSize = new System.Drawing.Size(541, 534);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
-            this.Controls.Add(this.dgvChiTietNhom);
             this.Controls.Add(this.btnThemThanhVien);
-            this.Controls.Add(this.txtTennhom);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dgvThemNhom);
             this.Controls.Add(this.label1);
-            this.Name = "fChiTietNhom";
-            this.Text = "fChiTietNhom";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietNhom)).EndInit();
+            this.Controls.Add(this.txtTenNhom);
+            this.Name = "fThemNhom";
+            this.Text = "fThemNhom";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThemNhom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,10 +123,11 @@
 
         #endregion
 
+        private System.Windows.Forms.TextBox txtTenNhom;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTennhom;
+        private System.Windows.Forms.DataGridView dgvThemNhom;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnThemThanhVien;
-        private System.Windows.Forms.DataGridView dgvChiTietNhom;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnHuy;
     }

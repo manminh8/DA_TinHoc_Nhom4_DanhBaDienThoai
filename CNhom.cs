@@ -9,7 +9,7 @@ namespace QLDanhBa
     public class CNhom
     {
         private string m_tenNhom;
-        private List<CDanhBa> m_dsDanhBa; //Danh danh ba
+        private List<CDanhBa> m_dsDanhBa; //Danh sach danh ba
         public string Tennhom { get => m_tenNhom; set => m_tenNhom = value; }
         public List<CDanhBa> DsDanhBa { get;set; }
 

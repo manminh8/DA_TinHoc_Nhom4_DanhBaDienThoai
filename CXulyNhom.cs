@@ -6,9 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace QLDanhBa
 {
+    [Serializable]
     public class CXulyNhom
     {
         private List<CNhom> m_lstNhom;
@@ -75,6 +77,11 @@ namespace QLDanhBa
                 return nhom.xoaDanhBa(sdt);
             }
             return false;
+        }
+        public void LuuDanhSachVaoFile()
+        {
+            string json = JsonConvert.SerializeObject(m_lstNhom);
+            File.WriteAllText("danhba.json", json);
         }
         public void autoLoad()
         {

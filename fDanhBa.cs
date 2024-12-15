@@ -76,10 +76,6 @@ namespace QLDanhBa
             }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            hienthi();
-        }
 
         private void FrmSua_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -108,11 +104,6 @@ namespace QLDanhBa
             BindingSource bs = new BindingSource();
             bs.DataSource = xulyDB.getDanhBa();
             comboBox1.DataSource = bs;
-        }
-
-        private void btnReFresh_Click(object sender, EventArgs e)
-        {
-            hienthi();
         }
         private void fDanhBa_FormClosing(object sender, FormClosingEventArgs e)
         {

@@ -31,8 +31,9 @@
             this.eventLog1 = new System.Diagnostics.EventLog();
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvNhom = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTenNhom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXoa = new System.Windows.Forms.Button();
+            this.btnXemChiTiet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhom)).BeginInit();
             this.SuspendLayout();
@@ -57,27 +58,25 @@
             this.dgvNhom.AllowUserToDeleteRows = false;
             this.dgvNhom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
+            this.ColumnTenNhom});
             this.dgvNhom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvNhom.Location = new System.Drawing.Point(0, 105);
             this.dgvNhom.Name = "dgvNhom";
-            this.dgvNhom.ReadOnly = true;
             this.dgvNhom.Size = new System.Drawing.Size(281, 396);
             this.dgvNhom.TabIndex = 1;
             // 
-            // Column1
+            // ColumnTenNhom
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column1.DataPropertyName = "Tennhom";
-            this.Column1.HeaderText = "Tên Nhóm";
-            this.Column1.MinimumWidth = 55;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 150;
+            this.ColumnTenNhom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColumnTenNhom.DataPropertyName = "Tennhom";
+            this.ColumnTenNhom.HeaderText = "Tên Nhóm";
+            this.ColumnTenNhom.MinimumWidth = 55;
+            this.ColumnTenNhom.Name = "ColumnTenNhom";
+            this.ColumnTenNhom.Width = 150;
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(189, 12);
+            this.btnXoa.Location = new System.Drawing.Point(98, 12);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(80, 39);
             this.btnXoa.TabIndex = 2;
@@ -85,11 +84,22 @@
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
+            // btnXemChiTiet
+            // 
+            this.btnXemChiTiet.Location = new System.Drawing.Point(184, 12);
+            this.btnXemChiTiet.Name = "btnXemChiTiet";
+            this.btnXemChiTiet.Size = new System.Drawing.Size(80, 39);
+            this.btnXemChiTiet.TabIndex = 3;
+            this.btnXemChiTiet.Text = "Xem Nhóm";
+            this.btnXemChiTiet.UseVisualStyleBackColor = true;
+            this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
+            // 
             // fNhom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(281, 501);
+            this.Controls.Add(this.btnXemChiTiet);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.dgvNhom);
             this.Controls.Add(this.btnThem);
@@ -106,7 +116,8 @@
         private System.Diagnostics.EventLog eventLog1;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dgvNhom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTenNhom;
+        private System.Windows.Forms.Button btnXemChiTiet;
     }
 }

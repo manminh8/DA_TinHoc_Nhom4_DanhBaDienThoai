@@ -23,20 +23,59 @@ namespace QLDanhBa
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            fChiTietNhom frm = new fChiTietNhom();
-            frm.FormClosed += (s, args) => this.Show();
+            fThemNhom fTN = new fThemNhom();
+            fTN.FormClosed += (s, args) =>
+            {
+                hienthiNhom();
+                this.Show();
+            };
             this.Hide();
-            frm.ShowDialog();
+            fTN.ShowDialog();
+            
         }
 
-        void hienthiNhom()
+        public void hienthiNhom()
         {
-            dgvNhom.DataSource = xulyNhom.getDSNhom();
+            BindingSource bs = new BindingSource();
+            bs.DataSource = xulyNhom.getDSNhom();
+            dgvNhom.DataSource = bs;
         }
+
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (dgvNhom.SelectedRows.Count > 0)
+            {
+                CNhom nhom = (CNhom)dgvNhom.SelectedRows[0].DataBoundItem;
+                string tennhom = nhom.Tennhom;
+                if (xulyNhom.XoaNhom(tennhom))
+                {
+                    hienthiNhom();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Chọn một nhóm để xóa");
+            }
+        }
 
+        private void btnXemChiTiet_Click(object sender, EventArgs e)
+        {
+            if (dgvNhom.SelectedRows.Count > 0)
+            {
+                CNhom nhom = (CNhom)dgvNhom.SelectedRows[0].DataBoundItem;
+                string tennhom = nhom.Tennhom;
+
+                fChiTietNhom fCTN = new fChiTietNhom();
+                fCTN.loadChiTietNhom(tennhom);
+                fCTN.FormClosed += (s, args) =>
+                {
+                    hienthiNhom();
+                    this.Show();
+                };
+                this.Hide();
+                fCTN.ShowDialog();
+            }
         }
     }
 }
