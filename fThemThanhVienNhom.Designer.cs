@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.dgvDanhBaTV = new System.Windows.Forms.DataGridView();
+            this.btnXacNhan = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tencoquan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnXacNhan = new System.Windows.Forms.Button();
-            this.btnHuy = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhBaTV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,46 +59,6 @@
             this.dgvDanhBaTV.Size = new System.Drawing.Size(696, 242);
             this.dgvDanhBaTV.TabIndex = 1;
             // 
-            // sdt
-            // 
-            this.sdt.DataPropertyName = "Sdt";
-            this.sdt.HeaderText = "Số điện thoại";
-            this.sdt.MinimumWidth = 6;
-            this.sdt.Name = "sdt";
-            this.sdt.Width = 125;
-            // 
-            // ten
-            // 
-            this.ten.DataPropertyName = "Ten";
-            this.ten.HeaderText = "Tên";
-            this.ten.MinimumWidth = 6;
-            this.ten.Name = "ten";
-            this.ten.Width = 125;
-            // 
-            // tencoquan
-            // 
-            this.tencoquan.DataPropertyName = "Tencoquan";
-            this.tencoquan.HeaderText = "Tên cơ quan";
-            this.tencoquan.MinimumWidth = 6;
-            this.tencoquan.Name = "tencoquan";
-            this.tencoquan.Width = 125;
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "Email";
-            this.email.HeaderText = "Email";
-            this.email.MinimumWidth = 6;
-            this.email.Name = "email";
-            this.email.Width = 150;
-            // 
-            // ghichu
-            // 
-            this.ghichu.DataPropertyName = "Ghichu";
-            this.ghichu.HeaderText = "Ghi chú";
-            this.ghichu.MinimumWidth = 6;
-            this.ghichu.Name = "ghichu";
-            this.ghichu.Width = 350;
-            // 
             // btnXacNhan
             // 
             this.btnXacNhan.Location = new System.Drawing.Point(51, 105);
@@ -120,11 +80,51 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(255, 26);
+            this.label1.Location = new System.Drawing.Point(175, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Chọn liên hệ để thêm";
+            // 
+            // sdt
+            // 
+            this.sdt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sdt.DataPropertyName = "Sdt";
+            this.sdt.HeaderText = "Số điện thoại";
+            this.sdt.MinimumWidth = 6;
+            this.sdt.Name = "sdt";
+            // 
+            // ten
+            // 
+            this.ten.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ten.DataPropertyName = "Ten";
+            this.ten.HeaderText = "Tên";
+            this.ten.MinimumWidth = 6;
+            this.ten.Name = "ten";
+            // 
+            // tencoquan
+            // 
+            this.tencoquan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tencoquan.DataPropertyName = "Tencoquan";
+            this.tencoquan.HeaderText = "Tên cơ quan";
+            this.tencoquan.MinimumWidth = 6;
+            this.tencoquan.Name = "tencoquan";
+            // 
+            // email
+            // 
+            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            // 
+            // ghichu
+            // 
+            this.ghichu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ghichu.DataPropertyName = "Ghichu";
+            this.ghichu.HeaderText = "Ghi chú";
+            this.ghichu.MinimumWidth = 6;
+            this.ghichu.Name = "ghichu";
             // 
             // fThemThanhVienNhom
             // 
@@ -146,13 +146,13 @@
         #endregion
 
         public System.Windows.Forms.DataGridView dgvDanhBaTV;
+        private System.Windows.Forms.Button btnXacNhan;
+        private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
         private System.Windows.Forms.DataGridViewTextBoxColumn ten;
         private System.Windows.Forms.DataGridViewTextBoxColumn tencoquan;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn ghichu;
-        private System.Windows.Forms.Button btnXacNhan;
-        private System.Windows.Forms.Button btnHuy;
-        private System.Windows.Forms.Label label1;
     }
 }

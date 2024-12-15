@@ -19,6 +19,13 @@ namespace QLDanhBa
         private List<CDanhBa> dbDienThoai;
         private List<CDanhBa> dsRac;
         private List<CNhom> dsNhom;
+        private CDuLieu()
+        {
+            dbDienThoai = new List<CDanhBa>();
+            dsRac = new List<CDanhBa>();
+            dsNhom = new List<CNhom>();
+        }
+
         public List<CDanhBa> getDanhBa()
         {
             return dbDienThoai;
@@ -31,12 +38,6 @@ namespace QLDanhBa
         {
             return dsNhom;
         }
-        private CDuLieu()
-        {
-            dbDienThoai = new List<CDanhBa>();
-            dsRac = new List<CDanhBa>();
-        }
-
         public static CDuLieu khoiTao()
         {
             if (m_instance == null)

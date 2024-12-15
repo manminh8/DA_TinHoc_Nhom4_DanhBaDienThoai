@@ -39,9 +39,8 @@ namespace QLDanhBa
                 xulyDB.autoLoad();
             if (File.Exists("TrashData.json"))
                 xulyRac.autoLoadRac();
-            if (File.Exists("ListNhom.json"))
-                xulyNhom.autoLoad();
             hienthi();
+ //           hienthiDS();
         }
 
         #region Events
@@ -104,14 +103,17 @@ namespace QLDanhBa
             }
         }
 
+        private void hienthiDS()
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = xulyDB.getDanhBa();
+            comboBox1.DataSource = bs;
+        }
+
         private void btnReFresh_Click(object sender, EventArgs e)
         {
             hienthi();
         }
-
-
-        #endregion
-
         private void fDanhBa_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
@@ -202,3 +204,4 @@ namespace QLDanhBa
         }
     }
 }
+#endregion

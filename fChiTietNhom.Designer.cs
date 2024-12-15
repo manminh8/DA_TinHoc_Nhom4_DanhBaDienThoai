@@ -61,6 +61,7 @@
             this.btnThemThanhVien.TabIndex = 2;
             this.btnThemThanhVien.Text = "Thêm Thành Viên";
             this.btnThemThanhVien.UseVisualStyleBackColor = true;
+            this.btnThemThanhVien.Click += new System.EventHandler(this.btnThemThanhVien_Click);
             // 
             // dgvChiTietNhom
             // 

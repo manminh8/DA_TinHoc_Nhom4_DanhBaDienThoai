@@ -18,13 +18,23 @@ namespace QLDanhBa
             m_lstNhom = CDuLieu.khoiTao().getdsNhom();
         }
 
-        public List<CNhom> lstNhom()
+        public List<CNhom> getDSNhom()
         {
             return m_lstNhom;
         }
-        public void them(CNhom nhom)
+        public List<CDanhBa> layDanhSachDanhBaTrongNhom(string tennhom)
         {
-            m_lstNhom.Add(nhom);
+            CNhom nhom = tim(tennhom);
+            return nhom?.getDSDBNhom();
+        }
+        public bool taoNhom(string tennhom)
+        {
+            if (tim(tennhom) == null)
+            {
+                m_lstNhom.Add(new CNhom(tennhom));
+                return true;
+            }
+            return false;
         }
         public CNhom tim(string tennhom)
         {
@@ -37,25 +47,34 @@ namespace QLDanhBa
             }
             return null;
         }
-        public void xoa(string tennhom)
+        public bool XoaNhom(string tenNhom)
         {
-            CNhom nhom = tim(tennhom);
+            CNhom nhom = tim(tenNhom);
             if (nhom != null)
             {
                 m_lstNhom.Remove(nhom);
+                return true;
             }
+            return false;
         }
-        public void sua(CNhom nhomUpdate)
+        public bool ThemDanhBaVaoNhom(string tenNhom, CDanhBa danhBa)
         {
-            CNhom nhom = tim(nhomUpdate.Tennhom);
-            if(nhom != null)
+            CNhom nhom = tim(tenNhom);
+            if (nhom != null)
             {
-                nhom.Sdt = nhomUpdate.Sdt;
-                nhom.Ten = nhomUpdate.Ten;
-                nhom.Email = nhomUpdate.Email;
-                nhom.Tencoquan = nhomUpdate.Tencoquan;
-                nhom.Danhsach = nhomUpdate.Danhsach;
+                nhom.ThemDanhBa(danhBa);
+                return true;
             }
+            return false;
+        }
+        public bool XoaDanhBaKhoiNhom(string tenNhom, string sdt)
+        {
+            CNhom nhom = tim(tenNhom);
+            if (nhom != null)
+            {
+                return nhom.xoaDanhBa(sdt);
+            }
+            return false;
         }
         public void autoLoad()
         {
