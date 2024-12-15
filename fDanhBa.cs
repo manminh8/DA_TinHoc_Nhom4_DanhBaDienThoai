@@ -28,21 +28,28 @@ namespace QLDanhBa
             BindingSource bs = new BindingSource();
             bs.DataSource = xulyDB.getDanhBa();
             dgvDanhBa.DataSource = bs;
+            foreach (DataGridViewColumn dataGridViewColumn in dgvDanhBa.Columns)
+            {
+                if (dataGridViewColumn.Name == "Danhsach")
+                {
+                    dataGridViewColumn.Visible = false;
+                    break;
+                }
+            }
         }
         public fDanhBa()
         {
             InitializeComponent();
             xulyDB = new CXulyDanhBa();
             xulyRac = new CXulyRac();
+            xulyNhom = new CXulyNhom();
             //Kiểm tra file có tồn tại để đọc dữ liệu
             if (File.Exists("DanhBa.json"))
                 xulyDB.autoLoad();
             if (File.Exists("TrashData.json"))
                 xulyRac.autoLoadRac();
             hienthi();
- //           hienthiDS();
         }
-
         #region Events
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -77,10 +84,6 @@ namespace QLDanhBa
         }
 
 
-        private void FrmSua_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -99,12 +102,6 @@ namespace QLDanhBa
             }
         }
 
-        private void hienthiDS()
-        {
-            BindingSource bs = new BindingSource();
-            bs.DataSource = xulyDB.getDanhBa();
-            comboBox1.DataSource = bs;
-        }
         private void fDanhBa_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
@@ -189,7 +186,11 @@ namespace QLDanhBa
         private void btnNhom_Click(object sender, EventArgs e)
         {
             fNhom frmNhom = new fNhom();
-            frmNhom.FormClosed += (s, args) => this.Show();
+            frmNhom.FormClosed += (s, args) =>
+            {
+                this.Show();
+                xulyNhom.LuuDanhSachVaoFile();
+            };
             this.Hide();
             frmNhom.ShowDialog();
         }

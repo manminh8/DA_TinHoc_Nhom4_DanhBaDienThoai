@@ -20,7 +20,13 @@ namespace QLDanhBa
 
             hienthiNhom();
         }
-
+        public void hienthiNhom()
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = xulyNhom.getDSNhom();
+            dgvNhom.DataSource = bs;
+        }
+        #region Events
         private void btnThem_Click(object sender, EventArgs e)
         {
             fThemNhom fTN = new fThemNhom();
@@ -33,15 +39,6 @@ namespace QLDanhBa
             fTN.ShowDialog();
             
         }
-
-        public void hienthiNhom()
-        {
-            BindingSource bs = new BindingSource();
-            bs.DataSource = xulyNhom.getDSNhom();
-            dgvNhom.DataSource = bs;
-        }
-
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (dgvNhom.SelectedRows.Count > 0)
@@ -78,4 +75,5 @@ namespace QLDanhBa
             }
         }
     }
+    #endregion
 }

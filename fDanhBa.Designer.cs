@@ -126,7 +126,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(323, 50);
+            this.txtSearch.Location = new System.Drawing.Point(322, 46);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(265, 26);
@@ -214,10 +214,10 @@
             this.btnTuyChon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTuyChon.Image = global::QLDanhBa.Properties.Resources.option;
             this.btnTuyChon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTuyChon.Location = new System.Drawing.Point(556, 107);
+            this.btnTuyChon.Location = new System.Drawing.Point(537, 107);
             this.btnTuyChon.Margin = new System.Windows.Forms.Padding(2);
             this.btnTuyChon.Name = "btnTuyChon";
-            this.btnTuyChon.Size = new System.Drawing.Size(124, 29);
+            this.btnTuyChon.Size = new System.Drawing.Size(124, 35);
             this.btnTuyChon.TabIndex = 14;
             this.btnTuyChon.Text = "Tùy chọn";
             this.btnTuyChon.UseVisualStyleBackColor = true;
@@ -228,10 +228,10 @@
             this.btnThungRac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThungRac.Image = global::QLDanhBa.Properties.Resources.delete;
             this.btnThungRac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThungRac.Location = new System.Drawing.Point(337, 107);
+            this.btnThungRac.Location = new System.Drawing.Point(374, 107);
             this.btnThungRac.Margin = new System.Windows.Forms.Padding(2);
             this.btnThungRac.Name = "btnThungRac";
-            this.btnThungRac.Size = new System.Drawing.Size(124, 33);
+            this.btnThungRac.Size = new System.Drawing.Size(124, 35);
             this.btnThungRac.TabIndex = 13;
             this.btnThungRac.Text = "Thùng rác";
             this.btnThungRac.UseVisualStyleBackColor = true;
@@ -240,14 +240,13 @@
             // btnNhom
             // 
             this.btnNhom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhom.Image = global::QLDanhBa.Properties.Resources.delete;
             this.btnNhom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhom.Location = new System.Drawing.Point(193, 107);
+            this.btnNhom.Location = new System.Drawing.Point(206, 107);
             this.btnNhom.Margin = new System.Windows.Forms.Padding(2);
             this.btnNhom.Name = "btnNhom";
-            this.btnNhom.Size = new System.Drawing.Size(124, 33);
+            this.btnNhom.Size = new System.Drawing.Size(124, 35);
             this.btnNhom.TabIndex = 15;
-            this.btnNhom.Text = "Nhom";
+            this.btnNhom.Text = "Nhóm";
             this.btnNhom.UseVisualStyleBackColor = true;
             this.btnNhom.Click += new System.EventHandler(this.btnNhom_Click);
             // 
@@ -256,7 +255,7 @@
             this.btnShowDBYT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowDBYT.Image = global::QLDanhBa.Properties.Resources.delete;
             this.btnShowDBYT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShowDBYT.Location = new System.Drawing.Point(34, 107);
+            this.btnShowDBYT.Location = new System.Drawing.Point(34, 109);
             this.btnShowDBYT.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowDBYT.Name = "btnShowDBYT";
             this.btnShowDBYT.Size = new System.Drawing.Size(124, 33);

@@ -81,7 +81,7 @@ namespace QLDanhBa
         public void LuuDanhSachVaoFile()
         {
             string json = JsonConvert.SerializeObject(m_lstNhom);
-            File.WriteAllText("danhba.json", json);
+            File.WriteAllText("danhba1.json", json);
         }
         public void autoLoad()
         {
