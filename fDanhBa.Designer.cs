@@ -49,6 +49,7 @@
             this.btnThungRac = new System.Windows.Forms.Button();
             this.btnNhom = new System.Windows.Forms.Button();
             this.btnShowDBYT = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhBa)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -116,7 +117,7 @@
             // 
             this.lblTimKiem.AutoSize = true;
             this.lblTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimKiem.Location = new System.Drawing.Point(115, 53);
+            this.lblTimKiem.Location = new System.Drawing.Point(37, 55);
             this.lblTimKiem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTimKiem.Name = "lblTimKiem";
             this.lblTimKiem.Size = new System.Drawing.Size(71, 20);
@@ -126,7 +127,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(322, 46);
+            this.txtSearch.Location = new System.Drawing.Point(244, 48);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(265, 26);
@@ -141,7 +142,7 @@
             "Tên",
             "Số điện thoại",
             "Tên cơ quan"});
-            this.comboBox1.Location = new System.Drawing.Point(193, 46);
+            this.comboBox1.Location = new System.Drawing.Point(115, 48);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(115, 28);
@@ -263,11 +264,26 @@
             this.btnShowDBYT.Text = "Danh bạ yêu thích";
             this.btnShowDBYT.UseVisualStyleBackColor = true;
             // 
+            // btnLuu
+            // 
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Image = global::QLDanhBa.Properties.Resources.option;
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.Location = new System.Drawing.Point(537, 48);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(124, 35);
+            this.btnLuu.TabIndex = 17;
+            this.btnLuu.Text = "Lưu nhóm";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
+            // 
             // fDanhBa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 409);
+            this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnShowDBYT);
             this.Controls.Add(this.btnNhom);
             this.Controls.Add(this.btnTuyChon);
@@ -311,6 +327,7 @@
         private System.Windows.Forms.Button btnTuyChon;
         private System.Windows.Forms.Button btnNhom;
         private System.Windows.Forms.Button btnShowDBYT;
+        private System.Windows.Forms.Button btnLuu;
     }
 }
 

@@ -64,7 +64,6 @@
             this.dgvNhom.Name = "dgvNhom";
             this.dgvNhom.Size = new System.Drawing.Size(281, 396);
             this.dgvNhom.TabIndex = 1;
-            this.dgvNhom.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvNhom_RowsAdded);
             // 
             // ColumnTenNhom
             // 

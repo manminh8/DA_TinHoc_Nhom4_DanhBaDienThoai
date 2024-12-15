@@ -76,22 +76,6 @@ namespace QLDanhBa
                 fCTN.ShowDialog();
             }
         }
-        public void xoaDong()
-        {
-          BindingSource bs=(BindingSource)dgvNhom.DataSource;
-            bs.RemoveCurrent();
-        }
-        private void dgvNhom_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {          
-            foreach (DataGridViewRow row in dgvNhom.Rows)
-            {
-                if (string.IsNullOrWhiteSpace(row.Cells[0].Value.ToString()))
-                {
-                    MessageBox.Show("Không Thể Để Trống Tên Nhóm", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);                
-                }
-                xoaDong();
-            }
-        }
     }
     #endregion
 }

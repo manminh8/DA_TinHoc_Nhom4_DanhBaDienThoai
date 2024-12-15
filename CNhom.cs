@@ -11,12 +11,15 @@ namespace QLDanhBa
         private string m_tenNhom;
         private List<CDanhBa> m_dsDanhBa; //Danh sach danh ba
         public string Tennhom { get => m_tenNhom; set => m_tenNhom = value; }
-        public List<CDanhBa> DsDanhBa { get;set; }
+        public List<CDanhBa> DsDanhBa {
+            get => m_dsDanhBa;
+            set => m_dsDanhBa = value;
+        }
 
         public CNhom(string tennhom)
         {
             Tennhom = tennhom;
-            m_dsDanhBa = new List<CDanhBa>();
+            DsDanhBa = new List<CDanhBa>();
         }
         public List<CDanhBa> getDSDBNhom() { return m_dsDanhBa; }
 

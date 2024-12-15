@@ -51,7 +51,8 @@ namespace QLDanhBa
             CNhom c = xulyNhom.tim(tenNhomcu);
             if (string.IsNullOrWhiteSpace(txtTennhom.Text.Trim()))
             {
-                return;
+                MessageBox.Show("Tên nhóm không hợp lệ");
+                txtTennhom.Focus();
             }
             if (c.Tennhom == txtTennhom.Text)
             {

@@ -53,14 +53,22 @@ namespace QLDanhBa
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (xulyNhom.tim(txtTenNhom.Text)==null)
+            if (xulyNhom.tim(txtTenNhom.Text) == null)
             {
-                xulyNhom.taoNhom(txtTenNhom.Text);
-                foreach (CDanhBa db in dsDB)
+                if (txtTenNhom.Text == string.Empty)
                 {
-                    xulyNhom.ThemDanhBaVaoNhom(txtTenNhom.Text, db);
+                    MessageBox.Show("Không được để trống tên nhóm");
+                    txtTenNhom.Focus();
                 }
-                this.Close();
+                else
+                {
+                    xulyNhom.taoNhom(txtTenNhom.Text);
+                    foreach (CDanhBa db in dsDB)
+                    {
+                        xulyNhom.ThemDanhBaVaoNhom(txtTenNhom.Text, db);
+                    }
+                    this.Close();
+                }
             }
             else
             {

@@ -78,10 +78,22 @@ namespace QLDanhBa
             }
             return false;
         }
-        public void LuuDanhSachVaoFile()
+        public void GhiFileJson(string filePath, List<CNhom> danhSachNhom)
         {
-            string json = JsonConvert.SerializeObject(m_lstNhom);
-            File.WriteAllText("danhba1.json", json);
+            try
+            {
+                // Chuyển danh sách nhóm sang chuỗi JSON
+                string json = JsonConvert.SerializeObject(danhSachNhom, Formatting.Indented);
+
+                // Ghi chuỗi JSON vào file
+                File.WriteAllText(filePath, json);
+
+                Console.WriteLine("Dữ liệu đã được ghi thành công vào file.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi ghi file JSON: " + ex.Message);
+            }
         }
         public void autoLoad()
         {

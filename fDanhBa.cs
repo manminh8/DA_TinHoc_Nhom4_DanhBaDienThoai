@@ -189,10 +189,14 @@ namespace QLDanhBa
             frmNhom.FormClosed += (s, args) =>
             {
                 this.Show();
-                xulyNhom.LuuDanhSachVaoFile();
             };
             this.Hide();
             frmNhom.ShowDialog();
+        }
+
+        private void btnLuu_Click_1(object sender, EventArgs e)
+        {
+            xulyNhom.GhiFileJson("JSON.json", xulyNhom.getDSNhom());
         }
     }
 }
