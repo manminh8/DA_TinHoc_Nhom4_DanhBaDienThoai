@@ -43,10 +43,9 @@ namespace QLDanhBa
             xulyDB = new CXulyDanhBa();
             xulyRac = new CXulyRac();
             xulyNhom = new CXulyNhom();
-            //Kiểm tra file có tồn tại để đọc dữ liệu
-            if (File.Exists("DanhBa.json"))
+            if(File.Exists("DanhBa.json"))
                 xulyDB.autoLoad();
-            if (File.Exists("TrashData.json"))
+            if(File.Exists("TrashData.json"))
                 xulyRac.autoLoadRac();
             hienthi();
         }
@@ -60,7 +59,7 @@ namespace QLDanhBa
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (xulyDB.saveFileJSON(xulyDB.getDanhBa()))
+            if (xulyDB.saveFileJSON())
             {
                 MessageBox.Show("Lưu Dữ Liệu Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -79,7 +78,7 @@ namespace QLDanhBa
             }
             else
             {
-                MessageBox.Show("Đã Tải Dữ Liệu Không Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tải Dữ Liệu Không Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -196,7 +195,7 @@ namespace QLDanhBa
 
         private void btnLuu_Click_1(object sender, EventArgs e)
         {
-            xulyNhom.GhiFileJson("JSON.json", xulyNhom.getDSNhom());
+            xulyNhom.GhiFileJson("JSON.json");
         }
     }
 }

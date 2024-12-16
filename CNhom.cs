@@ -23,6 +23,15 @@ namespace QLDanhBa
         }
         public List<CDanhBa> getDSDBNhom() { return m_dsDanhBa; }
 
+        public CDanhBa tim(string sdt)
+        {
+            foreach (CDanhBa db in m_dsDanhBa)
+            {
+                if (db.Sdt == sdt)
+                    return db;
+            }
+            return null;
+        }
         public void ThemDanhBa(CDanhBa danhBa)
         {
             if (danhBa != null && !m_dsDanhBa.Contains(danhBa))
@@ -32,7 +41,7 @@ namespace QLDanhBa
         }
         public bool xoaDanhBa(string sdt)
         {
-            CDanhBa db = new CDanhBa();
+            CDanhBa db = tim(sdt);
             if (db.Sdt == sdt)
             {
                 if (db != null)

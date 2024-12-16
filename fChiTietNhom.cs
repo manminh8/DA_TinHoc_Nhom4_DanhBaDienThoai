@@ -92,5 +92,16 @@ namespace QLDanhBa
         {
 
         }
+
+        private void btnXoaThanhVien_Click(object sender, EventArgs e)
+        {
+            CNhom nhom = xulyNhom.tim(txtTennhom.Text);
+            if (dgvChiTietNhom.SelectedRows.Count > 0)
+            {
+                CDanhBa db = (CDanhBa)dgvChiTietNhom.SelectedRows[0].DataBoundItem;
+                nhom.xoaDanhBa(db.Sdt);
+                hienthi();
+            }
+        }
     }
 }

@@ -78,12 +78,12 @@ namespace QLDanhBa
             }
             return false;
         }
-        public void GhiFileJson(string filePath, List<CNhom> danhSachNhom)
+        public void GhiFileJson(string filePath)
         {
             try
             {
                 // Chuyển danh sách nhóm sang chuỗi JSON
-                string json = JsonConvert.SerializeObject(danhSachNhom, Formatting.Indented);
+                string json = JsonConvert.SerializeObject(m_lstNhom, Formatting.Indented);
 
                 // Ghi chuỗi JSON vào file
                 File.WriteAllText(filePath, json);

@@ -81,9 +81,6 @@ namespace QLDanhBa
         }
         public bool autoLoad()
         {
-            // Kiểm tra file có tồn tại hay không
-            if (File.Exists("DanhBa.json"))
-            {
                 try
                 {
                     // Đọc nội dung file
@@ -102,14 +99,8 @@ namespace QLDanhBa
                     MessageBox.Show(ex.Message);
                     return false;
                 }
-            }
-            else
-            {
-                // File không tồn tại, không load
-                return false;
-            }
         }
-        public bool saveFileJSON(object data)
+        public bool saveFileJSON()
         {
             try
             {

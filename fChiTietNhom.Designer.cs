@@ -34,6 +34,7 @@
             this.dgvChiTietNhom = new System.Windows.Forms.DataGridView();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
+            this.btnXoaThanhVien = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietNhom)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             // 
             // btnThemThanhVien
             // 
-            this.btnThemThanhVien.Location = new System.Drawing.Point(173, 105);
+            this.btnThemThanhVien.Location = new System.Drawing.Point(121, 107);
             this.btnThemThanhVien.Name = "btnThemThanhVien";
             this.btnThemThanhVien.Size = new System.Drawing.Size(118, 23);
             this.btnThemThanhVien.TabIndex = 2;
@@ -95,11 +96,22 @@
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
+            // btnXoaThanhVien
+            // 
+            this.btnXoaThanhVien.Location = new System.Drawing.Point(267, 107);
+            this.btnXoaThanhVien.Name = "btnXoaThanhVien";
+            this.btnXoaThanhVien.Size = new System.Drawing.Size(118, 23);
+            this.btnXoaThanhVien.TabIndex = 6;
+            this.btnXoaThanhVien.Text = "Xóa Thành Viên";
+            this.btnXoaThanhVien.UseVisualStyleBackColor = true;
+            this.btnXoaThanhVien.Click += new System.EventHandler(this.btnXoaThanhVien_Click);
+            // 
             // fChiTietNhom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(487, 450);
+            this.Controls.Add(this.btnXoaThanhVien);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.dgvChiTietNhom);
@@ -122,5 +134,6 @@
         private System.Windows.Forms.DataGridView dgvChiTietNhom;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Button btnXoaThanhVien;
     }
 }
