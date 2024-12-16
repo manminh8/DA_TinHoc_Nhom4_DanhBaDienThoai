@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fDanhBa));
             this.dgvDanhBa = new System.Windows.Forms.DataGridView();
+            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tencoquan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTimKiem = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -46,11 +51,6 @@
             this.btnNhom = new System.Windows.Forms.Button();
             this.btnTuyChon = new System.Windows.Forms.Button();
             this.btnThungRac = new System.Windows.Forms.Button();
-            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tencoquan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhBa)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +73,48 @@
             this.dgvDanhBa.RowTemplate.Height = 24;
             this.dgvDanhBa.Size = new System.Drawing.Size(838, 242);
             this.dgvDanhBa.TabIndex = 0;
+            // 
+            // sdt
+            // 
+            this.sdt.DataPropertyName = "Sdt";
+            this.sdt.HeaderText = "Số điện thoại";
+            this.sdt.MinimumWidth = 6;
+            this.sdt.Name = "sdt";
+            this.sdt.Width = 125;
+            // 
+            // ten
+            // 
+            this.ten.DataPropertyName = "Ten";
+            this.ten.HeaderText = "Tên";
+            this.ten.MinimumWidth = 6;
+            this.ten.Name = "ten";
+            this.ten.Width = 125;
+            // 
+            // tencoquan
+            // 
+            this.tencoquan.DataPropertyName = "Tencoquan";
+            this.tencoquan.HeaderText = "Tên cơ quan";
+            this.tencoquan.MinimumWidth = 6;
+            this.tencoquan.Name = "tencoquan";
+            this.tencoquan.Width = 125;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.email.Width = 150;
+            // 
+            // ghichu
+            // 
+            this.ghichu.DataPropertyName = "Ghichu";
+            this.ghichu.HeaderText = "Ghi chú";
+            this.ghichu.MinimumWidth = 6;
+            this.ghichu.Name = "ghichu";
+            this.ghichu.Width = 350;
             // 
             // lblTimKiem
             // 
@@ -176,7 +218,7 @@
             this.btnChiaSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChiaSe.Image = global::QLDanhBa.Properties.Resources.share;
             this.btnChiaSe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChiaSe.Location = new System.Drawing.Point(693, 73);
+            this.btnChiaSe.Location = new System.Drawing.Point(693, 77);
             this.btnChiaSe.Margin = new System.Windows.Forms.Padding(2);
             this.btnChiaSe.Name = "btnChiaSe";
             this.btnChiaSe.Size = new System.Drawing.Size(124, 35);
@@ -253,48 +295,6 @@
             this.btnThungRac.Text = "Thùng rác";
             this.btnThungRac.UseVisualStyleBackColor = true;
             this.btnThungRac.Click += new System.EventHandler(this.btnThungRac_Click);
-            // 
-            // sdt
-            // 
-            this.sdt.DataPropertyName = "Sdt";
-            this.sdt.HeaderText = "Số điện thoại";
-            this.sdt.MinimumWidth = 6;
-            this.sdt.Name = "sdt";
-            this.sdt.Width = 125;
-            // 
-            // ten
-            // 
-            this.ten.DataPropertyName = "Ten";
-            this.ten.HeaderText = "Tên";
-            this.ten.MinimumWidth = 6;
-            this.ten.Name = "ten";
-            this.ten.Width = 125;
-            // 
-            // tencoquan
-            // 
-            this.tencoquan.DataPropertyName = "Tencoquan";
-            this.tencoquan.HeaderText = "Tên cơ quan";
-            this.tencoquan.MinimumWidth = 6;
-            this.tencoquan.Name = "tencoquan";
-            this.tencoquan.Width = 125;
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "Email";
-            this.email.HeaderText = "Email";
-            this.email.MinimumWidth = 6;
-            this.email.Name = "email";
-            this.email.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.email.Width = 150;
-            // 
-            // ghichu
-            // 
-            this.ghichu.DataPropertyName = "Ghichu";
-            this.ghichu.HeaderText = "Ghi chú";
-            this.ghichu.MinimumWidth = 6;
-            this.ghichu.Name = "ghichu";
-            this.ghichu.Width = 350;
             // 
             // fDanhBa
             // 
