@@ -15,18 +15,18 @@ namespace QLDanhBa
         private string m_tencoquan;
         private string m_ghichu;
         private DanhSach m_danhsach;
-        //private string m_danhmuc;
         
 
-        public CDanhBa(string sdt, string ten,string mail, string tencoquan, string ghichu)//,string danhmuc)
+        public CDanhBa(string sdt, string ten,string mail, string tencoquan, string ghichu, DanhSach ds)//,string danhmuc)
         {
             Sdt = sdt;
             Ten = ten;
             Email = mail;
             Tencoquan = tencoquan;
             Ghichu = ghichu;
+            Danhsach = ds;
         }
-        public CDanhBa() : this("", "", "", "","") { }
+        public CDanhBa() : this("", "", "", "","",DanhSach.None) { }
 
         public CDanhBa(CDanhBa orther)
         {
@@ -35,6 +35,7 @@ namespace QLDanhBa
             Email = orther.Email;
             Tencoquan = orther.Tencoquan;
             Ghichu = orther.Ghichu;
+            Danhsach = orther.Danhsach;
         }
         public string Sdt { get => m_sdt; set => m_sdt = value; }
         public string Ten { get => m_ten; set => m_ten = value; }      

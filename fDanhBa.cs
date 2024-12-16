@@ -28,14 +28,11 @@ namespace QLDanhBa
             BindingSource bs = new BindingSource();
             bs.DataSource = xulyDB.getDanhBa();
             dgvDanhBa.DataSource = bs;
-            foreach (DataGridViewColumn dataGridViewColumn in dgvDanhBa.Columns)
-            {
-                if (dataGridViewColumn.Name == "Danhsach")
-                {
-                    dataGridViewColumn.Visible = false;
-                    break;
-                }
-            }
+        }
+        void taoColumn()
+        {
+            var ColSDT = new DataGridViewTextBoxColumn();
+
         }
         public fDanhBa()
         {
@@ -43,9 +40,9 @@ namespace QLDanhBa
             xulyDB = new CXulyDanhBa();
             xulyRac = new CXulyRac();
             xulyNhom = new CXulyNhom();
-            if(File.Exists("DanhBa.json"))
+            if (File.Exists("DanhBa.json"))
                 xulyDB.autoLoad();
-            if(File.Exists("TrashData.json"))
+            if (File.Exists("TrashData.json"))
                 xulyRac.autoLoadRac();
             if (File.Exists("JSON.json"))
                 xulyNhom.autoLoadNhom();
@@ -163,6 +160,20 @@ namespace QLDanhBa
                         listSearch.Add(item);
                     }
                 }
+                else if (searchType == "Email")
+                {
+                    if (item.Email.Contains(search))
+                    {
+                        listSearch.Add(item);
+                    }
+                }
+                else if (searchType == "Ghi chú")
+                {
+                    if (item.Ghichu.Contains(search))
+                    {
+                        listSearch.Add(item);
+                    }
+                }
 
                 if (listSearch.Count == 0)
                 {
@@ -203,49 +214,78 @@ namespace QLDanhBa
             };
             this.Hide();
             frmNhom.ShowDialog();
-        }
-
-        private void btnLuu_Click_1(object sender, EventArgs e)
-        {
-            xulyNhom.GhiFileJson("JSON.json");
+            xulyNhom.autoSaveNhom();
         }
 
         private void btnChiaSe_Click(object sender, EventArgs e)
         {
-            // Hiển thị hộp thoại lưu file
-            SaveFileDialog saveFileDialog = new SaveFileDialog
+            if (dgvDanhBa.SelectedRows.Count > 0)
+            {
+                // Hiển thị hộp thoại lưu file
+                SaveFileDialog saveFileDialog = new SaveFileDialog
             {
                 Filter = "JSON files (*.json)|*.json|CSV files (*.csv)|*.csv|All files (*.*)|*.*",
                 Title = "Lưu danh bạ"
             };
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string filePath = saveFileDialog.FileName;
-                if (dgvDanhBa.SelectedRows.Count > 0)
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    //Tạo danh sách lưu trữ những danh sách đã chọn 
-                    List<CDanhBa> ls = new List<CDanhBa>();
-                    try
+                    string filePath = saveFileDialog.FileName;
+
                     {
-                        for (int i = 0; i < dgvDanhBa.SelectedRows.Count; i++)
+                        //Tạo danh sách lưu trữ những danh sách đã chọn 
+                        List<CDanhBa> ls = new List<CDanhBa>();
+                        try
                         {
-                            ls.Add(xulyDB.tim(dgvDanhBa.SelectedRows[i].Cells[0].Value.ToString()));
+                            for (int i = 0; i < dgvDanhBa.SelectedRows.Count; i++)
+                            {
+                                ls.Add(xulyDB.tim(dgvDanhBa.SelectedRows[i].Cells[0].Value.ToString()));
+                            }
+                            // chuyển danh sách đã chọn qua chuỗi json 
+                            string jsonContent = JsonConvert.SerializeObject(ls, Formatting.Indented);
+                            // lưu trữ json 
+                            File.WriteAllText(filePath, jsonContent);
+                            MessageBox.Show("Liên hệ đã được chia sẻ tại: " + filePath, "Thông báo");
+                            // Chia sẻ file
+                            OpenFile(filePath);
                         }
-                        // chuyển danh sách đã chọn qua chuỗi json 
-                        string jsonContent = JsonConvert.SerializeObject(ls, Formatting.Indented);
-                        // lưu trữ json 
-                        File.WriteAllText(filePath, jsonContent);
-                        MessageBox.Show("Liên hệ đã được chia sẻ tại: " + filePath, "Thông báo");
-                        // Chia sẻ file
-                        OpenFile(filePath);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("Cần chọn một liên hệ để chia sẻ");
+            }
+        }
+
+        private void dgvDanhBa_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDanhBa.SelectedRows.Count > 0)
+            {
+                btnChiaSe.Enabled = true;
+                btnTuyChon.Enabled = true;
+            }
+        }
+
+        private void btnShowDBYT_Click(object sender, EventArgs e)
+        {
+            List<CDanhBa> dsDB = new List<CDanhBa>();
+            foreach(CDanhBa db in xulyDB.getDanhBa())
+            {
+                if(db.Danhsach == QLDanhBa.DanhSach.YeuThich)
+                {
+                    dsDB.Add(db);
+                }
+            }
+            dgvDanhBa.DataSource = null;
+            if (dsDB.Count > 0)
+            {
+                dgvDanhBa.DataSource = dsDB.ToList();
+            }
+
         }
     }
 }

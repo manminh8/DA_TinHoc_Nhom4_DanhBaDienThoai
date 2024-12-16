@@ -95,21 +95,23 @@ namespace QLDanhBa
                 Console.WriteLine("Lỗi khi ghi file JSON: " + ex.Message);
             }
         }
-        public void autoLoadNhom()
+        public List<CNhom> autoLoadNhom()
         {
+            string json = File.ReadAllText("JSON.json");
+            if (string.IsNullOrEmpty(json)) return m_lstNhom;
             try
             {
-                string json = File.ReadAllText("JSON.json");
                 List<CNhom> nhom = JsonConvert.DeserializeObject<List<CNhom>>(json);
                 foreach (var item in nhom)
                 {
                     m_lstNhom.Add(item);
                 }
+                return m_lstNhom;
 
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
+                return m_lstNhom;
             }
         }
         public bool autoSaveNhom()

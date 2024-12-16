@@ -42,6 +42,7 @@
             this.rdbYeuThich = new System.Windows.Forms.RadioButton();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
+            this.rdbHanChe = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // txtSuaGhiChu
@@ -132,7 +133,6 @@
             // 
             // txtSuaSDT
             // 
-            this.txtSuaSDT.Enabled = false;
             this.txtSuaSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSuaSDT.Location = new System.Drawing.Point(150, 46);
             this.txtSuaSDT.Name = "txtSuaSDT";
@@ -155,7 +155,7 @@
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Image = global::QLDanhBa.Properties.Resources.remove_user;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(275, 424);
+            this.btnXoa.Location = new System.Drawing.Point(264, 424);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(109, 44);
@@ -178,11 +178,23 @@
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
+            // rdbHanChe
+            // 
+            this.rdbHanChe.AutoSize = true;
+            this.rdbHanChe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbHanChe.Location = new System.Drawing.Point(275, 361);
+            this.rdbHanChe.Name = "rdbHanChe";
+            this.rdbHanChe.Size = new System.Drawing.Size(88, 22);
+            this.rdbHanChe.TabIndex = 18;
+            this.rdbHanChe.Text = "Hạn chế";
+            this.rdbHanChe.UseVisualStyleBackColor = true;
+            // 
             // fTuyChon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 514);
+            this.Controls.Add(this.rdbHanChe);
             this.Controls.Add(this.rdbYeuThich);
             this.Controls.Add(this.txtSuaSDT);
             this.Controls.Add(this.txtSuaGhiChu);
@@ -218,5 +230,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSuaSDT;
         private System.Windows.Forms.RadioButton rdbYeuThich;
+        private System.Windows.Forms.RadioButton rdbHanChe;
     }
 }
