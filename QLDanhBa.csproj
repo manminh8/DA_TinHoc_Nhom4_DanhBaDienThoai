@@ -180,5 +180,14 @@
   <ItemGroup>
     <None Include="Resources\delete %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-instagram1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\share1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

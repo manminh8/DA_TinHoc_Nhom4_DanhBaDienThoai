@@ -76,5 +76,10 @@ namespace QLDanhBa
                 txtTenNhom.Focus();
             }
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

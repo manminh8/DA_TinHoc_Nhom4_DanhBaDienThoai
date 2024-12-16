@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fDanhBa));
             this.dgvDanhBa = new System.Windows.Forms.DataGridView();
-            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tencoquan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTimKiem = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -45,11 +40,17 @@
             this.cmsDanhBaDong = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.btnChiaSe = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnShowDBYT = new System.Windows.Forms.Button();
+            this.btnNhom = new System.Windows.Forms.Button();
             this.btnTuyChon = new System.Windows.Forms.Button();
             this.btnThungRac = new System.Windows.Forms.Button();
-            this.btnNhom = new System.Windows.Forms.Button();
-            this.btnShowDBYT = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
+            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tencoquan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhBa)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -65,62 +66,22 @@
             this.email,
             this.ghichu});
             this.dgvDanhBa.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvDanhBa.Location = new System.Drawing.Point(0, 167);
+            this.dgvDanhBa.Location = new System.Drawing.Point(0, 170);
             this.dgvDanhBa.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDanhBa.Name = "dgvDanhBa";
             this.dgvDanhBa.RowHeadersWidth = 51;
             this.dgvDanhBa.RowTemplate.Height = 24;
-            this.dgvDanhBa.Size = new System.Drawing.Size(712, 242);
+            this.dgvDanhBa.Size = new System.Drawing.Size(838, 242);
             this.dgvDanhBa.TabIndex = 0;
-            // 
-            // sdt
-            // 
-            this.sdt.DataPropertyName = "Sdt";
-            this.sdt.HeaderText = "Số điện thoại";
-            this.sdt.MinimumWidth = 6;
-            this.sdt.Name = "sdt";
-            this.sdt.Width = 125;
-            // 
-            // ten
-            // 
-            this.ten.DataPropertyName = "Ten";
-            this.ten.HeaderText = "Tên";
-            this.ten.MinimumWidth = 6;
-            this.ten.Name = "ten";
-            this.ten.Width = 125;
-            // 
-            // tencoquan
-            // 
-            this.tencoquan.DataPropertyName = "Tencoquan";
-            this.tencoquan.HeaderText = "Tên cơ quan";
-            this.tencoquan.MinimumWidth = 6;
-            this.tencoquan.Name = "tencoquan";
-            this.tencoquan.Width = 125;
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "Email";
-            this.email.HeaderText = "Email";
-            this.email.MinimumWidth = 6;
-            this.email.Name = "email";
-            this.email.Width = 150;
-            // 
-            // ghichu
-            // 
-            this.ghichu.DataPropertyName = "Ghichu";
-            this.ghichu.HeaderText = "Ghi chú";
-            this.ghichu.MinimumWidth = 6;
-            this.ghichu.Name = "ghichu";
-            this.ghichu.Width = 350;
             // 
             // lblTimKiem
             // 
             this.lblTimKiem.AutoSize = true;
-            this.lblTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimKiem.Location = new System.Drawing.Point(37, 55);
+            this.lblTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimKiem.Location = new System.Drawing.Point(11, 51);
             this.lblTimKiem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTimKiem.Name = "lblTimKiem";
-            this.lblTimKiem.Size = new System.Drawing.Size(71, 20);
+            this.lblTimKiem.Size = new System.Drawing.Size(79, 20);
             this.lblTimKiem.TabIndex = 9;
             this.lblTimKiem.Text = "Tìm kiếm";
             // 
@@ -206,9 +167,64 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(712, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(838, 24);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // btnChiaSe
+            // 
+            this.btnChiaSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChiaSe.Image = global::QLDanhBa.Properties.Resources.share;
+            this.btnChiaSe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChiaSe.Location = new System.Drawing.Point(693, 73);
+            this.btnChiaSe.Margin = new System.Windows.Forms.Padding(2);
+            this.btnChiaSe.Name = "btnChiaSe";
+            this.btnChiaSe.Size = new System.Drawing.Size(124, 35);
+            this.btnChiaSe.TabIndex = 17;
+            this.btnChiaSe.Text = "Chia Sẻ";
+            this.btnChiaSe.UseVisualStyleBackColor = true;
+            this.btnChiaSe.Click += new System.EventHandler(this.btnChiaSe_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Image = global::QLDanhBa.Properties.Resources.save_instagram;
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.Location = new System.Drawing.Point(537, 48);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(124, 35);
+            this.btnLuu.TabIndex = 17;
+            this.btnLuu.Text = "Lưu nhóm";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
+            // 
+            // btnShowDBYT
+            // 
+            this.btnShowDBYT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowDBYT.Image = global::QLDanhBa.Properties.Resources.delete;
+            this.btnShowDBYT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowDBYT.Location = new System.Drawing.Point(11, 109);
+            this.btnShowDBYT.Margin = new System.Windows.Forms.Padding(2);
+            this.btnShowDBYT.Name = "btnShowDBYT";
+            this.btnShowDBYT.Size = new System.Drawing.Size(178, 33);
+            this.btnShowDBYT.TabIndex = 16;
+            this.btnShowDBYT.Text = "Danh bạ yêu thích";
+            this.btnShowDBYT.UseVisualStyleBackColor = true;
+            // 
+            // btnNhom
+            // 
+            this.btnNhom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhom.Image = global::QLDanhBa.Properties.Resources.people;
+            this.btnNhom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhom.Location = new System.Drawing.Point(215, 107);
+            this.btnNhom.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNhom.Name = "btnNhom";
+            this.btnNhom.Size = new System.Drawing.Size(124, 35);
+            this.btnNhom.TabIndex = 15;
+            this.btnNhom.Text = "Nhóm";
+            this.btnNhom.UseVisualStyleBackColor = true;
+            this.btnNhom.Click += new System.EventHandler(this.btnNhom_Click);
             // 
             // btnTuyChon
             // 
@@ -238,51 +254,54 @@
             this.btnThungRac.UseVisualStyleBackColor = true;
             this.btnThungRac.Click += new System.EventHandler(this.btnThungRac_Click);
             // 
-            // btnNhom
+            // sdt
             // 
-            this.btnNhom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhom.Location = new System.Drawing.Point(206, 107);
-            this.btnNhom.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNhom.Name = "btnNhom";
-            this.btnNhom.Size = new System.Drawing.Size(124, 35);
-            this.btnNhom.TabIndex = 15;
-            this.btnNhom.Text = "Nhóm";
-            this.btnNhom.UseVisualStyleBackColor = true;
-            this.btnNhom.Click += new System.EventHandler(this.btnNhom_Click);
+            this.sdt.DataPropertyName = "Sdt";
+            this.sdt.HeaderText = "Số điện thoại";
+            this.sdt.MinimumWidth = 6;
+            this.sdt.Name = "sdt";
+            this.sdt.Width = 125;
             // 
-            // btnShowDBYT
+            // ten
             // 
-            this.btnShowDBYT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowDBYT.Image = global::QLDanhBa.Properties.Resources.delete;
-            this.btnShowDBYT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShowDBYT.Location = new System.Drawing.Point(34, 109);
-            this.btnShowDBYT.Margin = new System.Windows.Forms.Padding(2);
-            this.btnShowDBYT.Name = "btnShowDBYT";
-            this.btnShowDBYT.Size = new System.Drawing.Size(124, 33);
-            this.btnShowDBYT.TabIndex = 16;
-            this.btnShowDBYT.Text = "Danh bạ yêu thích";
-            this.btnShowDBYT.UseVisualStyleBackColor = true;
+            this.ten.DataPropertyName = "Ten";
+            this.ten.HeaderText = "Tên";
+            this.ten.MinimumWidth = 6;
+            this.ten.Name = "ten";
+            this.ten.Width = 125;
             // 
-            // btnLuu
+            // tencoquan
             // 
-            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Image = global::QLDanhBa.Properties.Resources.option;
-            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(537, 48);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(124, 35);
-            this.btnLuu.TabIndex = 17;
-            this.btnLuu.Text = "Lưu nhóm";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
+            this.tencoquan.DataPropertyName = "Tencoquan";
+            this.tencoquan.HeaderText = "Tên cơ quan";
+            this.tencoquan.MinimumWidth = 6;
+            this.tencoquan.Name = "tencoquan";
+            this.tencoquan.Width = 125;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.email.Width = 150;
+            // 
+            // ghichu
+            // 
+            this.ghichu.DataPropertyName = "Ghichu";
+            this.ghichu.HeaderText = "Ghi chú";
+            this.ghichu.MinimumWidth = 6;
+            this.ghichu.Name = "ghichu";
+            this.ghichu.Width = 350;
             // 
             // fDanhBa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 409);
+            this.ClientSize = new System.Drawing.Size(838, 412);
+            this.Controls.Add(this.btnChiaSe);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnShowDBYT);
             this.Controls.Add(this.btnNhom);
@@ -311,11 +330,6 @@
         private System.Windows.Forms.Label lblTimKiem;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tencoquan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ghichu;
         private System.Windows.Forms.ToolStripMenuItem danhBạToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cmsDanhBaXuatDuLieu;
         private System.Windows.Forms.ToolStripMenuItem cmsDanhBaThemLienHe;
@@ -328,6 +342,12 @@
         private System.Windows.Forms.Button btnNhom;
         private System.Windows.Forms.Button btnShowDBYT;
         private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnChiaSe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tencoquan;
+        private System.Windows.Forms.DataGridViewLinkColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ghichu;
     }
 }
 

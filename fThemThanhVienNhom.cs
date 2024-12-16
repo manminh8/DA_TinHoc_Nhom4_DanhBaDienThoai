@@ -41,15 +41,19 @@ namespace QLDanhBa
         {
             if (dgvDanhBaTV.SelectedRows.Count > 0)
             {
-                CDanhBa selectedDB = (CDanhBa)dgvDanhBaTV.SelectedRows[0].DataBoundItem;
-                if(this.Owner.GetType() == typeof(fChiTietNhom))
+                foreach (DataGridViewRow row in dgvDanhBaTV.SelectedRows)
                 {
-                    ((fChiTietNhom)this.Owner).addDanhBa(selectedDB);
-                }else if(this.Owner.GetType() == typeof(fThemNhom))
-                {
-                    ((fThemNhom)this.Owner).addDanhBa(selectedDB);
+                    CDanhBa selectedDB = (CDanhBa)row.DataBoundItem;
+                    if (this.Owner.GetType() == typeof(fChiTietNhom))
+                    {
+                        ((fChiTietNhom)this.Owner).addDanhBa(selectedDB);
+                    }
+                    else if (this.Owner.GetType() == typeof(fThemNhom))
+                    {
+                        ((fThemNhom)this.Owner).addDanhBa(selectedDB);
+                    }
+                    this.Close();
                 }
-                this.Close();
             }
             else
             {

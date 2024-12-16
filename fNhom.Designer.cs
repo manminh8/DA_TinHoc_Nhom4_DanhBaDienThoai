@@ -28,19 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.eventLog1 = new System.Diagnostics.EventLog();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fNhom));
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvNhom = new System.Windows.Forms.DataGridView();
             this.ColumnTenNhom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnXemChiTiet = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhom)).BeginInit();
             this.SuspendLayout();
-            // 
-            // eventLog1
-            // 
-            this.eventLog1.SynchronizingObject = this;
             // 
             // btnThem
             // 
@@ -103,17 +98,15 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.dgvNhom);
             this.Controls.Add(this.btnThem);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fNhom";
-            this.Text = "fNhom";
-            ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
+            this.Text = "Nhóm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhom)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Diagnostics.EventLog eventLog1;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dgvNhom;
         private System.Windows.Forms.Button btnXoa;

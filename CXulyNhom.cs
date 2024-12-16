@@ -95,11 +95,11 @@ namespace QLDanhBa
                 Console.WriteLine("Lỗi khi ghi file JSON: " + ex.Message);
             }
         }
-        public void autoLoad()
+        public void autoLoadNhom()
         {
             try
             {
-                string json = File.ReadAllText("ListNhom.json");
+                string json = File.ReadAllText("JSON.json");
                 List<CNhom> nhom = JsonConvert.DeserializeObject<List<CNhom>>(json);
                 foreach (var item in nhom)
                 {
@@ -112,12 +112,12 @@ namespace QLDanhBa
                 MessageBox.Show(ex.Message);
             }
         }
-        public bool autoSave()
+        public bool autoSaveNhom()
         {
             try
             {
                 string json = JsonConvert.SerializeObject(this, Formatting.Indented);
-                File.WriteAllText("ListNhom.json", json);
+                File.WriteAllText("JSON.json", json);
                 return true;
             }
             catch (Exception ex)

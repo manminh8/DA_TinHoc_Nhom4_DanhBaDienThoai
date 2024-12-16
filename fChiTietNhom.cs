@@ -90,7 +90,13 @@ namespace QLDanhBa
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-
+            string text = "Bạn Có Muốn Thoát Không?";
+            string caption = "Thông Báo";
+            DialogResult rs=MessageBox.Show(text,caption,MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void btnXoaThanhVien_Click(object sender, EventArgs e)

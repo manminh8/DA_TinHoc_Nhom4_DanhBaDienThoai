@@ -41,24 +41,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 15);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(31, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên nhóm";
             // 
             // txtTennhom
             // 
-            this.txtTennhom.Location = new System.Drawing.Point(160, 12);
+            this.txtTennhom.Location = new System.Drawing.Point(146, 29);
             this.txtTennhom.Name = "txtTennhom";
             this.txtTennhom.Size = new System.Drawing.Size(205, 20);
             this.txtTennhom.TabIndex = 1;
             // 
             // btnThemThanhVien
             // 
-            this.btnThemThanhVien.Location = new System.Drawing.Point(121, 107);
+            this.btnThemThanhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemThanhVien.Location = new System.Drawing.Point(59, 107);
             this.btnThemThanhVien.Name = "btnThemThanhVien";
-            this.btnThemThanhVien.Size = new System.Drawing.Size(118, 23);
+            this.btnThemThanhVien.Size = new System.Drawing.Size(133, 35);
             this.btnThemThanhVien.TabIndex = 2;
             this.btnThemThanhVien.Text = "Thêm Thành Viên";
             this.btnThemThanhVien.UseVisualStyleBackColor = true;
@@ -78,9 +80,10 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(358, 190);
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Location = new System.Drawing.Point(290, 190);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.Size = new System.Drawing.Size(89, 32);
             this.btnLuu.TabIndex = 4;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
@@ -88,9 +91,10 @@
             // 
             // btnHuy
             // 
+            this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.Location = new System.Drawing.Point(70, 190);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 25);
+            this.btnHuy.Size = new System.Drawing.Size(89, 32);
             this.btnHuy.TabIndex = 5;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
@@ -98,9 +102,10 @@
             // 
             // btnXoaThanhVien
             // 
-            this.btnXoaThanhVien.Location = new System.Drawing.Point(267, 107);
+            this.btnXoaThanhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaThanhVien.Location = new System.Drawing.Point(268, 107);
             this.btnXoaThanhVien.Name = "btnXoaThanhVien";
-            this.btnXoaThanhVien.Size = new System.Drawing.Size(118, 23);
+            this.btnXoaThanhVien.Size = new System.Drawing.Size(134, 35);
             this.btnXoaThanhVien.TabIndex = 6;
             this.btnXoaThanhVien.Text = "Xóa Thành Viên";
             this.btnXoaThanhVien.UseVisualStyleBackColor = true;
@@ -119,7 +124,8 @@
             this.Controls.Add(this.txtTennhom);
             this.Controls.Add(this.label1);
             this.Name = "fChiTietNhom";
-            this.Text = "fChiTietNhom";
+            this.ShowIcon = false;
+            this.Text = "Chi Tiết Nhóm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietNhom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -47,8 +47,20 @@ namespace QLDanhBa
                 xulyDB.autoLoad();
             if(File.Exists("TrashData.json"))
                 xulyRac.autoLoadRac();
+            if (File.Exists("JSON.json"))
+                xulyNhom.autoLoadNhom();
             hienthi();
         }
+        private void OpenFile(string filePath)
+        {
+            // Mở file bằng ứng dụng mặc định (người dùng tự chọn phương thức chia sẻ)
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = filePath,
+                UseShellExecute = true
+            });
+        }
+
         #region Events
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -196,6 +208,44 @@ namespace QLDanhBa
         private void btnLuu_Click_1(object sender, EventArgs e)
         {
             xulyNhom.GhiFileJson("JSON.json");
+        }
+
+        private void btnChiaSe_Click(object sender, EventArgs e)
+        {
+            // Hiển thị hộp thoại lưu file
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "JSON files (*.json)|*.json|CSV files (*.csv)|*.csv|All files (*.*)|*.*",
+                Title = "Lưu danh bạ"
+            };
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+                if (dgvDanhBa.SelectedRows.Count > 0)
+                {
+                    //Tạo danh sách lưu trữ những danh sách đã chọn 
+                    List<CDanhBa> ls = new List<CDanhBa>();
+                    try
+                    {
+                        for (int i = 0; i < dgvDanhBa.SelectedRows.Count; i++)
+                        {
+                            ls.Add(xulyDB.tim(dgvDanhBa.SelectedRows[i].Cells[0].Value.ToString()));
+                        }
+                        // chuyển danh sách đã chọn qua chuỗi json 
+                        string jsonContent = JsonConvert.SerializeObject(ls, Formatting.Indented);
+                        // lưu trữ json 
+                        File.WriteAllText(filePath, jsonContent);
+                        MessageBox.Show("Liên hệ đã được chia sẻ tại: " + filePath, "Thông báo");
+                        // Chia sẻ file
+                        OpenFile(filePath);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
         }
     }
 }
