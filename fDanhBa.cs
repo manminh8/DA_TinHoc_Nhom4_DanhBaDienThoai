@@ -232,10 +232,6 @@ namespace QLDanhBa
                         {
                             CDanhBa db = (CDanhBa)dgvDanhBa.SelectedRows[0].DataBoundItem;
                             ls.Add(db);
-                            //for (int i = 0; i < dgvDanhBa.SelectedRows.Count; i++)
-                            //{
-                            //    ls.Add(xulyDB.tim(dgvDanhBa.SelectedRows[i].Cells[0].Value.ToString()));
-                            //}
                             // chuyển danh sách đã chọn qua chuỗi json 
                             string jsonContent = JsonConvert.SerializeObject(ls, Formatting.Indented);
                             // lưu trữ json 
@@ -268,6 +264,7 @@ namespace QLDanhBa
         private void btnShowDBYT_Click(object sender, EventArgs e)
         {
             List<CDanhBa> dsDB = new List<CDanhBa>();
+            dgvDanhBa.DataSource = dsDB;
             foreach(CDanhBa db in xulyDB.getDanhBa())
             {
                 if(db.Danhsach == QLDanhBa.DanhSach.YeuThich)
@@ -275,7 +272,6 @@ namespace QLDanhBa
                     dsDB.Add(db);
                 }
             }
-            dgvDanhBa.DataSource = null;
             if (dsDB.Count > 0)
             {
                 dgvDanhBa.DataSource = dsDB.ToList();
