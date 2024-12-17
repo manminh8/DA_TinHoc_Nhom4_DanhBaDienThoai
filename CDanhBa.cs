@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,6 +43,7 @@ namespace QLDanhBa
         public string Email { get => m_email; set => m_email = value; }
         public string Tencoquan { get => m_tencoquan; set => m_tencoquan = value; }
         public string Ghichu { get => m_ghichu; set => m_ghichu = value; }
+        [JsonIgnore]
         public DanhSach Danhsach { get => m_danhsach; set => m_danhsach = value; }
 
     }

@@ -43,6 +43,7 @@ namespace QLDanhBa
                 xulyNhom.autoLoadNhom();
             hienthi();
         }
+
         private void OpenFile(string filePath)
         {
             // Mở file bằng ứng dụng mặc định (người dùng tự chọn phương thức chia sẻ)
@@ -285,6 +286,11 @@ namespace QLDanhBa
         private void cmsDanhBaDong_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            dgvDanhBa.DataSource = xulyDB.getDanhBa();
         }
     }
 }

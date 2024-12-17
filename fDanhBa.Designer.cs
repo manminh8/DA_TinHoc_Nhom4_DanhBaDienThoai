@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fDanhBa));
             this.dgvDanhBa = new System.Windows.Forms.DataGridView();
+            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tencoquan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DanhSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTimKiem = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cbbTimKiem = new System.Windows.Forms.ComboBox();
@@ -45,12 +51,7 @@
             this.btnNhom = new System.Windows.Forms.Button();
             this.btnTuyChon = new System.Windows.Forms.Button();
             this.btnThungRac = new System.Windows.Forms.Button();
-            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tencoquan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DanhSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhBa)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +73,44 @@
             this.dgvDanhBa.Name = "dgvDanhBa";
             this.dgvDanhBa.RowTemplate.Height = 24;
             this.dgvDanhBa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhBa_CellClick);
+            // 
+            // sdt
+            // 
+            this.sdt.DataPropertyName = "Sdt";
+            resources.ApplyResources(this.sdt, "sdt");
+            this.sdt.Name = "sdt";
+            // 
+            // ten
+            // 
+            this.ten.DataPropertyName = "Ten";
+            resources.ApplyResources(this.ten, "ten");
+            this.ten.Name = "ten";
+            // 
+            // tencoquan
+            // 
+            this.tencoquan.DataPropertyName = "Tencoquan";
+            resources.ApplyResources(this.tencoquan, "tencoquan");
+            this.tencoquan.Name = "tencoquan";
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "Email";
+            resources.ApplyResources(this.email, "email");
+            this.email.Name = "email";
+            this.email.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ghichu
+            // 
+            this.ghichu.DataPropertyName = "Ghichu";
+            resources.ApplyResources(this.ghichu, "ghichu");
+            this.ghichu.Name = "ghichu";
+            // 
+            // DanhSach
+            // 
+            this.DanhSach.DataPropertyName = "Danhsach";
+            resources.ApplyResources(this.DanhSach, "DanhSach");
+            this.DanhSach.Name = "DanhSach";
             // 
             // lblTimKiem
             // 
@@ -185,48 +224,19 @@
             this.btnThungRac.UseVisualStyleBackColor = true;
             this.btnThungRac.Click += new System.EventHandler(this.btnThungRac_Click);
             // 
-            // sdt
+            // btnLamMoi
             // 
-            this.sdt.DataPropertyName = "Sdt";
-            resources.ApplyResources(this.sdt, "sdt");
-            this.sdt.Name = "sdt";
-            // 
-            // ten
-            // 
-            this.ten.DataPropertyName = "Ten";
-            resources.ApplyResources(this.ten, "ten");
-            this.ten.Name = "ten";
-            // 
-            // tencoquan
-            // 
-            this.tencoquan.DataPropertyName = "Tencoquan";
-            resources.ApplyResources(this.tencoquan, "tencoquan");
-            this.tencoquan.Name = "tencoquan";
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "Email";
-            resources.ApplyResources(this.email, "email");
-            this.email.Name = "email";
-            this.email.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ghichu
-            // 
-            this.ghichu.DataPropertyName = "Ghichu";
-            resources.ApplyResources(this.ghichu, "ghichu");
-            this.ghichu.Name = "ghichu";
-            // 
-            // DanhSach
-            // 
-            this.DanhSach.DataPropertyName = "Danhsach";
-            resources.ApplyResources(this.DanhSach, "DanhSach");
-            this.DanhSach.Name = "DanhSach";
+            resources.ApplyResources(this.btnLamMoi, "btnLamMoi");
+            this.btnLamMoi.Image = global::QLDanhBa.Properties.Resources.restart;
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // fDanhBa
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnChiaSe);
             this.Controls.Add(this.btnShowDBYT);
             this.Controls.Add(this.btnNhom);
@@ -270,6 +280,7 @@
         private System.Windows.Forms.DataGridViewLinkColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn ghichu;
         private System.Windows.Forms.DataGridViewTextBoxColumn DanhSach;
+        private System.Windows.Forms.Button btnLamMoi;
     }
 }
 
