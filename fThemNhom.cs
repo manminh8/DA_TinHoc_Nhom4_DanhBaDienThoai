@@ -27,7 +27,8 @@ namespace QLDanhBa
         }
         public void addDanhBa(CDanhBa db)
         {
-            dsDB.Add(db);
+            if(!dsDB.Contains(db))
+                dsDB.Add(db);
         }
         private void btnThemThanhVien_Click(object sender, EventArgs e)
         {

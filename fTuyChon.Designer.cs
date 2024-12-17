@@ -138,6 +138,7 @@
             this.txtSuaSDT.Name = "txtSuaSDT";
             this.txtSuaSDT.Size = new System.Drawing.Size(284, 26);
             this.txtSuaSDT.TabIndex = 12;
+            this.txtSuaSDT.Enter += new System.EventHandler(this.txtSuaSDT_Enter);
             // 
             // rdbYeuThich
             // 

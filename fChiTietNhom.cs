@@ -32,7 +32,10 @@ namespace QLDanhBa
         }
         public void addDanhBa(CDanhBa danhBa)
         {
-            dsDB.Add(danhBa);
+            if (!dsDB.Contains(danhBa))
+            {
+                dsDB.Add(danhBa);
+            }
         }
         public void loadChiTietNhom(string tennhom)
         {

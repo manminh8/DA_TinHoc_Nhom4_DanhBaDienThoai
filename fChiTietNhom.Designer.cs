@@ -31,10 +31,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtTennhom = new System.Windows.Forms.TextBox();
             this.btnThemThanhVien = new System.Windows.Forms.Button();
-            this.dgvChiTietNhom = new System.Windows.Forms.DataGridView();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnXoaThanhVien = new System.Windows.Forms.Button();
+            this.dgvChiTietNhom = new System.Windows.Forms.DataGridView();
+            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tencoquan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DanhSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietNhom)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,18 +71,6 @@
             this.btnThemThanhVien.Text = "Thêm Thành Viên";
             this.btnThemThanhVien.UseVisualStyleBackColor = true;
             this.btnThemThanhVien.Click += new System.EventHandler(this.btnThemThanhVien_Click);
-            // 
-            // dgvChiTietNhom
-            // 
-            this.dgvChiTietNhom.AllowUserToAddRows = false;
-            this.dgvChiTietNhom.AllowUserToDeleteRows = false;
-            this.dgvChiTietNhom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChiTietNhom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvChiTietNhom.Location = new System.Drawing.Point(0, 259);
-            this.dgvChiTietNhom.Name = "dgvChiTietNhom";
-            this.dgvChiTietNhom.ReadOnly = true;
-            this.dgvChiTietNhom.Size = new System.Drawing.Size(487, 191);
-            this.dgvChiTietNhom.TabIndex = 3;
             // 
             // btnLuu
             // 
@@ -111,15 +105,88 @@
             this.btnXoaThanhVien.UseVisualStyleBackColor = true;
             this.btnXoaThanhVien.Click += new System.EventHandler(this.btnXoaThanhVien_Click);
             // 
+            // dgvChiTietNhom
+            // 
+            this.dgvChiTietNhom.AllowUserToAddRows = false;
+            this.dgvChiTietNhom.AllowUserToDeleteRows = false;
+            this.dgvChiTietNhom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChiTietNhom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sdt,
+            this.ten,
+            this.tencoquan,
+            this.email,
+            this.ghichu,
+            this.DanhSach});
+            this.dgvChiTietNhom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvChiTietNhom.Location = new System.Drawing.Point(0, 240);
+            this.dgvChiTietNhom.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvChiTietNhom.MultiSelect = false;
+            this.dgvChiTietNhom.Name = "dgvChiTietNhom";
+            this.dgvChiTietNhom.RowHeadersWidth = 51;
+            this.dgvChiTietNhom.RowTemplate.Height = 24;
+            this.dgvChiTietNhom.Size = new System.Drawing.Size(487, 210);
+            this.dgvChiTietNhom.TabIndex = 7;
+            // 
+            // sdt
+            // 
+            this.sdt.DataPropertyName = "Sdt";
+            this.sdt.HeaderText = "Số điện thoại";
+            this.sdt.MinimumWidth = 6;
+            this.sdt.Name = "sdt";
+            this.sdt.Width = 125;
+            // 
+            // ten
+            // 
+            this.ten.DataPropertyName = "Ten";
+            this.ten.HeaderText = "Tên";
+            this.ten.MinimumWidth = 6;
+            this.ten.Name = "ten";
+            this.ten.Width = 125;
+            // 
+            // tencoquan
+            // 
+            this.tencoquan.DataPropertyName = "Tencoquan";
+            this.tencoquan.HeaderText = "Tên cơ quan";
+            this.tencoquan.MinimumWidth = 6;
+            this.tencoquan.Name = "tencoquan";
+            this.tencoquan.Width = 125;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.email.Width = 150;
+            // 
+            // ghichu
+            // 
+            this.ghichu.DataPropertyName = "Ghichu";
+            this.ghichu.HeaderText = "Ghi chú";
+            this.ghichu.MinimumWidth = 6;
+            this.ghichu.Name = "ghichu";
+            this.ghichu.Width = 350;
+            // 
+            // DanhSach
+            // 
+            this.DanhSach.DataPropertyName = "Danhsach";
+            this.DanhSach.HeaderText = "Danhsach";
+            this.DanhSach.MinimumWidth = 2;
+            this.DanhSach.Name = "DanhSach";
+            this.DanhSach.Visible = false;
+            this.DanhSach.Width = 2;
+            // 
             // fChiTietNhom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(487, 450);
+            this.Controls.Add(this.dgvChiTietNhom);
             this.Controls.Add(this.btnXoaThanhVien);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
-            this.Controls.Add(this.dgvChiTietNhom);
             this.Controls.Add(this.btnThemThanhVien);
             this.Controls.Add(this.txtTennhom);
             this.Controls.Add(this.label1);
@@ -137,9 +204,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTennhom;
         private System.Windows.Forms.Button btnThemThanhVien;
-        private System.Windows.Forms.DataGridView dgvChiTietNhom;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnXoaThanhVien;
+        public System.Windows.Forms.DataGridView dgvChiTietNhom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tencoquan;
+        private System.Windows.Forms.DataGridViewLinkColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ghichu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DanhSach;
     }
 }

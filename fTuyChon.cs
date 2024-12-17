@@ -19,7 +19,7 @@ namespace QLDanhBa
         {
             InitializeComponent();
             xuly = new CXulyDanhBa();
-            xulyRac= new CXulyRac();
+            xulyRac = new CXulyRac();
         }
         public void hienThiThongTin(CDanhBa danhBa)
         {
@@ -28,7 +28,7 @@ namespace QLDanhBa
             txtSuaTenCoQuan.Text = danhBa.Tencoquan;
             txtSuaEmail.Text = danhBa.Email;
             txtSuaGhiChu.Text = danhBa.Ghichu;
-            if(danhBa.Danhsach == DanhSach.YeuThich)
+            if (danhBa.Danhsach == DanhSach.YeuThich)
             {
                 rdbYeuThich.Checked = true;
             }
@@ -56,37 +56,30 @@ namespace QLDanhBa
         private void btnSua_Click(object sender, EventArgs e)
         {
             //CDanhBa danhbaMoi = new CDanhBa(txtSuaSDT.Text, txtSuaTen.Text, txtSuaEmail.Text, txtSuaTenCoQuan.Text, txtSuaGhiChu.Text);
-            CDanhBa danhBaMoi = xuly.tim(txtSuaSDT.Text);
-            if (danhBaMoi != null)
+            CDanhBa danhBaCu = xuly.tim(txtSuaSDT.Tag.ToString());
+            danhBaCu.Sdt = txtSuaSDT.Text;
+            danhBaCu.Ten = txtSuaTen.Text;
+            danhBaCu.Tencoquan = txtSuaTenCoQuan.Text;
+            danhBaCu.Email = txtSuaEmail.Text;
+            danhBaCu.Ghichu = txtSuaGhiChu.Text;
+            if (rdbYeuThich.Checked)
             {
-                danhBaMoi.Ten = txtSuaTen.Text;
-                danhBaMoi.Tencoquan = txtSuaTenCoQuan.Text;
-                danhBaMoi.Email = txtSuaEmail.Text;
-                danhBaMoi.Ghichu = txtSuaGhiChu.Text;
-                if (rdbYeuThich.Checked)
-                {
-                    danhBaMoi.Danhsach = DanhSach.YeuThich;
-                    rdbHanChe.Checked = false;
-                }
-                else if (rdbHanChe.Checked)
-                {
-                    danhBaMoi.Danhsach = DanhSach.HanChe;
-                    rdbYeuThich.Checked = false;
-                }
-                if (check())
-                {
-                    xuly.sua(danhBaMoi);
-                    xuly.autoSave();
-                    MessageBox.Show("Đã Sửa Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.None);
-                    this.Close();
-                }
+                danhBaCu.Danhsach = DanhSach.YeuThich;
+                rdbHanChe.Checked = false;
             }
-            else
+            else if (rdbHanChe.Checked)
             {
-                MessageBox.Show("Không Thể Sửa!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                danhBaCu.Danhsach = DanhSach.HanChe;
+                rdbYeuThich.Checked = false;
+            }
+            if (check())
+            {
+                xuly.sua(danhBaCu);
+                xuly.autoSave();
+                MessageBox.Show("Đã Sửa Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                this.Close();
             }
         }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             CDanhBa danhBaMoi = xuly.tim(txtSuaSDT.Text);
@@ -106,5 +99,12 @@ namespace QLDanhBa
             }
         }
 
+        private void txtSuaSDT_Enter(object sender, EventArgs e)
+        {
+            txtSuaSDT.Tag = txtSuaSDT.Text; // Lưu lại số điện thoại cũ
+        }
     }
+
+
 }
+

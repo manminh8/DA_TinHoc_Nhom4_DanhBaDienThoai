@@ -30,11 +30,16 @@
         {
             this.txtTenNhom = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvThemNhom = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.btnThemThanhVien = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
+            this.dgvThemNhom = new System.Windows.Forms.DataGridView();
+            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tencoquan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThemNhom)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,15 +59,6 @@
             this.label1.Size = new System.Drawing.Size(90, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên Nhóm";
-            // 
-            // dgvThemNhom
-            // 
-            this.dgvThemNhom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThemNhom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvThemNhom.Location = new System.Drawing.Point(0, 219);
-            this.dgvThemNhom.Name = "dgvThemNhom";
-            this.dgvThemNhom.Size = new System.Drawing.Size(541, 315);
-            this.dgvThemNhom.TabIndex = 2;
             // 
             // label2
             // 
@@ -107,16 +103,78 @@
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
+            // dgvThemNhom
+            // 
+            this.dgvThemNhom.AllowUserToAddRows = false;
+            this.dgvThemNhom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThemNhom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sdt,
+            this.ten,
+            this.tencoquan,
+            this.email,
+            this.ghichu});
+            this.dgvThemNhom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvThemNhom.Location = new System.Drawing.Point(0, 292);
+            this.dgvThemNhom.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvThemNhom.Name = "dgvThemNhom";
+            this.dgvThemNhom.RowHeadersWidth = 51;
+            this.dgvThemNhom.RowTemplate.Height = 24;
+            this.dgvThemNhom.Size = new System.Drawing.Size(541, 242);
+            this.dgvThemNhom.TabIndex = 7;
+            // 
+            // sdt
+            // 
+            this.sdt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sdt.DataPropertyName = "Sdt";
+            this.sdt.HeaderText = "Số điện thoại";
+            this.sdt.MinimumWidth = 6;
+            this.sdt.Name = "sdt";
+            this.sdt.Width = 95;
+            // 
+            // ten
+            // 
+            this.ten.DataPropertyName = "Ten";
+            this.ten.HeaderText = "Tên";
+            this.ten.MinimumWidth = 6;
+            this.ten.Name = "ten";
+            this.ten.Width = 90;
+            // 
+            // tencoquan
+            // 
+            this.tencoquan.DataPropertyName = "Tencoquan";
+            this.tencoquan.HeaderText = "Tên cơ quan";
+            this.tencoquan.MinimumWidth = 6;
+            this.tencoquan.Name = "tencoquan";
+            this.tencoquan.Width = 91;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.email.Width = 90;
+            // 
+            // ghichu
+            // 
+            this.ghichu.DataPropertyName = "Ghichu";
+            this.ghichu.HeaderText = "Ghi chú";
+            this.ghichu.MinimumWidth = 6;
+            this.ghichu.Name = "ghichu";
+            this.ghichu.Width = 90;
+            // 
             // fThemNhom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 534);
+            this.Controls.Add(this.dgvThemNhom);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnThemThanhVien);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dgvThemNhom);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTenNhom);
             this.Name = "fThemNhom";
@@ -132,10 +190,15 @@
 
         private System.Windows.Forms.TextBox txtTenNhom;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvThemNhom;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnThemThanhVien;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnHuy;
+        public System.Windows.Forms.DataGridView dgvThemNhom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tencoquan;
+        private System.Windows.Forms.DataGridViewLinkColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ghichu;
     }
 }
