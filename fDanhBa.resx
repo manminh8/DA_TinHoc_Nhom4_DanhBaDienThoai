@@ -120,76 +120,21 @@
   <metadata name="sdt.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="sdt.HeaderText" xml:space="preserve">
-    <value>Số điện thoại</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="sdt.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="sdt.Width" type="System.Int32, mscorlib">
-    <value>125</value>
-  </data>
   <metadata name="ten.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="ten.HeaderText" xml:space="preserve">
-    <value>Tên</value>
-  </data>
-  <data name="ten.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="ten.Width" type="System.Int32, mscorlib">
-    <value>125</value>
-  </data>
   <metadata name="tencoquan.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="tencoquan.HeaderText" xml:space="preserve">
-    <value>Tên cơ quan</value>
-  </data>
-  <data name="tencoquan.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="tencoquan.Width" type="System.Int32, mscorlib">
-    <value>125</value>
-  </data>
   <metadata name="email.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="email.HeaderText" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="email.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="email.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
   <metadata name="ghichu.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="ghichu.HeaderText" xml:space="preserve">
-    <value>Ghi chú</value>
-  </data>
-  <data name="ghichu.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="ghichu.Width" type="System.Int32, mscorlib">
-    <value>350</value>
-  </data>
   <metadata name="DanhSach.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="DanhSach.HeaderText" xml:space="preserve">
-    <value>Danhsach</value>
-  </data>
-  <data name="DanhSach.MinimumWidth" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="DanhSach.Width" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dgvDanhBa.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -201,6 +146,7 @@
   <data name="dgvDanhBa.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dgvDanhBa.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>51</value>
   </data>
@@ -591,6 +537,81 @@
   <data name="&gt;&gt;btnThungRac.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <metadata name="sdt.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="sdt.HeaderText" xml:space="preserve">
+    <value>Số điện thoại</value>
+  </data>
+  <data name="sdt.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="sdt.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="ten.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ten.HeaderText" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="ten.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="ten.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="tencoquan.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="tencoquan.HeaderText" xml:space="preserve">
+    <value>Tên cơ quan</value>
+  </data>
+  <data name="tencoquan.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tencoquan.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="email.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="email.HeaderText" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="email.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="email.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <metadata name="ghichu.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ghichu.HeaderText" xml:space="preserve">
+    <value>Ghi chú</value>
+  </data>
+  <data name="ghichu.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="ghichu.Width" type="System.Int32, mscorlib">
+    <value>350</value>
+  </data>
+  <metadata name="DanhSach.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DanhSach.HeaderText" xml:space="preserve">
+    <value>Danhsach</value>
+  </data>
+  <data name="DanhSach.MinimumWidth" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="DanhSach.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="DanhSach.Width" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -896,42 +917,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Danh Bạ</value>
   </data>
-  <data name="&gt;&gt;sdt.Name" xml:space="preserve">
-    <value>sdt</value>
-  </data>
-  <data name="&gt;&gt;sdt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ten.Name" xml:space="preserve">
-    <value>ten</value>
-  </data>
-  <data name="&gt;&gt;ten.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tencoquan.Name" xml:space="preserve">
-    <value>tencoquan</value>
-  </data>
-  <data name="&gt;&gt;tencoquan.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;email.Name" xml:space="preserve">
-    <value>email</value>
-  </data>
-  <data name="&gt;&gt;email.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewLinkColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ghichu.Name" xml:space="preserve">
-    <value>ghichu</value>
-  </data>
-  <data name="&gt;&gt;ghichu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DanhSach.Name" xml:space="preserve">
-    <value>DanhSach</value>
-  </data>
-  <data name="&gt;&gt;DanhSach.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;danhBạToolStripMenuItem.Name" xml:space="preserve">
     <value>danhBạToolStripMenuItem</value>
   </data>
@@ -967,6 +952,42 @@
   </data>
   <data name="&gt;&gt;trợGiúpToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sdt.Name" xml:space="preserve">
+    <value>sdt</value>
+  </data>
+  <data name="&gt;&gt;sdt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ten.Name" xml:space="preserve">
+    <value>ten</value>
+  </data>
+  <data name="&gt;&gt;ten.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tencoquan.Name" xml:space="preserve">
+    <value>tencoquan</value>
+  </data>
+  <data name="&gt;&gt;tencoquan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;email.Name" xml:space="preserve">
+    <value>email</value>
+  </data>
+  <data name="&gt;&gt;email.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewLinkColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ghichu.Name" xml:space="preserve">
+    <value>ghichu</value>
+  </data>
+  <data name="&gt;&gt;ghichu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DanhSach.Name" xml:space="preserve">
+    <value>DanhSach</value>
+  </data>
+  <data name="&gt;&gt;DanhSach.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>fDanhBa</value>

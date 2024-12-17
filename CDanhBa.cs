@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLDanhBa
 {
-    public enum DanhSach{ YeuThich,HanChe,None}
+    public enum DanhSach { YeuThich,HanChe,None}
     public class CDanhBa
     {
         private string m_sdt;
@@ -17,7 +17,7 @@ namespace QLDanhBa
         private DanhSach m_danhsach;
         
 
-        public CDanhBa(string sdt, string ten,string mail, string tencoquan, string ghichu, DanhSach ds)//,string danhmuc)
+        public CDanhBa(string sdt, string ten,string mail, string tencoquan, string ghichu, DanhSach ds)
         {
             Sdt = sdt;
             Ten = ten;

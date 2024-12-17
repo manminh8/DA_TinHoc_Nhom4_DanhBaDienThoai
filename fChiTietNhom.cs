@@ -30,12 +30,10 @@ namespace QLDanhBa
             bs.DataSource = dsDB.ToList();
             dgvChiTietNhom.DataSource = bs;
         }
-
         public void addDanhBa(CDanhBa danhBa)
         {
             dsDB.Add(danhBa);
         }
-
         public void loadChiTietNhom(string tennhom)
         {
             BindingSource bs = new BindingSource();
@@ -45,7 +43,6 @@ namespace QLDanhBa
             tenNhomcu = tennhom;
             txtTennhom.Text = tennhom;
         }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             CNhom c = xulyNhom.tim(tenNhomcu);
@@ -58,6 +55,7 @@ namespace QLDanhBa
             {
                 foreach (CDanhBa db in dsDB)    
                     xulyNhom.ThemDanhBaVaoNhom(c.Tennhom, db);
+                this.Close();
             }
             else if (xulyNhom.tim(txtTennhom.Text) == null)
             {

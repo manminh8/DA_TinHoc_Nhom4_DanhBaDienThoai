@@ -29,11 +29,6 @@ namespace QLDanhBa
             bs.DataSource = xulyDB.getDanhBa();
             dgvDanhBa.DataSource = bs;
         }
-        void taoColumn()
-        {
-            var ColSDT = new DataGridViewTextBoxColumn();
-
-        }
         public fDanhBa()
         {
             InitializeComponent();
@@ -90,9 +85,6 @@ namespace QLDanhBa
                 MessageBox.Show("Tải Dữ Liệu Không Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (dgvDanhBa.SelectedRows.Count > 0)
@@ -237,15 +229,16 @@ namespace QLDanhBa
                         List<CDanhBa> ls = new List<CDanhBa>();
                         try
                         {
-                            for (int i = 0; i < dgvDanhBa.SelectedRows.Count; i++)
-                            {
-                                ls.Add(xulyDB.tim(dgvDanhBa.SelectedRows[i].Cells[0].Value.ToString()));
-                            }
+                            CDanhBa db = (CDanhBa)dgvDanhBa.SelectedRows[0].DataBoundItem;
+                            ls.Add(db);
+                            //for (int i = 0; i < dgvDanhBa.SelectedRows.Count; i++)
+                            //{
+                            //    ls.Add(xulyDB.tim(dgvDanhBa.SelectedRows[i].Cells[0].Value.ToString()));
+                            //}
                             // chuyển danh sách đã chọn qua chuỗi json 
                             string jsonContent = JsonConvert.SerializeObject(ls, Formatting.Indented);
                             // lưu trữ json 
                             File.WriteAllText(filePath, jsonContent);
-                            MessageBox.Show("Liên hệ đã được chia sẻ tại: " + filePath, "Thông báo");
                             // Chia sẻ file
                             OpenFile(filePath);
                         }
@@ -287,6 +280,11 @@ namespace QLDanhBa
                 dgvDanhBa.DataSource = dsDB.ToList();
             }
 
+        }
+
+        private void cmsDanhBaDong_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

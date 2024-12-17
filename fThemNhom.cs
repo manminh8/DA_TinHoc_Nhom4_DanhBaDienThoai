@@ -79,7 +79,18 @@ namespace QLDanhBa
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            string text = "Bạn Có Muốn Thoát Không?";
+            string caption = "Thông Báo";
+            if (dgvThemNhom.DataSource != null || txtTenNhom.Text != string.Empty)
+            {
+                DialogResult rs = MessageBox.Show(text, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rs == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+            }
             this.Close();
+
         }
     }
 }
