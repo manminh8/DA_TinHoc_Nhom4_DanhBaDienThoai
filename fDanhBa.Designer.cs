@@ -193,7 +193,7 @@
             // btnShowDBYT
             // 
             resources.ApplyResources(this.btnShowDBYT, "btnShowDBYT");
-            this.btnShowDBYT.Image = global::QLDanhBa.Properties.Resources.delete;
+            this.btnShowDBYT.Image = global::QLDanhBa.Properties.Resources.romantic_novel;
             this.btnShowDBYT.Name = "btnShowDBYT";
             this.btnShowDBYT.UseVisualStyleBackColor = true;
             this.btnShowDBYT.Click += new System.EventHandler(this.btnShowDBYT_Click);

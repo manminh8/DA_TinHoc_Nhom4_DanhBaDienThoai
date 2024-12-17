@@ -112,6 +112,7 @@ namespace QLDanhBa
 
         private void fDanhBa_FormClosing(object sender, FormClosingEventArgs e)
         {
+            xulyNhom.GhiFileJson("JSON.json");
             Application.Exit();
         }
 
@@ -224,7 +225,7 @@ namespace QLDanhBa
                 // Hiển thị hộp thoại lưu file
                 SaveFileDialog saveFileDialog = new SaveFileDialog
             {
-                Filter = "JSON files (*.json)|*.json|CSV files (*.csv)|*.csv|All files (*.*)|*.*",
+                Filter = "All files (*.*)|*.*|Plain text (*.txt)|*.txt|JSON files (*.json)|*.json|CSV files (*.csv)|*.csv",
                 Title = "Lưu danh bạ"
             };
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)

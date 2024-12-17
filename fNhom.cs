@@ -18,7 +18,6 @@ namespace QLDanhBa
         {
             InitializeComponent();
             xulyNhom = new CXulyNhom();
-
             hienthiNhom();
         }
         public void hienthiNhom()

@@ -143,6 +143,16 @@ namespace QLDanhBa.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap romantic_novel {
+            get {
+                object obj = ResourceManager.GetObject("romantic-novel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap save_instagram {
             get {
                 object obj = ResourceManager.GetObject("save-instagram", resourceCulture);

@@ -228,6 +228,9 @@
   <data name="lblTimKiem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
+  <data name="lblTimKiem.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblTimKiem.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 51</value>
   </data>
@@ -411,6 +414,9 @@
   <data name="btnChiaSe.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
+  <data name="btnChiaSe.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnChiaSe.Location" type="System.Drawing.Point, System.Drawing">
     <value>537, 48</value>
   </data>
@@ -444,6 +450,9 @@
   <data name="btnShowDBYT.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
+  <data name="btnShowDBYT.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnShowDBYT.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 109</value>
   </data>
@@ -476,6 +485,9 @@
   </data>
   <data name="btnNhom.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
+  </data>
+  <data name="btnNhom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnNhom.Location" type="System.Drawing.Point, System.Drawing">
     <value>215, 107</value>
@@ -513,6 +525,9 @@
   <data name="btnTuyChon.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
+  <data name="btnTuyChon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnTuyChon.Location" type="System.Drawing.Point, System.Drawing">
     <value>537, 107</value>
   </data>
@@ -545,6 +560,9 @@
   </data>
   <data name="btnThungRac.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
+  </data>
+  <data name="btnThungRac.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnThungRac.Location" type="System.Drawing.Point, System.Drawing">
     <value>374, 107</value>
