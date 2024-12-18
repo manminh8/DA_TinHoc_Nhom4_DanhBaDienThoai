@@ -232,8 +232,16 @@ namespace QLDanhBa
                         {
                             CDanhBa db = (CDanhBa)dgvDanhBa.SelectedRows[0].DataBoundItem;
                             ls.Add(db);
+                            var lsTam = ls.Select(contact => new
+                            {
+                                contact.Ten,
+                                contact.Sdt,
+                                contact.Tencoquan,
+                                contact.Email,
+                                contact.Ghichu
+                            }).ToList();
                             // chuyển danh sách đã chọn qua chuỗi json 
-                            string jsonContent = JsonConvert.SerializeObject(ls, Formatting.Indented);
+                            string jsonContent = JsonConvert.SerializeObject(lsTam, Formatting.Indented);
                             // lưu trữ json 
                             File.WriteAllText(filePath, jsonContent);
                             // Chia sẻ file
