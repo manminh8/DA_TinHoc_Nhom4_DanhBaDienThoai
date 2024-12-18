@@ -55,7 +55,8 @@ namespace QLDanhBa
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
-            //CDanhBa danhbaMoi = new CDanhBa(txtSuaSDT.Text, txtSuaTen.Text, txtSuaEmail.Text, txtSuaTenCoQuan.Text, txtSuaGhiChu.Text);
+            if (txtSuaSDT.Tag == null)
+                txtSuaSDT.Tag = txtSuaSDT.Text;
             CDanhBa danhBaCu = xuly.tim(txtSuaSDT.Tag.ToString());
             danhBaCu.Sdt = txtSuaSDT.Text;
             danhBaCu.Ten = txtSuaTen.Text;

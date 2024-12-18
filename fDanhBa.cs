@@ -43,6 +43,37 @@ namespace QLDanhBa
                 xulyNhom.autoLoadNhom();
             hienthi();
         }
+        public static string ChuyenDoiKhongDau(string chuoi)
+        {
+            string[] arr1 = new string[] { "a", "A", "e", "E", "i", "I", "o", "O", "u", "U", "y", "Y", "d", "D" };
+            string[] arr2 = new string[]
+            {
+            "áàạảãâấầậẩẫăắằặẳẵ",
+            "ÁÀẠẢÃÂẤẦẬẨẪĂẮẰẶẲẴ",
+            "éèẹẻẽêếềệểễ",
+            "ÉÈẸẺẼÊẾỀỆỂỄ",
+            "íìịỉĩ",
+            "ÍÌỊỈĨ",
+            "óòọỏõôốồộổỗơớờợởỡ",
+            "ÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠ",
+            "úùụủũưứừựửữ",
+            "ÚÙỤỦŨƯỨỪỰỬỮ",
+            "ýỳỵỷỹ",
+            "ÝỲỴỶỸ",
+            "đ",
+            "Đ"
+            };
+
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                for (int j = 0; j < arr2[i].Length; j++)
+                {
+                    chuoi = chuoi.Replace(arr2[i][j], arr1[i][0]);
+                }
+            }
+            return chuoi;
+        }
+
 
         private void OpenFile(string filePath)
         {
@@ -142,28 +173,28 @@ namespace QLDanhBa
                 }
                 else if (searchType == "Tên")
                 {
-                    if (item.Ten.Contains(search))
+                    if (item.Ten.ToLower().Contains(search)|| item.Ten.Contains(search) || ChuyenDoiKhongDau(item.Ten).Contains(search))
                     {
                         listSearch.Add(item);
                     }
                 }
                 else if (searchType == "Tên cơ quan")
                 {
-                    if (item.Tencoquan.Contains(search))
+                    if (item.Tencoquan.Contains(search)|| item.Tencoquan.ToLower().Contains(search))
                     {
                         listSearch.Add(item);
                     }
                 }
                 else if (searchType == "Email")
                 {
-                    if (item.Email.Contains(search))
+                    if (item.Email.ToLower().Contains(search) || item.Email.Contains(search))
                     {
                         listSearch.Add(item);
                     }
                 }
                 else if (searchType == "Ghi chú")
                 {
-                    if (item.Ghichu.Contains(search))
+                    if (item.Ghichu.ToLower().Contains(search) || item.Ghichu.Contains(search))
                     {
                         listSearch.Add(item);
                     }
@@ -238,7 +269,6 @@ namespace QLDanhBa
                                 contact.Sdt,
                                 contact.Tencoquan,
                                 contact.Email,
-                                contact.Ghichu
                             }).ToList();
                             // chuyển danh sách đã chọn qua chuỗi json 
                             string jsonContent = JsonConvert.SerializeObject(lsTam, Formatting.Indented);

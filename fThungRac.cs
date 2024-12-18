@@ -33,10 +33,18 @@ namespace QLDanhBa
         {
             if (dgvThungRac.SelectedRows.Count > 0)
             {
-                CDanhBa selectedItem = (CDanhBa)dgvThungRac.SelectedRows[0].DataBoundItem;
-                xulyRac.xoa(selectedItem.Sdt);
-                MessageBox.Show("Liên hệ đã được xóa");
-                hienthi();
+                List<CDanhBa> dbXoa = new List<CDanhBa>();
+                foreach (DataGridViewRow row in dgvThungRac.SelectedRows)
+                {
+                    CDanhBa selectedItem = (CDanhBa)row.DataBoundItem;
+                    dbXoa.Add(selectedItem);
+                }
+                foreach(CDanhBa db in dbXoa)
+                {
+                    xulyRac.xoa(db.Sdt);
+                }
+                    MessageBox.Show("Liên hệ đã được xóa");
+                    hienthi();
             }
             else
             {
