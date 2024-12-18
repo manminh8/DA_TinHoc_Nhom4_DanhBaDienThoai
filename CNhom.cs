@@ -15,7 +15,6 @@ namespace QLDanhBa
             get => m_dsDanhBa;
             set => m_dsDanhBa = value;
         }
-
         public CNhom(string tennhom)
         {
             Tennhom = tennhom;

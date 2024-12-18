@@ -16,8 +16,6 @@ namespace QLDanhBa
         private string m_tencoquan;
         private string m_ghichu;
         private DanhSach m_danhsach;
-        
-
         public CDanhBa(string sdt, string ten,string mail, string tencoquan, string ghichu, DanhSach ds)
         {
             Sdt = sdt;

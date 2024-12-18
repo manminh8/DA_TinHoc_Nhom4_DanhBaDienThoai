@@ -23,7 +23,7 @@ namespace QLDanhBa
             xulyNhom = new CXulyNhom();
 
         }
-
+       
         public void hienthi()
         {
             BindingSource bs = new BindingSource();

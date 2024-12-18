@@ -15,11 +15,13 @@ namespace QLDanhBa
     {
         private CXulyDanhBa xuly;
         private CXulyRac xulyRac;
+        private CXulyNhom xulyNhom;
         public fTuyChon()
         {
             InitializeComponent();
             xuly = new CXulyDanhBa();
             xulyRac = new CXulyRac();
+            xulyNhom = new CXulyNhom();
         }
         public void hienThiThongTin(CDanhBa danhBa)
         {
@@ -32,6 +34,18 @@ namespace QLDanhBa
             {
                 rdbYeuThich.Checked = true;
             }
+        }
+        public bool timDanhBa(List<CNhom> dsnhom)
+        {
+            foreach (CNhom c in dsnhom)
+            {
+                List<CDanhBa> dsDB = xulyNhom.layDanhSachDanhBaTrongNhom(c.Tennhom);
+                if(dsDB.Any(danhba => danhba.Sdt == txtSuaSDT.Text))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
         private bool check()
         {
@@ -83,8 +97,9 @@ namespace QLDanhBa
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
+           
             CDanhBa danhBaMoi = xuly.tim(txtSuaSDT.Text);
-            if (danhBaMoi != null)
+            if (danhBaMoi != null && timDanhBa(xulyNhom.getDSNhom()) == true) 
             {
                 xuly.xoa(danhBaMoi.Sdt);
                 xuly.autoSave();
